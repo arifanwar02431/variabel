@@ -69,21 +69,28 @@
   });
 
   /* ---------- 2. Daftar isi aktif ---------- */
+  /* Catatan: hanya baris daftar isi yang digeser ke samping (scrollLeft).
+     Halaman tidak pernah digeser oleh skrip, supaya scroll jari/mouse tidak terganggu. */
+  const tocInner = document.querySelector(".toc-inner");
   const tocLinks = Array.from(document.querySelectorAll(".toc a[href^='#']"));
-  if (tocLinks.length && "IntersectionObserver" in window) {
+  if (tocInner && tocLinks.length && "IntersectionObserver" in window) {
     const map = new Map();
     tocLinks.forEach(function (a) {
       const sec = document.querySelector(a.getAttribute("href"));
       if (sec) map.set(sec, a);
     });
+    let current = null;
+    const setActive = function (link) {
+      if (!link || link === current) return;
+      if (current) current.classList.remove("active");
+      link.classList.add("active");
+      current = link;
+      const target = link.offsetLeft - (tocInner.clientWidth - link.offsetWidth) / 2;
+      tocInner.scrollLeft = Math.max(0, target);
+    };
     const obs = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          tocLinks.forEach(function (l) { l.classList.remove("active"); });
-          const link = map.get(e.target);
-          link.classList.add("active");
-          link.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
-        }
+        if (e.isIntersecting) setActive(map.get(e.target));
       });
     }, { rootMargin: "-40% 0px -55% 0px" });
     map.forEach(function (_, sec) { obs.observe(sec); });

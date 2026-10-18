@@ -85,9 +85,7 @@ code, pre, kbd { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Me
 /* ---------- Navigasi ---------- */
 .nav {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(250, 246, 239, .9);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(250, 246, 239, .97);
   border-bottom: 1px solid var(--line);
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
@@ -108,10 +106,18 @@ code, pre, kbd { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Me
 }
 .nav-links a:hover { background: var(--surface); color: var(--ink); }
 .nav-links a[aria-current="page"] { background: var(--ink); color: #fff; }
+.nav-links a { white-space: nowrap; }
 @media (max-width: 560px) {
   .brand-text { display: none; }
   .nav-links a { padding: 8px 10px; }
 }
+@media (max-width: 380px) {
+  .nav-links { gap: 2px; }
+  .nav-links a { padding: 7px 8px; font-size: .86rem; }
+  .container { padding: 0 16px; }
+}
+/* Ketukan cepat di layar sentuh (tanpa jeda/zoom ganda) */
+a, button, summary, input { touch-action: manipulation; }
 
 /* ---------- Hero ---------- */
 .hero { padding: 60px 0 44px; }
@@ -151,13 +157,12 @@ code, pre, kbd { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Me
 /* ---------- Daftar isi (chips) ---------- */
 .toc {
   position: sticky; top: 64px; z-index: 40;
-  background: rgba(250, 246, 239, .92);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(250, 246, 239, .97);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 .toc-inner {
+  position: relative; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain;
   display: flex; gap: 6px; overflow-x: auto; padding: 10px 20px;
   max-width: 1080px; margin: 0 auto; scrollbar-width: none;
 }
