@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Variabel Kelas 4 — Ruang Variabel</title>
+  <meta name="description" content="Belajar variabel untuk kelas 4: pengertian, tujuan, contoh, kegunaan, aturan nama, game interaktif, dan kuis.">
+  <meta name="theme-color" content="#FAF6EF">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="k4">
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">x=</span><span class="brand-text">Ruang Variabel</span></a>
+    <nav class="nav-links" aria-label="Navigasi utama">
+      <a href="index.html">Beranda</a>
+      <a href="kelas-4.html" aria-current="page">Kelas 4</a>
+      <a href="kelas-6.html">Kelas 6</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">Kelas 4 · Pemula</span>
+      <h1>Variabel itu seperti <span class="mark">kotak berlabel</span>.</h1>
+      <p class="lead">Di halaman ini kamu akan belajar apa itu variabel, untuk apa variabel dibuat, contohnya, dan kegunaannya. Setelah itu, kamu bisa langsung mencobanya sendiri!</p>
+      <div class="hero-meta">
+        <span class="pill">⏱ ± 30 menit</span>
+        <span class="pill">6 bagian materi</span>
+        <span class="pill">🕹️ 2 latihan</span>
+        <span class="pill">✅ Kuis 6 soal</span>
+      </div>
+    </div>
+  </section>
+
+  <nav class="toc" aria-label="Daftar isi">
+    <div class="toc-inner">
+      <a href="#pengertian">Pengertian</a>
+      <a href="#tujuan">Tujuan</a>
+      <a href="#contoh">Contoh</a>
+      <a href="#kegunaan">Kegunaan</a>
+      <a href="#nama">Memberi Nama</a>
+      <a href="#coba">Ayo Coba</a>
+      <a href="#kuis">Kuis</a>
+      <a href="#rangkuman">Rangkuman</a>
+    </div>
+  </nav>
+
+  <!-- 01 PENGERTIAN -->
+  <section class="section" id="pengertian">
+    <div class="container">
+      <div class="section-head"><span class="section-num">01</span><h2>Apa itu variabel?</h2></div>
+      <p class="section-intro">Saat bermain game, pernahkah kamu bertanya: bagaimana komputer tahu skormu sekarang berapa? Jawabannya: komputer menyimpannya di dalam <strong>variabel</strong>.</p>
+
+      <div class="definition">
+        <span class="label">Pengertian</span>
+        <strong>Variabel</strong> adalah tempat untuk <strong>menyimpan data</strong> di dalam program komputer. Setiap variabel punya <strong>nama</strong> dan <strong>isi</strong>.
+      </div>
+
+      <h3>Bayangkan sebuah kotak</h3>
+      <p class="prose">Coba bayangkan kamu punya beberapa kotak. Di luar setiap kotak ada label bertuliskan namanya. Di dalam kotak ada barang yang disimpan. Variabel bekerja persis seperti itu!</p>
+
+      <div class="anatomy mt-2">
+        <div class="vbox-row">
+          <div class="vbox"><span class="vbox-label">nama</span><span class="vbox-value">Budi</span></div>
+          <div class="vbox"><span class="vbox-label">umur</span><span class="vbox-value">10</span></div>
+          <div class="vbox"><span class="vbox-label">skor</span><span class="vbox-value">25</span></div>
+        </div>
+        <ul class="anatomy-list">
+          <li><span class="dot yellow">A</span><div><strong>Label di luar kotak = nama variabel.</strong><br><span class="muted">Contoh: <code>nama</code>, <code>umur</code>, <code>skor</code>. Nama dipakai untuk memanggil kotaknya.</span></div></li>
+          <li><span class="dot white">B</span><div><strong>Barang di dalam kotak = isi (nilai) variabel.</strong><br><span class="muted">Contoh: <code>Budi</code>, <code>10</code>, <code>25</code>. Isinya bisa berupa angka atau tulisan.</span></div></li>
+        </ul>
+      </div>
+
+      <div class="callout">
+        <span class="callout-icon">🔤</span>
+        <div><p><strong>Kenapa namanya “variabel”?</strong> Kata ini berasal dari bahasa Inggris <em>variable</em> yang artinya “dapat berubah”. Memang benar, isi kotaknya boleh diganti kapan saja, misalnya skor yang terus bertambah.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 TUJUAN -->
+  <section class="section" id="tujuan">
+    <div class="container">
+      <div class="section-head"><span class="section-num">02</span><h2>Tujuan variabel</h2></div>
+      <p class="section-intro">Komputer itu pintar berhitung, tetapi ia tidak bisa “ingat” sendiri. Karena itu, kita membuat variabel dengan tiga tujuan utama:</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="icon">🧠</div>
+          <h3>Mengingat data</h3>
+          <p>Variabel membantu komputer menyimpan informasi, misalnya nama pemain atau jumlah koin yang sudah dikumpulkan.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🔁</div>
+          <h3>Memakai data berulang kali</h3>
+          <p>Cukup panggil nama variabelnya, isinya bisa dipakai lagi dan lagi tanpa harus menulis ulang.</p>
+        </div>
+        <div class="card">
+          <div class="icon">✏️</div>
+          <h3>Mengubah data dengan mudah</h3>
+          <p>Isi variabel bisa diganti, seperti skor yang bertambah setiap kali kamu mendapat bintang.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 CONTOH -->
+  <section class="section" id="contoh">
+    <div class="container">
+      <div class="section-head"><span class="section-num">03</span><h2>Contoh variabel</h2></div>
+      <p class="section-intro">Ternyata, “variabel” ada di sekitar kita. Lihat contoh berikut, lalu kita lihat contohnya di dalam program.</p>
+
+      <h3 class="subhead">a. Di kehidupan sehari-hari</h3>
+      <div class="grid grid-4">
+        <div class="card">
+          <p class="mb-0" style="color:var(--ink);font-weight:600">⚽ Papan skor pertandingan</p>
+          <div class="vbox-row"><div class="vbox sm"><span class="vbox-label">skor_tim_a</span><span class="vbox-value">2</span></div></div>
+          <p class="mt-2">Angkanya berubah setiap ada gol.</p>
+        </div>
+        <div class="card">
+          <p class="mb-0" style="color:var(--ink);font-weight:600">🐷 Celengan</p>
+          <div class="vbox-row"><div class="vbox sm"><span class="vbox-label">tabungan</span><span class="vbox-value">15000</span></div></div>
+          <p class="mt-2">Isinya bertambah saat kamu menabung.</p>
+        </div>
+        <div class="card">
+          <p class="mb-0" style="color:var(--ink);font-weight:600">🌡️ Termometer</p>
+          <div class="vbox-row"><div class="vbox sm"><span class="vbox-label">suhu</span><span class="vbox-value">31</span></div></div>
+          <p class="mt-2">Nilainya naik turun sepanjang hari.</p>
+        </div>
+        <div class="card">
+          <p class="mb-0" style="color:var(--ink);font-weight:600">🏫 Papan nama kelas</p>
+          <div class="vbox-row"><div class="vbox sm"><span class="vbox-label">wali_kelas</span><span class="vbox-value">Bu Rina</span></div></div>
+          <p class="mt-2">Isinya bisa berupa tulisan, bukan hanya angka.</p>
+        </div>
+      </div>
+
+      <h3 class="subhead">b. Di dalam program (blok kode)</h3>
+      <p class="prose">Di aplikasi pemrograman blok seperti Scratch, variabel dibuat lewat kategori <strong>Variabel</strong> → <strong>Buat Variabel</strong>. Blok variabel berwarna oranye. Perhatikan program game berikut:</p>
+
+      <div class="blocks-wrap mt-2">
+        <div>
+          <div class="blocks" aria-label="Program saat bendera hijau diklik">
+            <span class="blk event">ketika 🏁 diklik</span>
+            <span class="blk var">atur <span class="drop">skor</span> ke <span class="slot">0</span></span>
+            <span class="blk var">atur <span class="drop">nyawa</span> ke <span class="slot">3</span></span>
+            <span class="blk look">katakan <span class="rnd">skor</span></span>
+          </div>
+          <div class="blocks" aria-label="Program saat tombol spasi ditekan">
+            <span class="blk event">ketika tombol spasi ditekan</span>
+            <span class="blk var">ubah <span class="drop">skor</span> sebesar <span class="slot">1</span></span>
+          </div>
+        </div>
+        <ul class="block-legend">
+          <li>
+            <span class="blk var">atur <span class="drop">skor</span> ke <span class="slot">0</span></span>
+            <p><strong>Mengisi</strong> variabel dengan nilai tertentu. Biasanya dipakai di awal permainan, supaya skor mulai dari 0.</p>
+          </li>
+          <li>
+            <span class="blk var">ubah <span class="drop">skor</span> sebesar <span class="slot">1</span></span>
+            <p><strong>Menambah</strong> isi variabel. Kalau angkanya negatif, misalnya <code>-1</code>, isinya <strong>berkurang</strong>.</p>
+          </li>
+          <li>
+            <span class="blk look">katakan <span class="rnd">skor</span></span>
+            <p><strong>Memakai</strong> isi variabel. Blok bulat oranye <span class="blk var" style="padding:1px 8px;font-size:.8rem;border-radius:999px">skor</span> berarti “ambil isi kotak skor”.</p>
+          </li>
+        </ul>
+      </div>
+
+      <h3 class="subhead">c. Sekilas: variabel dalam kode tulisan</h3>
+      <p class="prose">Nanti di kelas yang lebih tinggi, kamu akan menulis variabel dengan huruf seperti ini. Artinya sama dengan blok di atas!</p>
+      <div class="code" style="max-width:560px">
+        <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>game.py</span></span><button class="copy-btn" type="button">Salin</button></div>
+<pre><code data-lang="py">
+nama = "Budi"      # atur nama ke Budi
+skor = 0           # atur skor ke 0
+skor = skor + 1    # ubah skor sebesar 1
+print(skor)        # katakan skor
+</code></pre>
+        <div class="code-out">1</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 KEGUNAAN -->
+  <section class="section" id="kegunaan">
+    <div class="container">
+      <div class="section-head"><span class="section-num">04</span><h2>Kegunaan variabel</h2></div>
+      <p class="section-intro">Hampir semua program memakai variabel. Inilah beberapa kegunaannya:</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="icon">🎮</div>
+          <h3>Di game</h3>
+          <p>Menyimpan <code>skor</code>, <code>nyawa</code>, <code>level</code>, dan <code>waktu</code> permainan.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🛒</div>
+          <h3>Di kasir toko</h3>
+          <p>Menyimpan <code>total_belanja</code> yang terus bertambah setiap barang dipindai.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🌦️</div>
+          <h3>Di aplikasi cuaca</h3>
+          <p>Menyimpan <code>suhu</code> dan <code>cuaca</code> hari ini agar bisa ditampilkan di layar.</p>
+        </div>
+        <div class="card">
+          <div class="icon">📝</div>
+          <h3>Di kuis</h3>
+          <p>Menghitung <code>jawaban_benar</code> supaya nilai akhirmu bisa ditampilkan.</p>
+        </div>
+        <div class="card">
+          <div class="icon">👋</div>
+          <h3>Menyapa pengguna</h3>
+          <p>Menyimpan <code>nama</code> yang kamu ketik, lalu program bisa berkata “Halo, Budi!”.</p>
+        </div>
+        <div class="card">
+          <div class="icon">➗</div>
+          <h3>Berhitung</h3>
+          <p>Menyimpan angka-angka, lalu menjumlahkan, mengurangkan, atau mengalikannya.</p>
+        </div>
+      </div>
+
+      <h3 class="subhead">Isi variabel bisa berubah</h3>
+      <p class="prose">Inilah yang membuat variabel sangat berguna. Lihat apa yang terjadi pada variabel <code>skor</code> saat kamu bermain:</p>
+      <div class="timeline">
+        <div class="vbox sm"><span class="vbox-label">skor</span><span class="vbox-value">0</span></div>
+        <div class="step-arrow">dapat bintang</div>
+        <div class="vbox sm"><span class="vbox-label">skor</span><span class="vbox-value">1</span></div>
+        <div class="step-arrow">dapat bintang</div>
+        <div class="vbox sm"><span class="vbox-label">skor</span><span class="vbox-value">2</span></div>
+        <div class="step-arrow">dapat permata (+5)</div>
+        <div class="vbox sm"><span class="vbox-label">skor</span><span class="vbox-value">7</span></div>
+      </div>
+      <div class="callout warn mt-2">
+        <span class="callout-icon">☝️</span>
+        <div><p><strong>Ingat!</strong> Satu kotak variabel hanya menyimpan <strong>satu isi</strong> pada satu waktu. Saat diisi nilai baru, isi yang lama akan diganti.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 MEMBERI NAMA -->
+  <section class="section" id="nama">
+    <div class="container">
+      <div class="section-head"><span class="section-num">05</span><h2>Aturan memberi nama variabel</h2></div>
+      <p class="section-intro">Nama yang baik membuat programmu mudah dipahami, oleh orang lain dan oleh dirimu sendiri.</p>
+
+      <div class="grid grid-2">
+        <ul class="rules">
+          <li><span class="badge-ok">✓</span><p><strong>Pakai nama yang jelas</strong><small><code>skor</code>, <code>nyawa</code>, <code>nama_pemain</code></small></p></li>
+          <li><span class="badge-ok">✓</span><p><strong>Ganti spasi dengan garis bawah (_)</strong><small><code>nama_pemain</code>, <code>jumlah_koin</code></small></p></li>
+          <li><span class="badge-ok">✓</span><p><strong>Angka boleh, asal di belakang</strong><small><code>pemain1</code>, <code>level2</code></small></p></li>
+        </ul>
+        <ul class="rules">
+          <li><span class="badge-bad">✗</span><p><strong>Jangan pakai spasi</strong><small><code>nama pemain</code></small></p></li>
+          <li><span class="badge-bad">✗</span><p><strong>Jangan diawali angka</strong><small><code>1pemain</code></small></p></li>
+          <li><span class="badge-bad">✗</span><p><strong>Hindari nama asal-asalan</strong><small><code>x</code>, <code>abc</code>, <code>aaa</code> (sulit ditebak isinya)</small></p></li>
+        </ul>
+      </div>
+
+      <div class="callout">
+        <span class="callout-icon">💬</span>
+        <div><p>Di Scratch, nama variabel sebenarnya boleh memakai spasi. Tapi di bahasa pemrograman tulisan seperti Python, spasi tidak boleh. Biasakan dari sekarang, ya!</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 AYO COBA -->
+  <section class="section" id="coba">
+    <div class="container">
+      <div class="section-head"><span class="section-num">06</span><h2>Ayo coba!</h2></div>
+      <p class="section-intro">Saatnya praktik. Perhatikan bagaimana isi kotak variabel berubah setiap kali kamu menekan tombol.</p>
+
+      <div class="demo" data-maker>
+        <div class="demo-head">
+          <h3>Latihan 1 · Buat kotakmu sendiri</h3>
+          <p>Ketik nama dan isi variabel</p>
+        </div>
+        <div class="demo-body demo-split">
+          <div class="grid">
+            <label class="field">Nama variabel (label kotak)
+              <input type="text" data-name value="hewan_favorit" autocomplete="off" spellcheck="false">
+            </label>
+            <label class="field">Isi variabel
+              <input type="text" data-value value="kucing" autocomplete="off" spellcheck="false">
+            </label>
+            <div class="feedback" aria-live="polite"></div>
+          </div>
+          <div style="display:flex;justify-content:center;align-items:center;min-height:180px">
+            <div class="vbox" style="min-width:200px;min-height:120px"><span class="vbox-label">…</span><span class="vbox-value">…</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo" data-game>
+        <div class="demo-head">
+          <h3>Latihan 2 · Game kumpulkan bintang</h3>
+          <p>Lihat variabel <code>skor</code> &amp; <code>nyawa</code></p>
+        </div>
+        <div class="demo-body">
+          <div class="vbox-row" style="justify-content:center;gap:34px 40px">
+            <div class="vbox" data-var="skor" style="min-width:170px"><span class="vbox-label">skor</span><span class="vbox-value">0</span></div>
+            <div class="vbox" data-var="nyawa" style="min-width:170px"><span class="vbox-label">nyawa</span><span class="vbox-value">3</span></div>
+          </div>
+          <div class="btn-row mt-2" style="justify-content:center">
+            <button class="btn" type="button" data-act="bintang">⭐ Ambil bintang (+1)</button>
+            <button class="btn" type="button" data-act="permata">💎 Ambil permata (+5)</button>
+            <button class="btn" type="button" data-act="batu">🪨 Kena batu (nyawa −1)</button>
+            <button class="btn btn-primary" type="button" data-act="ulang">↺ Main lagi</button>
+          </div>
+          <div class="status-line"><span>Blok yang dijalankan:</span> <span data-block><span class="blk var">atur <span class="drop">skor</span> ke <span class="slot">0</span></span> <span class="blk var">atur <span class="drop">nyawa</span> ke <span class="slot">3</span></span></span></div>
+          <p class="game-msg" data-msg aria-live="polite">Tekan tombol untuk mulai bermain.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 KUIS -->
+  <section class="section quiz-block" id="kuis">
+    <div class="container prose" data-quiz="QUIZ_K4">
+      <div class="section-head"><span class="section-num">07</span><h2>Kuis variabel</h2></div>
+      <p class="section-intro">Pilih jawaban yang paling tepat. Pembahasan akan muncul setelah kamu menjawab.</p>
+      <div class="quiz-bar"><span></span></div>
+      <p class="quiz-status"></p>
+      <div class="quiz-list"></div>
+      <div class="quiz-result" hidden>
+        <p class="mb-0">Skor kamu</p>
+        <div class="score"></div>
+        <p class="msg"></p>
+        <button class="btn btn-primary quiz-reset" type="button">↺ Ulangi kuis</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGKUMAN -->
+  <section class="section" id="rangkuman">
+    <div class="container">
+      <div class="recap">
+        <h2>Rangkuman</h2>
+        <ol>
+          <li><span><strong>Pengertian:</strong> variabel adalah tempat menyimpan data di dalam program, seperti kotak yang punya label (nama) dan isi (nilai).</span></li>
+          <li><span><strong>Tujuan:</strong> agar komputer bisa mengingat data, memakainya berulang kali, dan mengubahnya dengan mudah.</span></li>
+          <li><span><strong>Contoh:</strong> <code>skor</code>, <code>nyawa</code>, <code>nama</code>, <code>suhu</code>. Di Scratch, kita memakai blok “atur … ke …” dan “ubah … sebesar …”.</span></li>
+          <li><span><strong>Kegunaan:</strong> menyimpan skor game, total belanja, jumlah jawaban benar, nama pengguna, dan hasil hitungan.</span></li>
+          <li><span><strong>Nama variabel</strong> harus jelas, tanpa spasi, dan tidak diawali angka.</span></li>
+        </ol>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#kuis">Kerjakan kuis lagi</a>
+          <a class="btn" href="kelas-6.html">Intip materi kelas 6 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>Ruang Variabel · Materi Kelas 4</span>
+    <span><a href="index.html">Beranda</a> · <a href="kelas-6.html">Kelas 6</a></span>
+  </div>
+</footer>
+
+<script>
+  window.QUIZ_K4 = [
+    {
+      q: "Variabel paling tepat diibaratkan seperti …",
+      o: ["Layar komputer", "Kotak berlabel yang menyimpan sesuatu", "Kabel listrik", "Tombol keyboard"],
+      a: 1,
+      e: "Variabel seperti kotak: labelnya adalah nama variabel, isinya adalah nilai yang disimpan."
+    },
+    {
+      q: "Dalam sebuah game, angka skor bertambah setiap kamu mendapat koin. Di mana angka skor itu disimpan?",
+      o: ["Di dalam variabel", "Di dalam mouse", "Di dalam speaker", "Tidak disimpan di mana pun"],
+      a: 0,
+      e: "Skor disimpan di variabel agar komputer bisa mengingat dan mengubahnya selama permainan."
+    },
+    {
+      q: "Nama variabel mana yang paling jelas untuk menyimpan jumlah nyawa pemain?",
+      o: ["<code>x</code>", "<code>aaa</code>", "<code>nyawa</code>", "<code>1nyawa</code>"],
+      a: 2,
+      e: "<code>nyawa</code> langsung menjelaskan isinya. <code>1nyawa</code> salah karena diawali angka."
+    },
+    {
+      q: "Isi variabel <code>skor</code> adalah 5. Lalu dijalankan blok “ubah skor sebesar 2”. Berapa isi skor sekarang?",
+      o: ["2", "5", "7", "52"],
+      a: 2,
+      e: "“Ubah sebesar 2” berarti isi lama ditambah 2: 5 + 2 = 7."
+    },
+    {
+      q: "Variabel <code>warna</code> berisi “merah”. Kemudian dijalankan blok “atur warna ke biru”. Apa isi variabel warna sekarang?",
+      o: ["merah", "biru", "merah dan biru", "kosong"],
+      a: 1,
+      e: "Satu variabel hanya menyimpan satu isi. Isi lama (merah) diganti dengan isi baru (biru)."
+    },
+    {
+      q: "Mengapa program membutuhkan variabel?",
+      o: ["Agar layar menjadi berwarna", "Agar komputer bisa mengingat dan mengubah data", "Agar komputer lebih ringan", "Agar program tidak bisa diubah"],
+      a: 1,
+      e: "Tujuan utama variabel adalah menyimpan data supaya bisa diingat, dipakai lagi, dan diubah."
+    }
+  ];
+</script>
+<script src="script.js"></script>
+</body>
+</html>

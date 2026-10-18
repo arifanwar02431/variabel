@@ -1,0 +1,923 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Variabel Kelas 6 — Ruang Variabel</title>
+  <meta name="description" content="Materi variabel kelas 6: pengertian, memori, tipe data, aturan penamaan, operasi, konstanta, scope, kesalahan umum, penelusur kode, kuis, dan latihan.">
+  <meta name="theme-color" content="#FAF6EF">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="k6">
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">x=</span><span class="brand-text">Ruang Variabel</span></a>
+    <nav class="nav-links" aria-label="Navigasi utama">
+      <a href="index.html">Beranda</a>
+      <a href="kelas-4.html">Kelas 4</a>
+      <a href="kelas-6.html" aria-current="page">Kelas 6</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">Kelas 6 · Lanjut</span>
+      <h1>Variabel: <span class="mark">nama, nilai,</span> dan tipe data.</h1>
+      <p class="lead">Di kelas 4 kamu mengenal variabel sebagai kotak berlabel. Sekarang kita menulisnya dalam kode teks (Python &amp; JavaScript), melihat cara variabel disimpan di memori, mengenal tipe data, aturan penamaan, ruang lingkup, dan cara melacak perubahan nilainya.</p>
+      <div class="hero-meta">
+        <span class="pill">⏱ ± 60–80 menit</span>
+        <span class="pill">12 bagian materi</span>
+        <span class="pill">🔍 Penelusur kode</span>
+        <span class="pill">✅ Kuis 8 soal</span>
+        <span class="pill">🧪 3 tantangan</span>
+      </div>
+    </div>
+  </section>
+
+  <nav class="toc" aria-label="Daftar isi">
+    <div class="toc-inner">
+      <a href="#pengertian">Pengertian</a>
+      <a href="#tujuan">Tujuan</a>
+      <a href="#menulis">Menulis Variabel</a>
+      <a href="#tipe-data">Tipe Data</a>
+      <a href="#penamaan">Penamaan</a>
+      <a href="#operasi">Operasi</a>
+      <a href="#contoh">Contoh Program</a>
+      <a href="#kegunaan">Kegunaan</a>
+      <a href="#konstanta">Konstanta</a>
+      <a href="#scope">Scope</a>
+      <a href="#kesalahan">Kesalahan Umum</a>
+      <a href="#penelusur">Penelusur Kode</a>
+      <a href="#kuis">Kuis</a>
+      <a href="#tantangan">Tantangan</a>
+    </div>
+  </nav>
+
+  <!-- 01 PENGERTIAN -->
+  <section class="section" id="pengertian">
+    <div class="container">
+      <div class="section-head"><span class="section-num">01</span><h2>Pengertian variabel</h2></div>
+
+      <div class="definition">
+        <span class="label">Definisi</span>
+        <strong>Variabel</strong> adalah <strong>nama</strong> yang menunjuk ke sebuah <strong>lokasi di memori komputer</strong> tempat suatu nilai disimpan. Nilai tersebut dapat dibaca dan diubah selama program berjalan.
+      </div>
+
+      <p class="prose">Setiap variabel memiliki tiga komponen penting:</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="icon">🏷️</div>
+          <h3>Nama <span class="muted" style="font-weight:500;font-size:.9rem">(identifier)</span></h3>
+          <p>Label yang kita pakai untuk memanggil variabel. Contoh: <code>umur</code>.</p>
+        </div>
+        <div class="card">
+          <div class="icon">📦</div>
+          <h3>Nilai <span class="muted" style="font-weight:500;font-size:.9rem">(value)</span></h3>
+          <p>Data yang disimpan di dalamnya. Contoh: <code>12</code>.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🧬</div>
+          <h3>Tipe data <span class="muted" style="font-weight:500;font-size:.9rem">(type)</span></h3>
+          <p>Jenis nilainya: bilangan, teks, benar/salah, dll. Contoh: <code>int</code>.</p>
+        </div>
+      </div>
+
+      <h3 class="subhead">Apa yang terjadi di memori?</h3>
+      <p class="prose">Memori komputer (RAM) bisa dibayangkan sebagai deretan laci bernomor (alamat). Saat kamu menulis <code>umur = 12</code>, komputer menaruh nilai 12 di salah satu laci, lalu mencatat bahwa nama <code>umur</code> menunjuk ke laci itu. Kita tidak perlu menghafal nomor lacinya, cukup memakai namanya.</p>
+      <div class="memory mt-2" aria-label="Ilustrasi memori">
+        <div class="cell empty">0x01<b>·</b></div>
+        <div class="cell used"><span class="nm">umur</span>0x02<b>12</b></div>
+        <div class="cell empty">0x03<b>·</b></div>
+        <div class="cell used"><span class="nm">nama</span>0x04<b>"Raka"</b></div>
+        <div class="cell used"><span class="nm">lulus</span>0x05<b>True</b></div>
+        <div class="cell empty">0x06<b>·</b></div>
+        <div class="cell empty">0x07<b>·</b></div>
+        <div class="cell empty">0x08<b>·</b></div>
+      </div>
+      <p class="muted" style="font-size:.86rem;margin-top:10px">Ilustrasi disederhanakan. Alamat memori sebenarnya jauh lebih panjang.</p>
+
+      <div class="callout warn">
+        <span class="callout-icon">⚠️</span>
+        <div>
+          <p><strong>Tanda <code>=</code> bukan “sama dengan”.</strong> Dalam pemrograman, <code>=</code> adalah <em>operator penugasan</em> (assignment): hitung nilai di sebelah kanan, lalu simpan ke variabel di sebelah kiri. Karena itu <code>umur = umur + 1</code> masuk akal di kode, walaupun di matematika tidak mungkin. Untuk membandingkan, gunakan <code>==</code>.</p>
+        </div>
+      </div>
+      <div class="code" style="max-width:640px">
+        <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>penugasan.py</span></span><button class="copy-btn" type="button">Salin</button></div>
+<pre><code data-lang="py">
+umur = 12            # simpan 12 ke variabel umur
+umur = umur + 1      # baca 12, tambah 1, simpan 13 ke umur
+print(umur)          # tampilkan isi umur
+print(umur == 13)    # == membandingkan, hasilnya True/False
+</code></pre>
+        <div class="code-out">13
+True</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 TUJUAN -->
+  <section class="section" id="tujuan">
+    <div class="container">
+      <div class="section-head"><span class="section-num">02</span><h2>Tujuan variabel</h2></div>
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="icon">💾</div>
+          <h3>Menyimpan data selama program berjalan</h3>
+          <p>Input dari pengguna, hasil perhitungan, atau keadaan program (misalnya “game sudah selesai”) perlu disimpan agar bisa dipakai di langkah berikutnya.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🔀</div>
+          <h3>Membuat program fleksibel</h3>
+          <p>Program yang sama bisa bekerja untuk data yang berbeda. Kalkulator luas tidak perlu ditulis ulang untuk setiap ukuran persegi panjang.</p>
+        </div>
+        <div class="card">
+          <div class="icon">📖</div>
+          <h3>Membuat kode mudah dibaca</h3>
+          <p><code>harga * jumlah</code> jauh lebih jelas maknanya daripada <code>15000 * 3</code>. Angka tanpa nama sering disebut <em>magic number</em>.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🧹</div>
+          <h3>Menghindari pengulangan</h3>
+          <p>Ubah nilai di satu tempat, maka seluruh bagian program yang memakainya ikut berubah. Lebih sedikit kesalahan.</p>
+        </div>
+      </div>
+
+      <h3 class="subhead">Bandingkan sendiri</h3>
+      <div class="grid grid-2">
+        <div>
+          <span class="card-tag tag-bad">Tanpa variabel</span>
+          <div class="code mt-0">
+            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>tanpa_variabel.py</span></span></div>
+<pre><code data-lang="py">
+print(15000 * 3)
+print(15000 * 3 * 0.1)
+print(15000 * 3 - 15000 * 3 * 0.1)
+# Harga naik? Ubah angka 15000 di 4 tempat!
+</code></pre>
+          </div>
+        </div>
+        <div>
+          <span class="card-tag tag-good">Dengan variabel</span>
+          <div class="code mt-0">
+            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>dengan_variabel.py</span></span></div>
+<pre><code data-lang="py">
+harga = 15000
+jumlah = 3
+total = harga * jumlah
+diskon = total * 0.1
+print(total, diskon, total - diskon)
+# Harga naik? Cukup ubah 1 baris.
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 MENULIS -->
+  <section class="section" id="menulis">
+    <div class="container">
+      <div class="section-head"><span class="section-num">03</span><h2>Menulis variabel di kode</h2></div>
+      <p class="section-intro">Ada tiga istilah yang perlu kamu kenal: <strong>deklarasi</strong> (membuat variabel), <strong>inisialisasi</strong> (memberi nilai pertama kali), dan <strong>penugasan ulang</strong> (mengganti nilainya).</p>
+
+      <div class="grid grid-2">
+        <div>
+          <h3>Python</h3>
+          <div class="code">
+            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>biodata.py</span></span><button class="copy-btn" type="button">Salin</button></div>
+<pre><code data-lang="py">
+nama = "Raka"
+kelas = 6
+tinggi = 145.5
+suka_coding = True
+
+kelas = 7    # penugasan ulang
+</code></pre>
+          </div>
+          <p class="muted">Cukup tulis <code>nama = nilai</code>. Python menentukan tipe datanya secara otomatis (<em>dynamic typing</em>).</p>
+        </div>
+        <div>
+          <h3>JavaScript</h3>
+          <div class="code">
+            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>biodata.js</span></span><button class="copy-btn" type="button">Salin</button></div>
+<pre><code data-lang="js">
+let nama = "Raka";
+let kelas = 6;
+let tinggi = 145.5;
+let sukaCoding = true;
+const SEKOLAH = "SD Harapan";
+
+kelas = 7;   // boleh, karena memakai let
+</code></pre>
+          </div>
+          <p class="muted">Deklarasi memakai kata kunci <code>let</code> (nilai boleh diubah) atau <code>const</code> (nilai tetap).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 TIPE DATA -->
+  <section class="section" id="tipe-data">
+    <div class="container">
+      <div class="section-head"><span class="section-num">04</span><h2>Tipe data</h2></div>
+      <p class="section-intro">Tipe data menentukan jenis nilai yang disimpan dan operasi apa yang bisa dilakukan padanya. Angka bisa dijumlahkan, teks bisa digabung.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Tipe (Python)</th><th>Nama</th><th>Contoh</th><th>Keterangan</th></tr></thead>
+          <tbody>
+            <tr><td><code>int</code></td><td>Bilangan bulat</td><td><code>umur = 12</code></td><td>Angka tanpa koma, bisa negatif.</td></tr>
+            <tr><td><code>float</code></td><td>Bilangan desimal</td><td><code>berat = 35.5</code></td><td>Memakai <strong>titik</strong>, bukan koma.</td></tr>
+            <tr><td><code>str</code></td><td>Teks (string)</td><td><code>nama = "Ayu"</code></td><td>Diapit tanda kutip <code>"..."</code> atau <code>'...'</code>.</td></tr>
+            <tr><td><code>bool</code></td><td>Logika (boolean)</td><td><code>hadir = True</code></td><td>Hanya dua nilai: <code>True</code> atau <code>False</code>.</td></tr>
+            <tr><td><code>list</code></td><td>Daftar</td><td><code>nilai = [80, 90, 75]</code></td><td>Banyak nilai dalam satu variabel.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid grid-2 mt-2">
+        <div>
+          <h3>Memeriksa tipe dengan <code>type()</code></h3>
+          <div class="code">
+            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>cek_tipe.py</span></span><button class="copy-btn" type="button">Salin</button></div>
+<pre><code data-lang="py">
+print(type(12))
+print(type(12.0))
+print(type("12"))
+print(type(True))
+</code></pre>
+            <div class="code-out">&lt;class 'int'&gt;
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;
+&lt;class 'bool'&gt;</div>
+          </div>
+        </div>
+        <div>
+          <h3>Mengubah tipe (konversi)</h3>
+          <div class="code">
+            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>konversi.py</span></span><button class="copy-btn" type="button">Salin</button></div>
+<pre><code data-lang="py">
+umur_teks = input("Umurmu? ")  # input() selalu str
+umur = int(umur_teks)          # ubah ke int
+print(umur + 1)
+
+harga = float("2.5")           # str -> float
+pesan = "Nilai: " + str(90)    # int -> str
+</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout warn">
+        <span class="callout-icon">🧐</span>
+        <div><p><strong>Angka di dalam tanda kutip adalah teks!</strong> <code>5 + 3</code> menghasilkan <code>8</code>, tetapi <code>"5" + "3"</code> menghasilkan <code>"53"</code> karena kedua teks digabung (disebut <em>konkatenasi</em>). Sedangkan <code>"5" + 3</code> menghasilkan error karena teks dan angka tidak bisa langsung dijumlahkan.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 PENAMAAN -->
+  <section class="section" id="penamaan">
+    <div class="container">
+      <div class="section-head"><span class="section-num">05</span><h2>Aturan &amp; konvensi penamaan</h2></div>
+      <p class="section-intro">Ada <strong>aturan wajib</strong> (jika dilanggar, program error) dan <strong>konvensi</strong> (kebiasaan baik yang disepakati para programmer).</p>
+
+      <div class="grid grid-2">
+        <div>
+          <h3>Aturan wajib</h3>
+          <ul class="rules">
+            <li><span class="badge-ok badge-num">1</span><p>Diawali <strong>huruf</strong> atau <strong>garis bawah</strong> <code>_</code>, tidak boleh angka.</p></li>
+            <li><span class="badge-ok badge-num">2</span><p>Hanya berisi huruf, angka, dan <code>_</code>. Tanpa spasi atau simbol seperti <code>- . ! @ #</code>.</p></li>
+            <li><span class="badge-ok badge-num">3</span><p><strong>Peka huruf besar-kecil</strong> (case-sensitive): <code>Nilai</code> dan <code>nilai</code> adalah dua variabel berbeda.</p></li>
+            <li><span class="badge-ok badge-num">4</span><p>Bukan <strong>kata kunci</strong> (keyword) seperti <code>if</code>, <code>for</code>, <code>class</code>, <code>True</code>.</p></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Konvensi (kebiasaan baik)</h3>
+          <ul class="rules">
+            <li><span class="badge-ok">✓</span><p><strong>Bermakna:</strong> <code>jumlah_siswa</code>, bukan <code>js</code>.</p></li>
+            <li><span class="badge-ok">✓</span><p><strong>Python → snake_case:</strong> <code>nilai_akhir</code></p></li>
+            <li><span class="badge-ok">✓</span><p><strong>JavaScript → camelCase:</strong> <code>nilaiAkhir</code></p></li>
+            <li><span class="badge-ok">✓</span><p><strong>Konstanta → HURUF_KAPITAL:</strong> <code>NILAI_KKM</code></p></li>
+            <li><span class="badge-ok">✓</span><p><strong>Boolean seperti pertanyaan:</strong> <code>sudah_lulus</code>, <code>is_aktif</code></p></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="table-wrap mt-2">
+        <table>
+          <thead><tr><th>Nama</th><th>Valid?</th><th>Alasan</th></tr></thead>
+          <tbody>
+            <tr><td><code>nilai1</code></td><td><span class="yes">✓ Valid</span></td><td>Angka boleh, asal tidak di depan.</td></tr>
+            <tr><td><code>1nilai</code></td><td><span class="no">✗ Error</span></td><td>Diawali angka.</td></tr>
+            <tr><td><code>nilai akhir</code></td><td><span class="no">✗ Error</span></td><td>Mengandung spasi.</td></tr>
+            <tr><td><code>nilai-akhir</code></td><td><span class="no">✗ Error</span></td><td>Dibaca sebagai <code>nilai</code> dikurangi <code>akhir</code>.</td></tr>
+            <tr><td><code>_rahasia</code></td><td><span class="yes">✓ Valid</span></td><td>Boleh diawali garis bawah.</td></tr>
+            <tr><td><code>for</code></td><td><span class="no">✗ Error</span></td><td>Kata kunci Python.</td></tr>
+            <tr><td><code>print</code></td><td><span class="yes">✓ Valid*</span></td><td>*Tapi menimpa fungsi bawaan. Hindari!</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo" data-checker>
+        <div class="demo-head">
+          <h3>Alat · Cek nama variabel (aturan Python)</h3>
+          <p>Ketik nama apa saja</p>
+        </div>
+        <div class="demo-body">
+          <label class="field">Nama variabel
+            <input type="text" value="nilai_akhir" autocomplete="off" spellcheck="false" aria-describedby="checker-fb">
+          </label>
+          <div class="feedback" id="checker-fb" aria-live="polite"></div>
+          <div class="btn-row mt-2">
+            <span class="muted" style="font-size:.88rem;align-self:center">Coba:</span>
+            <button class="btn" type="button" data-try="2tim">2tim</button>
+            <button class="btn" type="button" data-try="harga-barang">harga-barang</button>
+            <button class="btn" type="button" data-try="class">class</button>
+            <button class="btn" type="button" data-try="jumlahSiswa">jumlahSiswa</button>
+            <button class="btn" type="button" data-try="input">input</button>
+            <button class="btn" type="button" data-try="NILAI_KKM">NILAI_KKM</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 OPERASI -->
+  <section class="section" id="operasi">
+    <div class="container">
+      <div class="section-head"><span class="section-num">06</span><h2>Operasi pada variabel</h2></div>
+      <p class="section-intro">Nilai variabel bisa dibaca, dihitung, lalu disimpan kembali. Python juga punya cara singkat untuk memperbarui nilai.</p>
+
+      <div class="grid grid-2">
+        <div>
+          <h3>Memperbarui nilai</h3>
+          <div class="code">
+            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>update.py</span></span><button class="copy-btn" type="button">Salin</button></div>
+<pre><code data-lang="py">
+skor = 10        # 10
+skor = skor + 5  # 15
+skor += 5        # 20  (sama dengan skor = skor + 5)
+skor -= 3        # 17
+skor *= 2        # 34
+skor /= 2        # 17.0 (hasil / selalu float)
+</code></pre>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Singkat</th><th>Sama dengan</th></tr></thead>
+              <tbody>
+                <tr><td><code>x += 3</code></td><td><code>x = x + 3</code></td></tr>
+                <tr><td><code>x -= 3</code></td><td><code>x = x - 3</code></td></tr>
+                <tr><td><code>x *= 3</code></td><td><code>x = x * 3</code></td></tr>
+                <tr><td><code>x /= 3</code></td><td><code>x = x / 3</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <h3>Banyak variabel sekaligus &amp; menukar nilai</h3>
+          <div class="code">
+            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>tukar.py</span></span><button class="copy-btn" type="button">Salin</button></div>
+<pre><code data-lang="py">
+x, y = 3, 7      # x = 3 dan y = 7
+
+# Cara umum: pakai variabel sementara
+temp = x
+x = y
+y = temp
+
+# Cara khas Python: satu baris
+x, y = y, x
+</code></pre>
+          </div>
+          <h3 class="mt-2">Menggabung teks</h3>
+          <div class="code">
+            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>gabung.py</span></span><button class="copy-btn" type="button">Salin</button></div>
+<pre><code data-lang="py">
+depan = "Rina"
+belakang = "Putri"
+lengkap = depan + " " + belakang
+print(f"Halo, {lengkap}!")   # f-string
+</code></pre>
+            <div class="code-out">Halo, Rina Putri!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 CONTOH PROGRAM -->
+  <section class="section" id="contoh">
+    <div class="container">
+      <div class="section-head"><span class="section-num">07</span><h2>Contoh program utuh</h2></div>
+      <p class="section-intro">Perhatikan bagaimana setiap variabel punya peran: menyimpan input, menyimpan hasil hitungan, lalu ditampilkan.</p>
+
+      <div class="grid grid-2">
+        <div>
+          <h3>A. Luas &amp; keliling persegi panjang (Python)</h3>
+          <div class="code">
+            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>persegi_panjang.py</span></span><button class="copy-btn" type="button">Salin</button></div>
+<pre><code data-lang="py">
+panjang = float(input("Panjang (cm): "))
+lebar = float(input("Lebar (cm): "))
+
+luas = panjang * lebar
+keliling = 2 * (panjang + lebar)
+
+print("Luas =", luas, "cm2")
+print("Keliling =", keliling, "cm")
+</code></pre>
+            <div class="code-out">Panjang (cm): 8
+Lebar (cm): 5
+Luas = 40.0 cm2
+Keliling = 26.0 cm</div>
+          </div>
+        </div>
+        <div>
+          <h3>B. Kasir mini (JavaScript)</h3>
+          <div class="code">
+            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>kasir.js</span></span><button class="copy-btn" type="button">Salin</button></div>
+<pre><code data-lang="js">
+const HARGA_PENSIL = 3000;
+let jumlahPensil = 4;
+let uangBayar = 20000;
+
+let total = HARGA_PENSIL * jumlahPensil;
+let kembalian = uangBayar - total;
+
+console.log("Total: " + total);
+console.log("Kembalian: " + kembalian);
+</code></pre>
+            <div class="code-out">Total: 12000
+Kembalian: 8000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 KEGUNAAN -->
+  <section class="section" id="kegunaan">
+    <div class="container">
+      <div class="section-head"><span class="section-num">08</span><h2>Kegunaan: pola-pola variabel</h2></div>
+      <p class="section-intro">Programmer sering memakai variabel dengan “peran” tertentu. Kenali enam pola yang paling umum:</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>🔢 Penghitung (counter)</h3>
+          <p>Menghitung berapa kali sesuatu terjadi.</p>
+          <div class="code"><pre><code data-lang="py">
+jawaban_benar = 0
+jawaban_benar += 1
+</code></pre></div>
+        </div>
+        <div class="card">
+          <h3>➕ Akumulator</h3>
+          <p>Mengumpulkan (menjumlahkan) banyak nilai.</p>
+          <div class="code"><pre><code data-lang="py">
+total = 0
+total += harga_buku
+total += harga_pensil
+</code></pre></div>
+        </div>
+        <div class="card">
+          <h3>🚩 Penanda (flag)</h3>
+          <p>Menyimpan keadaan ya/tidak.</p>
+          <div class="code"><pre><code data-lang="py">
+game_selesai = False
+if nyawa == 0:
+    game_selesai = True
+</code></pre></div>
+        </div>
+        <div class="card">
+          <h3>⌨️ Penyimpan input</h3>
+          <p>Menyimpan jawaban dari pengguna.</p>
+          <div class="code"><pre><code data-lang="py">
+nama = input("Siapa namamu? ")
+print("Halo,", nama)
+</code></pre></div>
+        </div>
+        <div class="card">
+          <h3>📥 Penampung sementara</h3>
+          <p>Menyimpan nilai sebentar agar tidak hilang.</p>
+          <div class="code"><pre><code data-lang="py">
+temp = a
+a = b
+b = temp
+</code></pre></div>
+        </div>
+        <div class="card">
+          <h3>⚙️ Pengaturan</h3>
+          <p>Nilai yang mengatur perilaku program.</p>
+          <div class="code"><pre><code data-lang="py">
+KECEPATAN = 5
+LEBAR_LAYAR = 800
+</code></pre></div>
+        </div>
+      </div>
+
+      <h3 class="subhead">Di aplikasi nyata</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Aplikasi</th><th>Contoh variabel</th></tr></thead>
+          <tbody>
+            <tr><td>🎮 Game</td><td><code>posisi_x</code>, <code>posisi_y</code>, <code>skor</code>, <code>level</code>, <code>game_selesai</code></td></tr>
+            <tr><td>💬 Aplikasi chat</td><td><code>username</code>, <code>pesan_terakhir</code>, <code>jumlah_belum_dibaca</code></td></tr>
+            <tr><td>🏦 Dompet digital</td><td><code>saldo</code>, <code>nominal_transfer</code>, <code>pin_benar</code></td></tr>
+            <tr><td>🌡️ Sensor/robot</td><td><code>suhu</code>, <code>jarak_halangan</code>, <code>kecepatan_motor</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 KONSTANTA -->
+  <section class="section" id="konstanta">
+    <div class="container">
+      <div class="section-head"><span class="section-num">09</span><h2>Variabel vs konstanta</h2></div>
+      <p class="section-intro">Konstanta adalah “variabel” yang nilainya <strong>tidak boleh diubah</strong> setelah dibuat, misalnya nilai π atau batas nilai KKM.</p>
+      <div class="grid grid-2">
+        <div class="table-wrap mt-0">
+          <table>
+            <thead><tr><th></th><th>Variabel</th><th>Konstanta</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Nilai berubah?</strong></td><td>Boleh</td><td>Tidak</td></tr>
+              <tr><td><strong>Python</strong></td><td><code>skor = 0</code></td><td><code>PI = 3.14</code> (kesepakatan)</td></tr>
+              <tr><td><strong>JavaScript</strong></td><td><code>let skor = 0;</code></td><td><code>const PI = 3.14;</code></td></tr>
+              <tr><td><strong>Contoh</strong></td><td>skor, waktu, saldo</td><td>PI, NILAI_KKM, HARI_PER_MINGGU</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <div class="code mt-0">
+            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>konstanta.js</span></span></div>
+<pre><code data-lang="js">
+const PI = 3.14;
+let jariJari = 7;
+let luas = PI * jariJari * jariJari;
+
+PI = 3;   // ❌ error!
+</code></pre>
+            <div class="code-out">TypeError: Assignment to constant variable.</div>
+          </div>
+          <p class="muted">Python tidak benar-benar mengunci konstanta. Huruf kapital hanya penanda bagi programmer: “jangan ubah nilai ini”.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 SCOPE -->
+  <section class="section" id="scope">
+    <div class="container">
+      <div class="section-head"><span class="section-num">10</span><h2>Ruang lingkup (scope)</h2></div>
+      <p class="section-intro">Scope menentukan <strong>di bagian mana</strong> sebuah variabel bisa dipakai. Ini mulai penting saat programmu memakai fungsi.</p>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="icon">📢</div>
+          <h3>Variabel global</h3>
+          <p>Dibuat di luar fungsi. Bisa dibaca dari mana saja dalam program. Seperti <strong>papan pengumuman sekolah</strong> yang bisa dibaca semua kelas.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🧑‍🏫</div>
+          <h3>Variabel lokal</h3>
+          <p>Dibuat di dalam fungsi. Hanya “hidup” di dalam fungsi itu, lalu hilang saat fungsi selesai. Seperti <strong>tulisan di papan tulis kelas</strong> yang dihapus setelah pelajaran.</p>
+        </div>
+      </div>
+
+      <div class="code" style="max-width:720px">
+        <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>scope.py</span></span><button class="copy-btn" type="button">Salin</button></div>
+<pre><code data-lang="py">
+NILAI_KKM = 75                      # global
+
+def cek_lulus(nilai):
+    status = nilai &gt;= NILAI_KKM     # status adalah variabel lokal
+    return status
+
+print(cek_lulus(80))                # True
+print(status)                       # ❌ status tidak dikenal di luar fungsi
+</code></pre>
+        <div class="code-out">True
+NameError: name 'status' is not defined</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 KESALAHAN UMUM -->
+  <section class="section" id="kesalahan">
+    <div class="container">
+      <div class="section-head"><span class="section-num">11</span><h2>Kesalahan umum &amp; cara memperbaikinya</h2></div>
+      <p class="section-intro">Error itu normal, bahkan untuk programmer profesional. Yang penting tahu cara membacanya.</p>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <span class="card-tag tag-bad">NameError</span>
+          <h3>Memakai variabel sebelum dibuat</h3>
+          <div class="code"><pre><code data-lang="py">
+print(skor)   # ❌ skor belum ada
+skor = 0
+</code></pre></div>
+          <p><strong>Perbaikan:</strong> buat (inisialisasi) variabel terlebih dahulu, baru dipakai.</p>
+        </div>
+        <div class="card">
+          <span class="card-tag tag-bad">NameError</span>
+          <h3>Salah huruf besar/kecil</h3>
+          <div class="code"><pre><code data-lang="py">
+Nama = "Ayu"
+print(nama)   # ❌ nama ≠ Nama
+</code></pre></div>
+          <p><strong>Perbaikan:</strong> tulis nama variabel persis sama setiap kali dipakai.</p>
+        </div>
+        <div class="card">
+          <span class="card-tag tag-bad">TypeError</span>
+          <h3>Mencampur teks dan angka</h3>
+          <div class="code"><pre><code data-lang="py">
+umur = 12
+print("Umur: " + umur)        # ❌
+print("Umur: " + str(umur))   # ✓
+</code></pre></div>
+          <p><strong>Perbaikan:</strong> ubah tipe datanya dulu dengan <code>str()</code> atau <code>int()</code>.</p>
+        </div>
+        <div class="card">
+          <span class="card-tag tag-bad">Bug logika</span>
+          <h3>Nilai lama tertimpa</h3>
+          <div class="code"><pre><code data-lang="py">
+a, b = 5, 8
+a = b    # a = 8, nilai 5 hilang!
+b = a    # b = 8 juga ❌
+</code></pre></div>
+          <p><strong>Perbaikan:</strong> simpan dulu di variabel sementara (<code>temp</code>). Tidak ada pesan error, jadi lebih sulit ditemukan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 PENELUSUR KODE -->
+  <section class="section" id="penelusur">
+    <div class="container">
+      <div class="section-head"><span class="section-num">12</span><h2>Penelusur kode</h2></div>
+      <p class="section-intro">Programmer sering “menelusuri” kode baris demi baris untuk melihat isi setiap variabel. Tekan <strong>Berikutnya</strong> dan perhatikan tabel variabel berubah.</p>
+
+      <div class="demo" data-tracer>
+        <div class="demo-head">
+          <div class="seg" role="tablist" aria-label="Pilih program">
+            <button type="button" data-prog="rata">Nilai rata-rata</button>
+            <button type="button" data-prog="tukar">Menukar nilai</button>
+            <button type="button" data-prog="ulang">Penghitung dalam perulangan</button>
+          </div>
+          <span class="step-count"></span>
+        </div>
+        <div class="demo-body">
+          <div class="tracer">
+            <ol class="tracer-code" aria-label="Kode program"></ol>
+            <div class="tracer-side">
+              <h4>Variabel di memori</h4>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Nama</th><th>Nilai</th><th>Tipe</th></tr></thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              <h4>Output</h4>
+              <div class="tracer-out" aria-live="polite"></div>
+            </div>
+          </div>
+          <p class="tracer-note" aria-live="polite"></p>
+          <div class="tracer-controls">
+            <button class="btn" type="button" data-reset>↺ Ulang</button>
+            <div class="btn-row">
+              <button class="btn" type="button" data-prev>◀ Sebelumnya</button>
+              <button class="btn btn-primary" type="button" data-next>Mulai ▶</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 KUIS -->
+  <section class="section quiz-block" id="kuis">
+    <div class="container prose" data-quiz="QUIZ_K6">
+      <div class="section-head"><span class="section-num">13</span><h2>Kuis variabel</h2></div>
+      <p class="section-intro">Delapan soal untuk menguji pemahamanmu. Beberapa soal meminta kamu menebak hasil kode.</p>
+      <div class="quiz-bar"><span></span></div>
+      <p class="quiz-status"></p>
+      <div class="quiz-list"></div>
+      <div class="quiz-result" hidden>
+        <p class="mb-0">Skor kamu</p>
+        <div class="score"></div>
+        <p class="msg"></p>
+        <button class="btn btn-primary quiz-reset" type="button">↺ Ulangi kuis</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14 TANTANGAN -->
+  <section class="section" id="tantangan">
+    <div class="container">
+      <div class="section-head"><span class="section-num">14</span><h2>Tantangan mandiri</h2></div>
+      <p class="section-intro">Kerjakan di komputer (misalnya di Thonny, IDLE, atau editor Python online). Coba sendiri dulu sebelum membuka contoh jawaban.</p>
+
+      <div class="grid grid-3">
+        <div class="challenge">
+          <h3>1. Kartu biodata</h3>
+          <p class="muted">Buat variabel <code>nama</code>, <code>umur</code>, <code>tinggi</code>, dan <code>hobi</code>. Tampilkan kalimat perkenalan memakai semua variabel itu.</p>
+          <details>
+            <summary>Lihat contoh jawaban</summary>
+            <div class="code"><pre><code data-lang="py">
+nama = "Dimas"
+umur = 12
+tinggi = 148.5
+hobi = "bermain catur"
+print(f"Halo, aku {nama}, umur {umur} tahun.")
+print(f"Tinggiku {tinggi} cm dan aku suka {hobi}.")
+</code></pre></div>
+          </details>
+        </div>
+        <div class="challenge">
+          <h3>2. Uang saku seminggu</h3>
+          <p class="muted">Minta pengguna memasukkan uang saku harian. Hitung total uang saku selama 5 hari sekolah dan berapa yang tersisa jika ditabung 20%.</p>
+          <details>
+            <summary>Lihat contoh jawaban</summary>
+            <div class="code"><pre><code data-lang="py">
+HARI_SEKOLAH = 5
+uang_harian = int(input("Uang saku harian: "))
+total = uang_harian * HARI_SEKOLAH
+tabungan = total * 0.2
+sisa = total - tabungan
+print("Total:", total)
+print("Ditabung:", tabungan)
+print("Bisa dipakai:", sisa)
+</code></pre></div>
+          </details>
+        </div>
+        <div class="challenge">
+          <h3>3. Konversi suhu</h3>
+          <p class="muted">Ubah suhu Celsius ke Fahrenheit dengan rumus F = C × 9/5 + 32. Simpan setiap hasil di variabel yang namanya jelas.</p>
+          <details>
+            <summary>Lihat contoh jawaban</summary>
+            <div class="code"><pre><code data-lang="py">
+celsius = float(input("Suhu (°C): "))
+fahrenheit = celsius * 9 / 5 + 32
+print(celsius, "°C =", fahrenheit, "°F")
+</code></pre></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGKUMAN -->
+  <section class="section" id="rangkuman">
+    <div class="container">
+      <div class="recap">
+        <h2>Rangkuman</h2>
+        <ol>
+          <li><span><strong>Pengertian:</strong> variabel adalah nama yang menunjuk ke lokasi di memori tempat nilai disimpan. Komponennya: nama, nilai, dan tipe data.</span></li>
+          <li><span><strong>Tujuan:</strong> menyimpan data selama program berjalan, membuat program fleksibel, mudah dibaca, dan tidak berulang.</span></li>
+          <li><span><strong>Penulisan:</strong> <code>=</code> adalah penugasan, bukan sama dengan. Python: <code>nama = nilai</code>; JavaScript: <code>let</code> / <code>const</code>.</span></li>
+          <li><span><strong>Tipe data</strong> utama: <code>int</code>, <code>float</code>, <code>str</code>, <code>bool</code>, <code>list</code>. Gunakan <code>int()</code>, <code>float()</code>, <code>str()</code> untuk konversi.</span></li>
+          <li><span><strong>Penamaan:</strong> diawali huruf/<code>_</code>, tanpa spasi &amp; simbol, case-sensitive, bukan keyword. Gunakan nama bermakna.</span></li>
+          <li><span><strong>Kegunaan:</strong> penghitung, akumulator, penanda, penyimpan input, penampung sementara, dan pengaturan.</span></li>
+          <li><span><strong>Lanjutan:</strong> konstanta tidak diubah nilainya; variabel lokal hanya hidup di dalam fungsi, variabel global bisa dibaca di mana saja.</span></li>
+        </ol>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#penelusur">Coba penelusur kode lagi</a>
+          <a class="btn" href="kelas-4.html">← Ulas materi kelas 4</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>Ruang Variabel · Materi Kelas 6</span>
+    <span><a href="index.html">Beranda</a> · <a href="kelas-4.html">Kelas 4</a></span>
+  </div>
+</footer>
+
+<script>
+  window.TRACE_PROGRAMS = {
+    rata: {
+      intro: "Program ini menghitung rata-rata dua nilai. Tekan <strong>Mulai</strong> untuk menjalankan baris pertama.",
+      lines: [
+        'nama = "Sinta"',
+        'nilai_mtk = 80',
+        'nilai_ipa = 90',
+        'total = nilai_mtk + nilai_ipa',
+        'rata_rata = total / 2',
+        'lulus = rata_rata >= 75',
+        'print(nama, rata_rata, lulus)'
+      ],
+      steps: [
+        { line: 0, set: { nama: ['"Sinta"', "str"] }, note: "Variabel <code>nama</code> dibuat dan diisi teks. Karena diapit tanda kutip, tipenya <code>str</code>." },
+        { line: 1, set: { nilai_mtk: ["80", "int"] }, note: "Variabel <code>nilai_mtk</code> berisi bilangan bulat 80 (<code>int</code>)." },
+        { line: 2, set: { nilai_ipa: ["90", "int"] }, note: "Variabel <code>nilai_ipa</code> berisi 90." },
+        { line: 3, set: { total: ["170", "int"] }, note: "Python <strong>membaca</strong> isi <code>nilai_mtk</code> (80) dan <code>nilai_ipa</code> (90), menjumlahkannya, lalu <strong>menyimpan</strong> 170 ke <code>total</code>." },
+        { line: 4, set: { rata_rata: ["85.0", "float"] }, note: "Pembagian dengan <code>/</code> selalu menghasilkan <code>float</code>, jadi hasilnya 85.0, bukan 85." },
+        { line: 5, set: { lulus: ["True", "bool"] }, note: "<code>85.0 >= 75</code> bernilai benar, sehingga <code>lulus</code> berisi <code>True</code> (tipe <code>bool</code>)." },
+        { line: 6, out: "Sinta 85.0 True", note: "<code>print()</code> membaca isi tiga variabel dan menampilkannya. Perhatikan: tidak ada variabel yang berubah di langkah ini." }
+      ]
+    },
+    tukar: {
+      intro: "Program ini menukar isi <code>a</code> dan <code>b</code> memakai variabel sementara <code>temp</code>.",
+      lines: [
+        'a = 5',
+        'b = 8',
+        'temp = a',
+        'a = b',
+        'b = temp',
+        'print(a, b)'
+      ],
+      steps: [
+        { line: 0, set: { a: ["5", "int"] }, note: "<code>a</code> berisi 5." },
+        { line: 1, set: { b: ["8", "int"] }, note: "<code>b</code> berisi 8. Tujuan kita: <code>a</code> menjadi 8 dan <code>b</code> menjadi 5." },
+        { line: 2, set: { temp: ["5", "int"] }, note: "Isi <code>a</code> disalin ke <code>temp</code> sebagai cadangan, sebelum <code>a</code> ditimpa." },
+        { line: 3, set: { a: ["8", "int"] }, note: "<code>a</code> ditimpa dengan isi <code>b</code>. Nilai 5 hilang dari <code>a</code>, tapi masih aman di <code>temp</code>." },
+        { line: 4, set: { b: ["5", "int"] }, note: "<code>b</code> diisi dari <code>temp</code>. Penukaran selesai!" },
+        { line: 5, out: "8 5", note: "Hasilnya <code>a = 8</code> dan <code>b = 5</code>. Tanpa <code>temp</code>, kedua variabel akan sama-sama berisi 8." }
+      ]
+    },
+    ulang: {
+      intro: "Perulangan <code>for</code> menjalankan baris yang menjorok berulang kali. Perhatikan bagaimana <code>jumlah</code> dan <code>i</code> berubah di setiap putaran.",
+      lines: [
+        'jumlah = 0',
+        'for i in range(1, 4):',
+        '    jumlah = jumlah + i',
+        'print(jumlah)'
+      ],
+      steps: [
+        { line: 0, set: { jumlah: ["0", "int"] }, note: "Akumulator <code>jumlah</code> dimulai dari 0." },
+        { line: 1, set: { i: ["1", "int"] }, note: "<code>range(1, 4)</code> menghasilkan 1, 2, 3. Putaran pertama: <code>i</code> = 1." },
+        { line: 2, set: { jumlah: ["1", "int"] }, note: "<code>jumlah</code> = 0 + 1 = 1." },
+        { line: 1, set: { i: ["2", "int"] }, note: "Putaran kedua: <code>i</code> = 2." },
+        { line: 2, set: { jumlah: ["3", "int"] }, note: "<code>jumlah</code> = 1 + 2 = 3." },
+        { line: 1, set: { i: ["3", "int"] }, note: "Putaran ketiga: <code>i</code> = 3 (angka 4 tidak termasuk)." },
+        { line: 2, set: { jumlah: ["6", "int"] }, note: "<code>jumlah</code> = 3 + 3 = 6." },
+        { line: 3, out: "6", note: "Perulangan selesai. Program menampilkan 6, yaitu 1 + 2 + 3. Inilah pola <strong>akumulator</strong>." }
+      ]
+    }
+  };
+
+  window.QUIZ_K6 = [
+    {
+      q: "Apa output kode berikut?<br><code>x = 10</code><br><code>x = x + 5</code><br><code>print(x)</code>",
+      o: ["10", "5", "15", "Error, karena x tidak mungkin sama dengan x + 5"],
+      a: 2,
+      e: "<code>=</code> adalah penugasan: baca x (10), tambah 5, simpan 15 kembali ke x."
+    },
+    {
+      q: "Manakah nama variabel yang <strong>valid</strong> di Python?",
+      o: ["<code>2nilai</code>", "<code>nilai-akhir</code>", "<code>nilai_akhir</code>", "<code>class</code>"],
+      a: 2,
+      e: "<code>2nilai</code> diawali angka, <code>nilai-akhir</code> memuat tanda minus, dan <code>class</code> adalah kata kunci."
+    },
+    {
+      q: "Tipe data dari <code>harga = 12.5</code> adalah …",
+      o: ["<code>int</code>", "<code>float</code>", "<code>str</code>", "<code>bool</code>"],
+      a: 1,
+      e: "Bilangan yang memiliki titik desimal bertipe <code>float</code>."
+    },
+    {
+      q: "Apa hasil dari <code>\"5\" + \"3\"</code> di Python?",
+      o: ["<code>8</code>", "<code>\"8\"</code>", "<code>\"53\"</code>", "Error"],
+      a: 2,
+      e: "Keduanya teks (<code>str</code>), sehingga operator <code>+</code> menggabungkannya menjadi <code>\"53\"</code>."
+    },
+    {
+      q: "Mula-mula <code>a = 3</code> dan <code>b = 7</code>. Setelah menjalankan <code>temp = a</code>, <code>a = b</code>, <code>b = temp</code>, isi a dan b adalah …",
+      o: ["a = 3, b = 7", "a = 7, b = 3", "a = 7, b = 7", "a = 3, b = 3"],
+      a: 1,
+      e: "<code>temp</code> menyimpan 3, lalu a menjadi 7, dan b diisi dari temp (3). Nilainya tertukar."
+    },
+    {
+      q: "Variabel yang dibuat di dalam sebuah fungsi dan hanya bisa dipakai di dalam fungsi itu disebut …",
+      o: ["Variabel global", "Variabel lokal", "Konstanta", "Keyword"],
+      a: 1,
+      e: "Variabel lokal hanya hidup di dalam fungsi tempat ia dibuat."
+    },
+    {
+      q: "Setelah <code>lulus = 80 >= 75</code>, apa isi variabel <code>lulus</code>?",
+      o: ["<code>80</code>", "<code>75</code>", "<code>True</code>", "<code>\"lulus\"</code>"],
+      a: 2,
+      e: "Ekspresi perbandingan <code>80 >= 75</code> bernilai benar, sehingga hasilnya <code>True</code> (tipe <code>bool</code>)."
+    },
+    {
+      q: "Mengapa programmer menulis <code>NILAI_KKM = 75</code> dengan huruf kapital semua?",
+      o: ["Agar program berjalan lebih cepat", "Sebagai penanda bahwa nilainya konstanta dan tidak boleh diubah", "Karena Python mewajibkan huruf kapital", "Agar bisa dipakai sebagai kata kunci"],
+      a: 1,
+      e: "Huruf kapital adalah konvensi untuk konstanta. Python tidak mewajibkannya, tetapi programmer lain jadi tahu nilai itu tidak untuk diubah."
+    }
+  ];
+</script>
+<script src="script.js"></script>
+</body>
+</html>
