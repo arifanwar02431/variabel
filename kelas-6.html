@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Variabel Kelas 6 — Ruang Variabel</title>
-  <meta name="description" content="Materi variabel kelas 6: pengertian, memori, tipe data, aturan penamaan, operasi, konstanta, scope, kesalahan umum, penelusur kode, kuis, dan latihan.">
+  <meta name="description" content="Materi variabel kelas 6 dengan Scratch: membuat variabel, blok variabel, operator, jika dan ulangi, untuk semua sprite, kesalahan umum, penelusur blok, kuis 25 soal, dan proyek.">
   <meta name="theme-color" content="#FAF6EF">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,15 +28,15 @@
 <main>
   <section class="hero">
     <div class="container">
-      <span class="eyebrow">Kelas 6 · Lanjut</span>
-      <h1>Variabel: <span class="mark">nama, nilai,</span> dan tipe data.</h1>
-      <p class="lead">Di kelas 4 kamu mengenal variabel sebagai kotak berlabel. Sekarang kita menulisnya dalam kode teks (Python &amp; JavaScript), melihat cara variabel disimpan di memori, mengenal tipe data, aturan penamaan, ruang lingkup, dan cara melacak perubahan nilainya.</p>
+      <span class="eyebrow">Kelas 6 · Lanjut · Scratch</span>
+      <h1>Variabel di Scratch: <span class="mark">lebih dalam</span>.</h1>
+      <p class="lead">Di kelas 4 kamu mengenal variabel sebagai kotak berlabel. Sekarang kita memakai variabel di Scratch untuk membuat program sungguhan: game dengan skor, hitung mundur, tanya-jawab, dan dadu acak.</p>
       <div class="hero-meta">
-        <span class="pill">⏱ ± 60–80 menit</span>
-        <span class="pill">12 bagian materi</span>
-        <span class="pill">🔍 Penelusur kode</span>
-        <span class="pill">✅ Kuis 8 soal</span>
-        <span class="pill">🧪 3 tantangan</span>
+        <span class="pill">⏱ ± 60 menit</span>
+        <span class="pill">11 bagian materi</span>
+        <span class="pill">🔍 Penelusur blok</span>
+        <span class="pill">✅ Kuis 25 soal</span>
+        <span class="pill">🧪 3 proyek</span>
       </div>
     </div>
   </section>
@@ -45,18 +45,17 @@
     <div class="toc-inner">
       <a href="#pengertian">Pengertian</a>
       <a href="#tujuan">Tujuan</a>
-      <a href="#menulis">Menulis Variabel</a>
-      <a href="#tipe-data">Tipe Data</a>
-      <a href="#penamaan">Penamaan</a>
-      <a href="#operasi">Operasi</a>
-      <a href="#contoh">Contoh Program</a>
+      <a href="#membuat">Membuat Variabel</a>
+      <a href="#blok">Blok Variabel</a>
+      <a href="#contoh">Contoh</a>
+      <a href="#operator">Operator</a>
+      <a href="#jika-ulangi">Jika &amp; Ulangi</a>
       <a href="#kegunaan">Kegunaan</a>
-      <a href="#konstanta">Konstanta</a>
-      <a href="#scope">Scope</a>
-      <a href="#kesalahan">Kesalahan Umum</a>
-      <a href="#penelusur">Penelusur Kode</a>
+      <a href="#sprite">Semua Sprite</a>
+      <a href="#kesalahan">Kesalahan</a>
+      <a href="#penelusur">Penelusur</a>
       <a href="#kuis">Kuis</a>
-      <a href="#tantangan">Tantangan</a>
+      <a href="#proyek">Proyek</a>
     </div>
   </nav>
 
@@ -67,58 +66,36 @@
 
       <div class="definition">
         <span class="label">Definisi</span>
-        <strong>Variabel</strong> adalah <strong>nama</strong> yang menunjuk ke sebuah <strong>lokasi di memori komputer</strong> tempat suatu nilai disimpan. Nilai tersebut dapat dibaca dan diubah selama program berjalan.
+        <strong>Variabel</strong> adalah tempat penyimpanan data di dalam program yang memiliki <strong>nama</strong> dan <strong>nilai</strong>. Nilainya <strong>dapat berubah</strong> selama program berjalan.
       </div>
 
-      <p class="prose">Setiap variabel memiliki tiga komponen penting:</p>
-      <div class="grid grid-3">
-        <div class="card">
-          <div class="icon">🏷️</div>
-          <h3>Nama <span class="muted" style="font-weight:500;font-size:.9rem">(identifier)</span></h3>
-          <p>Label yang kita pakai untuk memanggil variabel. Contoh: <code>umur</code>.</p>
-        </div>
-        <div class="card">
-          <div class="icon">📦</div>
-          <h3>Nilai <span class="muted" style="font-weight:500;font-size:.9rem">(value)</span></h3>
-          <p>Data yang disimpan di dalamnya. Contoh: <code>12</code>.</p>
-        </div>
-        <div class="card">
-          <div class="icon">🧬</div>
-          <h3>Tipe data <span class="muted" style="font-weight:500;font-size:.9rem">(type)</span></h3>
-          <p>Jenis nilainya: bilangan, teks, benar/salah, dll. Contoh: <code>int</code>.</p>
-        </div>
-      </div>
-
-      <h3 class="subhead">Apa yang terjadi di memori?</h3>
-      <p class="prose">Memori komputer (RAM) bisa dibayangkan sebagai deretan laci bernomor (alamat). Saat kamu menulis <code>umur = 12</code>, komputer menaruh nilai 12 di salah satu laci, lalu mencatat bahwa nama <code>umur</code> menunjuk ke laci itu. Kita tidak perlu menghafal nomor lacinya, cukup memakai namanya.</p>
-      <div class="memory mt-2" aria-label="Ilustrasi memori">
-        <div class="cell empty">0x01<b>·</b></div>
-        <div class="cell used"><span class="nm">umur</span>0x02<b>12</b></div>
-        <div class="cell empty">0x03<b>·</b></div>
-        <div class="cell used"><span class="nm">nama</span>0x04<b>"Raka"</b></div>
-        <div class="cell used"><span class="nm">lulus</span>0x05<b>True</b></div>
-        <div class="cell empty">0x06<b>·</b></div>
-        <div class="cell empty">0x07<b>·</b></div>
-        <div class="cell empty">0x08<b>·</b></div>
-      </div>
-      <p class="muted" style="font-size:.86rem;margin-top:10px">Ilustrasi disederhanakan. Alamat memori sebenarnya jauh lebih panjang.</p>
-
-      <div class="callout warn">
-        <span class="callout-icon">⚠️</span>
+      <div class="split">
         <div>
-          <p><strong>Tanda <code>=</code> bukan “sama dengan”.</strong> Dalam pemrograman, <code>=</code> adalah <em>operator penugasan</em> (assignment): hitung nilai di sebelah kanan, lalu simpan ke variabel di sebelah kiri. Karena itu <code>umur = umur + 1</code> masuk akal di kode, walaupun di matematika tidak mungkin. Untuk membandingkan, gunakan <code>==</code>.</p>
+          <p>Di Scratch, setiap variabel punya tiga hal yang perlu kamu kenali:</p>
+          <ul class="rules">
+            <li><span class="badge-num">1</span><p><strong>Nama</strong><small>Label untuk memanggil variabel, misalnya <code>skor</code>, <code>nyawa</code>, <code>nama</code>.</small></p></li>
+            <li><span class="badge-num">2</span><p><strong>Nilai</strong><small>Isinya, bisa berupa <b>angka</b> (12) atau <b>teks</b> (Raka).</small></p></li>
+            <li><span class="badge-num">3</span><p><strong>Monitor</strong><small>Kotak kecil di panggung yang menampilkan nama dan nilai variabel saat program berjalan.</small></p></li>
+          </ul>
+        </div>
+        <div>
+          <div class="stage" aria-label="Contoh panggung dengan monitor variabel">
+            <div class="monitors">
+              <span class="monitor">skor <b>12</b></span>
+              <span class="monitor">nyawa <b>3</b></span>
+              <span class="monitor">nama <b>Raka</b></span>
+            </div>
+            <div class="bubble">Skorku 12!</div>
+            <div class="sprite">🤖</div>
+            <span class="stage-label">Panggung</span>
+          </div>
+          <p class="muted" style="font-size:.88rem;margin-top:8px">Monitor variabel muncul di pojok panggung jika kotak centang di samping variabel dicentang.</p>
         </div>
       </div>
-      <div class="code" style="max-width:640px">
-        <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>penugasan.py</span></span><button class="copy-btn" type="button">Salin</button></div>
-<pre><code data-lang="py">
-umur = 12            # simpan 12 ke variabel umur
-umur = umur + 1      # baca 12, tambah 1, simpan 13 ke umur
-print(umur)          # tampilkan isi umur
-print(umur == 13)    # == membandingkan, hasilnya True/False
-</code></pre>
-        <div class="code-out">13
-True</div>
+
+      <div class="callout">
+        <span class="callout-icon">🔎</span>
+        <div><p><strong>Angka biasa vs variabel.</strong> Angka <b>10</b> yang kamu ketik di dalam blok akan selalu 10. Sedangkan variabel <b>skor</b> bisa bernilai 0, lalu 1, lalu 25, tergantung apa yang terjadi saat program berjalan. Itulah yang membuat game bisa “hidup”.</p></div>
       </div>
     </div>
   </section>
@@ -128,337 +105,238 @@ True</div>
     <div class="container">
       <div class="section-head"><span class="section-num">02</span><h2>Tujuan variabel</h2></div>
       <div class="grid grid-2">
-        <div class="card">
-          <div class="icon">💾</div>
-          <h3>Menyimpan data selama program berjalan</h3>
-          <p>Input dari pengguna, hasil perhitungan, atau keadaan program (misalnya “game sudah selesai”) perlu disimpan agar bisa dipakai di langkah berikutnya.</p>
-        </div>
-        <div class="card">
-          <div class="icon">🔀</div>
-          <h3>Membuat program fleksibel</h3>
-          <p>Program yang sama bisa bekerja untuk data yang berbeda. Kalkulator luas tidak perlu ditulis ulang untuk setiap ukuran persegi panjang.</p>
-        </div>
-        <div class="card">
-          <div class="icon">📖</div>
-          <h3>Membuat kode mudah dibaca</h3>
-          <p><code>harga * jumlah</code> jauh lebih jelas maknanya daripada <code>15000 * 3</code>. Angka tanpa nama sering disebut <em>magic number</em>.</p>
-        </div>
-        <div class="card">
-          <div class="icon">🧹</div>
-          <h3>Menghindari pengulangan</h3>
-          <p>Ubah nilai di satu tempat, maka seluruh bagian program yang memakainya ikut berubah. Lebih sedikit kesalahan.</p>
-        </div>
+        <div class="card"><div class="icon">💾</div><h3>Menyimpan data selama program berjalan</h3><p>Skor, sisa waktu, jawaban pemain, atau level disimpan supaya bisa dipakai di langkah-langkah berikutnya.</p></div>
+        <div class="card"><div class="icon">🎮</div><h3>Membuat program bereaksi</h3><p>Program bisa berbeda-beda hasilnya tergantung isi variabel: menang jika skor 10, kalah jika nyawa 0.</p></div>
+        <div class="card"><div class="icon">🔗</div><h3>Berbagi data antar-blok dan antar-sprite</h3><p>Satu sprite menambah skor, sprite lain menampilkannya. Semuanya membaca variabel yang sama.</p></div>
+        <div class="card"><div class="icon">🧮</div><h3>Menghitung dan menyimpan hasil</h3><p>Total belanja, jumlah lemparan dadu, atau hasil kuis dihitung lalu disimpan di variabel.</p></div>
       </div>
 
       <h3 class="subhead">Bandingkan sendiri</h3>
       <div class="grid grid-2">
         <div>
           <span class="card-tag tag-bad">Tanpa variabel</span>
-          <div class="code mt-0">
-            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>tanpa_variabel.py</span></span></div>
-<pre><code data-lang="py">
-print(15000 * 3)
-print(15000 * 3 * 0.1)
-print(15000 * 3 - 15000 * 3 * 0.1)
-# Harga naik? Ubah angka 15000 di 4 tempat!
-</code></pre>
-          </div>
+          <div class="script-box block"><div data-script>
+            event: ketika sprite ini diklik
+            look: katakan (Skormu 1)
+          </div></div>
+          <p class="muted mt-2">Diklik berapa kali pun, sprite selalu berkata “Skormu 1”. Program tidak bisa mengingat apa-apa.</p>
         </div>
         <div>
           <span class="card-tag tag-good">Dengan variabel</span>
-          <div class="code mt-0">
-            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>dengan_variabel.py</span></span></div>
-<pre><code data-lang="py">
-harga = 15000
-jumlah = 3
-total = harga * jumlah
-diskon = total * 0.1
-print(total, diskon, total - diskon)
-# Harga naik? Cukup ubah 1 baris.
-</code></pre>
-          </div>
+          <div class="script-box block"><div data-script>
+            event: ketika sprite ini diklik
+            var: ubah [skor] sebesar (1)
+            look: katakan {o:gabung (Skormu ) {skor}}
+          </div></div>
+          <p class="muted mt-2">Setiap diklik, skor bertambah dan sprite menyebutkan skor terbaru: 1, 2, 3, dan seterusnya.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 03 MENULIS -->
-  <section class="section" id="menulis">
+  <!-- 03 MEMBUAT -->
+  <section class="section" id="membuat">
     <div class="container">
-      <div class="section-head"><span class="section-num">03</span><h2>Menulis variabel di kode</h2></div>
-      <p class="section-intro">Ada tiga istilah yang perlu kamu kenal: <strong>deklarasi</strong> (membuat variabel), <strong>inisialisasi</strong> (memberi nilai pertama kali), dan <strong>penugasan ulang</strong> (mengganti nilainya).</p>
-
-      <div class="grid grid-2">
+      <div class="section-head"><span class="section-num">03</span><h2>Membuat variabel di Scratch</h2></div>
+      <div class="split">
+        <ul class="rules">
+          <li><span class="badge-num">1</span><p>Klik kategori <strong>Variabel</strong> (lingkaran oranye) di bagian kiri.</p></li>
+          <li><span class="badge-num">2</span><p>Klik tombol <strong>Buat Variabel</strong>.</p></li>
+          <li><span class="badge-num">3</span><p>Ketik nama variabel yang jelas, misalnya <code>skor</code>.</p></li>
+          <li><span class="badge-num">4</span><p>Pilih <strong>Untuk semua sprite</strong> atau <strong>Hanya untuk sprite ini</strong> (dibahas di bagian 09).</p></li>
+          <li><span class="badge-num">5</span><p>Klik <strong>OK</strong>. Blok-blok untuk variabel baru langsung muncul.</p></li>
+        </ul>
         <div>
-          <h3>Python</h3>
-          <div class="code">
-            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>biodata.py</span></span><button class="copy-btn" type="button">Salin</button></div>
-<pre><code data-lang="py">
-nama = "Raka"
-kelas = 6
-tinggi = 145.5
-suka_coding = True
-
-kelas = 7    # penugasan ulang
-</code></pre>
+          <div class="mock-dialog" aria-label="Ilustrasi kotak dialog variabel baru">
+            <div class="md-head">Variabel Baru</div>
+            <div class="md-body">
+              <div>Nama variabel baru:</div>
+              <div class="md-input">skor</div>
+              <div class="md-radios"><span class="on">Untuk semua sprite</span><span>Hanya untuk sprite ini</span></div>
+              <div class="md-btns"><span>Batal</span><span>OK</span></div>
+            </div>
           </div>
-          <p class="muted">Cukup tulis <code>nama = nilai</code>. Python menentukan tipe datanya secara otomatis (<em>dynamic typing</em>).</p>
+          <p class="muted" style="font-size:.88rem;margin-top:10px">Ilustrasi disederhanakan. Tampilan di Scratch bisa sedikit berbeda.</p>
         </div>
-        <div>
-          <h3>JavaScript</h3>
-          <div class="code">
-            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>biodata.js</span></span><button class="copy-btn" type="button">Salin</button></div>
-<pre><code data-lang="js">
-let nama = "Raka";
-let kelas = 6;
-let tinggi = 145.5;
-let sukaCoding = true;
-const SEKOLAH = "SD Harapan";
-
-kelas = 7;   // boleh, karena memakai let
-</code></pre>
-          </div>
-          <p class="muted">Deklarasi memakai kata kunci <code>let</code> (nilai boleh diubah) atau <code>const</code> (nilai tetap).</p>
-        </div>
+      </div>
+      <div class="callout tip">
+        <span class="callout-icon">💡</span>
+        <div><p>Scratch sudah menyediakan variabel bernama “variabel saya”. Lebih baik buat variabel sendiri dengan nama yang jelas. Untuk mengganti nama atau menghapus variabel, <strong>klik kanan</strong> pada variabel tersebut di daftar blok.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- 04 TIPE DATA -->
-  <section class="section" id="tipe-data">
+  <!-- 04 BLOK -->
+  <section class="section" id="blok">
     <div class="container">
-      <div class="section-head"><span class="section-num">04</span><h2>Tipe data</h2></div>
-      <p class="section-intro">Tipe data menentukan jenis nilai yang disimpan dan operasi apa yang bisa dilakukan padanya. Angka bisa dijumlahkan, teks bisa digabung.</p>
+      <div class="section-head"><span class="section-num">04</span><h2>Blok-blok variabel</h2></div>
+      <p class="section-intro">Setelah variabel dibuat, ada lima blok yang paling sering dipakai.</p>
+      <ul class="block-legend">
+        <li><div data-script>var: {skor}</div><p><strong>Reporter</strong> (blok bulat): mengambil isi variabel untuk dipakai di blok lain. Centang kotak di sampingnya untuk menampilkan monitor di panggung.</p></li>
+        <li><div data-script>var: atur [skor] ke (0)</div><p><strong>Mengganti</strong> isi variabel dengan nilai baru. Isi lama hilang.</p></li>
+        <li><div data-script>var: ubah [skor] sebesar (1)</div><p><strong>Menambah</strong> isi lama dengan angka tertentu. Pakai angka negatif (−1) untuk mengurangi.</p></li>
+        <li><div data-script>var: tampilkan variabel [skor]</div><p><strong>Memunculkan</strong> monitor variabel di panggung saat program berjalan.</p></li>
+        <li><div data-script>var: sembunyikan variabel [skor]</div><p><strong>Menyembunyikan</strong> monitor variabel dari panggung.</p></li>
+      </ul>
 
+      <h3 class="subhead">“Atur” atau “ubah”?</h3>
+      <p class="prose">Keduanya sering tertukar. Misalnya isi <code>skor</code> sekarang <b>10</b>:</p>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Tipe (Python)</th><th>Nama</th><th>Contoh</th><th>Keterangan</th></tr></thead>
+          <thead><tr><th>Blok</th><th>Yang terjadi</th><th>Isi skor sesudahnya</th></tr></thead>
           <tbody>
-            <tr><td><code>int</code></td><td>Bilangan bulat</td><td><code>umur = 12</code></td><td>Angka tanpa koma, bisa negatif.</td></tr>
-            <tr><td><code>float</code></td><td>Bilangan desimal</td><td><code>berat = 35.5</code></td><td>Memakai <strong>titik</strong>, bukan koma.</td></tr>
-            <tr><td><code>str</code></td><td>Teks (string)</td><td><code>nama = "Ayu"</code></td><td>Diapit tanda kutip <code>"..."</code> atau <code>'...'</code>.</td></tr>
-            <tr><td><code>bool</code></td><td>Logika (boolean)</td><td><code>hadir = True</code></td><td>Hanya dua nilai: <code>True</code> atau <code>False</code>.</td></tr>
-            <tr><td><code>list</code></td><td>Daftar</td><td><code>nilai = [80, 90, 75]</code></td><td>Banyak nilai dalam satu variabel.</td></tr>
+            <tr><td><div data-script>var: atur [skor] ke (3)</div></td><td>Isi lama (10) dibuang, diganti 3</td><td><b>3</b></td></tr>
+            <tr><td><div data-script>var: ubah [skor] sebesar (3)</div></td><td>Isi lama (10) ditambah 3</td><td><b>13</b></td></tr>
+            <tr><td><div data-script>var: ubah [skor] sebesar (-3)</div></td><td>Isi lama (10) dikurangi 3</td><td><b>7</b></td></tr>
           </tbody>
         </table>
       </div>
 
-      <div class="grid grid-2 mt-2">
-        <div>
-          <h3>Memeriksa tipe dengan <code>type()</code></h3>
-          <div class="code">
-            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>cek_tipe.py</span></span><button class="copy-btn" type="button">Salin</button></div>
-<pre><code data-lang="py">
-print(type(12))
-print(type(12.0))
-print(type("12"))
-print(type(True))
-</code></pre>
-            <div class="code-out">&lt;class 'int'&gt;
-&lt;class 'float'&gt;
-&lt;class 'str'&gt;
-&lt;class 'bool'&gt;</div>
-          </div>
-        </div>
-        <div>
-          <h3>Mengubah tipe (konversi)</h3>
-          <div class="code">
-            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>konversi.py</span></span><button class="copy-btn" type="button">Salin</button></div>
-<pre><code data-lang="py">
-umur_teks = input("Umurmu? ")  # input() selalu str
-umur = int(umur_teks)          # ubah ke int
-print(umur + 1)
-
-harga = float("2.5")           # str -> float
-pesan = "Nilai: " + str(90)    # int -> str
-</code></pre>
-          </div>
-        </div>
-      </div>
-
-      <div class="callout warn">
-        <span class="callout-icon">🧐</span>
-        <div><p><strong>Angka di dalam tanda kutip adalah teks!</strong> <code>5 + 3</code> menghasilkan <code>8</code>, tetapi <code>"5" + "3"</code> menghasilkan <code>"53"</code> karena kedua teks digabung (disebut <em>konkatenasi</em>). Sedangkan <code>"5" + 3</code> menghasilkan error karena teks dan angka tidak bisa langsung dijumlahkan.</p></div>
+      <div class="callout">
+        <span class="callout-icon">🖥️</span>
+        <div><p><strong>Tampilan monitor.</strong> Klik kanan monitor di panggung untuk memilih tampilan <b>normal</b> (nama + nilai), <b>besar</b> (hanya angka, cocok untuk papan skor), atau <b>penggeser</b> (slider) yang bisa digeser untuk mengubah nilai variabel saat program berjalan.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- 05 PENAMAAN -->
-  <section class="section" id="penamaan">
-    <div class="container">
-      <div class="section-head"><span class="section-num">05</span><h2>Aturan &amp; konvensi penamaan</h2></div>
-      <p class="section-intro">Ada <strong>aturan wajib</strong> (jika dilanggar, program error) dan <strong>konvensi</strong> (kebiasaan baik yang disepakati para programmer).</p>
-
-      <div class="grid grid-2">
-        <div>
-          <h3>Aturan wajib</h3>
-          <ul class="rules">
-            <li><span class="badge-ok badge-num">1</span><p>Diawali <strong>huruf</strong> atau <strong>garis bawah</strong> <code>_</code>, tidak boleh angka.</p></li>
-            <li><span class="badge-ok badge-num">2</span><p>Hanya berisi huruf, angka, dan <code>_</code>. Tanpa spasi atau simbol seperti <code>- . ! @ #</code>.</p></li>
-            <li><span class="badge-ok badge-num">3</span><p><strong>Peka huruf besar-kecil</strong> (case-sensitive): <code>Nilai</code> dan <code>nilai</code> adalah dua variabel berbeda.</p></li>
-            <li><span class="badge-ok badge-num">4</span><p>Bukan <strong>kata kunci</strong> (keyword) seperti <code>if</code>, <code>for</code>, <code>class</code>, <code>True</code>.</p></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Konvensi (kebiasaan baik)</h3>
-          <ul class="rules">
-            <li><span class="badge-ok">✓</span><p><strong>Bermakna:</strong> <code>jumlah_siswa</code>, bukan <code>js</code>.</p></li>
-            <li><span class="badge-ok">✓</span><p><strong>Python → snake_case:</strong> <code>nilai_akhir</code></p></li>
-            <li><span class="badge-ok">✓</span><p><strong>JavaScript → camelCase:</strong> <code>nilaiAkhir</code></p></li>
-            <li><span class="badge-ok">✓</span><p><strong>Konstanta → HURUF_KAPITAL:</strong> <code>NILAI_KKM</code></p></li>
-            <li><span class="badge-ok">✓</span><p><strong>Boolean seperti pertanyaan:</strong> <code>sudah_lulus</code>, <code>is_aktif</code></p></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="table-wrap mt-2">
-        <table>
-          <thead><tr><th>Nama</th><th>Valid?</th><th>Alasan</th></tr></thead>
-          <tbody>
-            <tr><td><code>nilai1</code></td><td><span class="yes">✓ Valid</span></td><td>Angka boleh, asal tidak di depan.</td></tr>
-            <tr><td><code>1nilai</code></td><td><span class="no">✗ Error</span></td><td>Diawali angka.</td></tr>
-            <tr><td><code>nilai akhir</code></td><td><span class="no">✗ Error</span></td><td>Mengandung spasi.</td></tr>
-            <tr><td><code>nilai-akhir</code></td><td><span class="no">✗ Error</span></td><td>Dibaca sebagai <code>nilai</code> dikurangi <code>akhir</code>.</td></tr>
-            <tr><td><code>_rahasia</code></td><td><span class="yes">✓ Valid</span></td><td>Boleh diawali garis bawah.</td></tr>
-            <tr><td><code>for</code></td><td><span class="no">✗ Error</span></td><td>Kata kunci Python.</td></tr>
-            <tr><td><code>print</code></td><td><span class="yes">✓ Valid*</span></td><td>*Tapi menimpa fungsi bawaan. Hindari!</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="demo" data-checker>
-        <div class="demo-head">
-          <h3>Alat · Cek nama variabel (aturan Python)</h3>
-          <p>Ketik nama apa saja</p>
-        </div>
-        <div class="demo-body">
-          <label class="field">Nama variabel
-            <input type="text" value="nilai_akhir" autocomplete="off" spellcheck="false" aria-describedby="checker-fb">
-          </label>
-          <div class="feedback" id="checker-fb" aria-live="polite"></div>
-          <div class="btn-row mt-2">
-            <span class="muted" style="font-size:.88rem;align-self:center">Coba:</span>
-            <button class="btn" type="button" data-try="2tim">2tim</button>
-            <button class="btn" type="button" data-try="harga-barang">harga-barang</button>
-            <button class="btn" type="button" data-try="class">class</button>
-            <button class="btn" type="button" data-try="jumlahSiswa">jumlahSiswa</button>
-            <button class="btn" type="button" data-try="input">input</button>
-            <button class="btn" type="button" data-try="NILAI_KKM">NILAI_KKM</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 06 OPERASI -->
-  <section class="section" id="operasi">
-    <div class="container">
-      <div class="section-head"><span class="section-num">06</span><h2>Operasi pada variabel</h2></div>
-      <p class="section-intro">Nilai variabel bisa dibaca, dihitung, lalu disimpan kembali. Python juga punya cara singkat untuk memperbarui nilai.</p>
-
-      <div class="grid grid-2">
-        <div>
-          <h3>Memperbarui nilai</h3>
-          <div class="code">
-            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>update.py</span></span><button class="copy-btn" type="button">Salin</button></div>
-<pre><code data-lang="py">
-skor = 10        # 10
-skor = skor + 5  # 15
-skor += 5        # 20  (sama dengan skor = skor + 5)
-skor -= 3        # 17
-skor *= 2        # 34
-skor /= 2        # 17.0 (hasil / selalu float)
-</code></pre>
-          </div>
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>Singkat</th><th>Sama dengan</th></tr></thead>
-              <tbody>
-                <tr><td><code>x += 3</code></td><td><code>x = x + 3</code></td></tr>
-                <tr><td><code>x -= 3</code></td><td><code>x = x - 3</code></td></tr>
-                <tr><td><code>x *= 3</code></td><td><code>x = x * 3</code></td></tr>
-                <tr><td><code>x /= 3</code></td><td><code>x = x / 3</code></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div>
-          <h3>Banyak variabel sekaligus &amp; menukar nilai</h3>
-          <div class="code">
-            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>tukar.py</span></span><button class="copy-btn" type="button">Salin</button></div>
-<pre><code data-lang="py">
-x, y = 3, 7      # x = 3 dan y = 7
-
-# Cara umum: pakai variabel sementara
-temp = x
-x = y
-y = temp
-
-# Cara khas Python: satu baris
-x, y = y, x
-</code></pre>
-          </div>
-          <h3 class="mt-2">Menggabung teks</h3>
-          <div class="code">
-            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>gabung.py</span></span><button class="copy-btn" type="button">Salin</button></div>
-<pre><code data-lang="py">
-depan = "Rina"
-belakang = "Putri"
-lengkap = depan + " " + belakang
-print(f"Halo, {lengkap}!")   # f-string
-</code></pre>
-            <div class="code-out">Halo, Rina Putri!</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 07 CONTOH PROGRAM -->
+  <!-- 05 CONTOH -->
   <section class="section" id="contoh">
     <div class="container">
-      <div class="section-head"><span class="section-num">07</span><h2>Contoh program utuh</h2></div>
-      <p class="section-intro">Perhatikan bagaimana setiap variabel punya peran: menyimpan input, menyimpan hasil hitungan, lalu ditampilkan.</p>
-
-      <div class="grid grid-2">
-        <div>
-          <h3>A. Luas &amp; keliling persegi panjang (Python)</h3>
-          <div class="code">
-            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>persegi_panjang.py</span></span><button class="copy-btn" type="button">Salin</button></div>
-<pre><code data-lang="py">
-panjang = float(input("Panjang (cm): "))
-lebar = float(input("Lebar (cm): "))
-
-luas = panjang * lebar
-keliling = 2 * (panjang + lebar)
-
-print("Luas =", luas, "cm2")
-print("Keliling =", keliling, "cm")
-</code></pre>
-            <div class="code-out">Panjang (cm): 8
-Lebar (cm): 5
-Luas = 40.0 cm2
-Keliling = 26.0 cm</div>
+      <div class="section-head"><span class="section-num">05</span><h2>Contoh program dengan variabel</h2></div>
+      <p class="section-intro">Tiga program pendek yang sering dipakai di proyek Scratch. Perhatikan peran variabel di setiap program.</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>A. Penghitung klik</h3>
+          <div class="script-box block">
+            <div data-script>
+              event: ketika 🏁 diklik
+              var: atur [skor] ke (0)
+              var: tampilkan variabel [skor]
+            </div>
+            <div data-script>
+              event: ketika sprite ini diklik
+              var: ubah [skor] sebesar (1)
+            </div>
           </div>
+          <p class="mt-2">Setiap kali sprite diklik, <code>skor</code> bertambah 1. Saat bendera hijau diklik, skor kembali ke 0.</p>
+        </div>
+        <div class="card">
+          <h3>B. Hitung mundur</h3>
+          <div class="script-box block"><div data-script>
+            event: ketika 🏁 diklik
+            var: atur [waktu] ke (10)
+            ctrl: ulangi sampai «{waktu} = (0)»
+              ctrl: tunggu (1) detik
+              var: ubah [waktu] sebesar (-1)
+            look: katakan (Waktu habis!) selama (2) detik
+          </div></div>
+          <p class="mt-2"><code>waktu</code> berkurang 1 setiap detik sampai 0, lalu sprite berkata “Waktu habis!”.</p>
+        </div>
+        <div class="card">
+          <h3>C. Tanya nama</h3>
+          <div class="script-box block"><div data-script>
+            event: ketika 🏁 diklik
+            sense: tanya (Siapa namamu?) dan tunggu
+            var: atur [nama] ke {s:jawaban}
+            look: katakan {o:gabung (Halo, ) {nama}} selama (2) detik
+          </div></div>
+          <p class="mt-2">Jawaban pemain disimpan di variabel <code>nama</code>, lalu dipakai untuk menyapa.</p>
+        </div>
+      </div>
+      <div class="callout warn">
+        <span class="callout-icon">☝️</span>
+        <div><p><strong>Kenapa jawaban perlu disimpan?</strong> Blok <span class="rep sense">jawaban</span> hanya mengingat jawaban <em>terakhir</em>. Kalau program bertanya lagi, jawaban lama hilang. Dengan menyimpannya ke variabel, jawaban itu aman dan bisa dipakai kapan saja.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 OPERATOR -->
+  <section class="section" id="operator">
+    <div class="container">
+      <div class="section-head"><span class="section-num">06</span><h2>Variabel + operator</h2></div>
+      <p class="section-intro">Blok operator (hijau) bisa menghitung dengan variabel, menggabung teks, atau membuat angka acak.</p>
+
+      <div class="split">
+        <div>
+          <h3>Menghitung total belanja</h3>
+          <div class="script-box block"><div data-script>
+            event: ketika 🏁 diklik
+            var: atur [harga] ke (3000)
+            var: atur [jumlah] ke (4)
+            var: atur [total] ke {o:{harga} * {jumlah}}
+            look: katakan {o:gabung (Total: ) {total}}
+          </div></div>
+          <p class="muted mt-2">Hasilnya sprite berkata <b>Total: 12000</b>. Blok <span class="rep op">gabung</span> menyambung teks dengan isi variabel.</p>
         </div>
         <div>
-          <h3>B. Kasir mini (JavaScript)</h3>
-          <div class="code">
-            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>kasir.js</span></span><button class="copy-btn" type="button">Salin</button></div>
-<pre><code data-lang="js">
-const HARGA_PENSIL = 3000;
-let jumlahPensil = 4;
-let uangBayar = 20000;
-
-let total = HARGA_PENSIL * jumlahPensil;
-let kembalian = uangBayar - total;
-
-console.log("Total: " + total);
-console.log("Kembalian: " + kembalian);
-</code></pre>
-            <div class="code-out">Total: 12000
-Kembalian: 8000</div>
+          <h3>Angka acak dengan <span class="rep op">acak 1 sampai 6</span></h3>
+          <div class="demo" data-dice>
+            <div class="demo-head"><h3>Coba: lempar dadu</h3><p>Tiga variabel sekaligus</p></div>
+            <div class="demo-body">
+              <div class="script-box block"><div data-script>
+                event: ketika sprite ini diklik
+                var: atur [dadu] ke {o:acak (1) sampai (6)}
+                var: ubah [lemparan] sebesar (1)
+                var: ubah [jumlah] sebesar {dadu}
+              </div></div>
+              <div class="stage" style="margin-top:14px;min-height:150px">
+                <div class="monitors">
+                  <span class="monitor">dadu <b data-mon="dadu">0</b></span>
+                  <span class="monitor">lemparan <b data-mon="lemparan">0</b></span>
+                  <span class="monitor">jumlah <b data-mon="total">0</b></span>
+                </div>
+                <div class="dice" style="position:absolute;right:24px;top:30px">?</div>
+              </div>
+              <div class="btn-row" style="margin-top:14px">
+                <button class="btn btn-primary" type="button" data-roll>🎲 Lempar dadu</button>
+                <button class="btn" type="button" data-roll-reset>↺ Ulang</button>
+              </div>
+            </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 JIKA & ULANGI -->
+  <section class="section" id="jika-ulangi">
+    <div class="container">
+      <div class="section-head"><span class="section-num">07</span><h2>Variabel + “jika” dan “ulangi”</h2></div>
+      <p class="section-intro">Variabel menjadi sangat berguna jika digabung dengan blok kontrol. Program bisa mengambil keputusan dan mengulang berdasarkan isi variabel.</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Jika … maka</h3>
+          <div class="script-box block"><div data-script>
+            event: ketika sprite ini diklik
+            var: ubah [skor] sebesar (1)
+            ctrl: jika «{skor} = (10)» maka
+              look: katakan (Kamu menang!) selama (2) detik
+              ctrl: hentikan [semua]
+          </div></div>
+          <p class="mt-2">Program memeriksa isi <code>skor</code> setiap kali sprite diklik. Saat skor tepat 10, permainan selesai.</p>
+        </div>
+        <div class="card">
+          <h3>Jika … maka … jika tidak</h3>
+          <div class="script-box block"><div data-script>
+            sense: tanya (Berapa 5 + 3?) dan tunggu
+            ctrl: jika «{s:jawaban} = (8)» maka
+              var: ubah [skor] sebesar (1)
+              look: katakan (Benar!) selama (2) detik
+            else: jika tidak
+              look: katakan (Coba lagi) selama (2) detik
+          </div></div>
+          <p class="mt-2">Skor hanya bertambah jika jawabannya benar.</p>
+        </div>
+        <div class="card">
+          <h3>Ulangi</h3>
+          <div class="script-box block"><div data-script>
+            event: ketika 🏁 diklik
+            var: atur [bintang] ke (0)
+            ctrl: ulangi (5) kali
+              var: ubah [bintang] sebesar (2)
+            look: katakan {bintang}
+          </div></div>
+          <p class="mt-2">Blok “ubah” dijalankan 5 kali: 0 → 2 → 4 → 6 → 8 → <b>10</b>.</p>
         </div>
       </div>
     </div>
@@ -468,225 +346,122 @@ Kembalian: 8000</div>
   <section class="section" id="kegunaan">
     <div class="container">
       <div class="section-head"><span class="section-num">08</span><h2>Kegunaan: pola-pola variabel</h2></div>
-      <p class="section-intro">Programmer sering memakai variabel dengan “peran” tertentu. Kenali enam pola yang paling umum:</p>
+      <p class="section-intro">Programmer Scratch sering memakai variabel dengan “peran” tertentu. Kenali enam pola ini, nanti pasti terpakai di proyekmu.</p>
       <div class="grid grid-3">
-        <div class="card">
-          <h3>🔢 Penghitung (counter)</h3>
-          <p>Menghitung berapa kali sesuatu terjadi.</p>
-          <div class="code"><pre><code data-lang="py">
-jawaban_benar = 0
-jawaban_benar += 1
-</code></pre></div>
-        </div>
-        <div class="card">
-          <h3>➕ Akumulator</h3>
-          <p>Mengumpulkan (menjumlahkan) banyak nilai.</p>
-          <div class="code"><pre><code data-lang="py">
-total = 0
-total += harga_buku
-total += harga_pensil
-</code></pre></div>
-        </div>
-        <div class="card">
-          <h3>🚩 Penanda (flag)</h3>
-          <p>Menyimpan keadaan ya/tidak.</p>
-          <div class="code"><pre><code data-lang="py">
-game_selesai = False
-if nyawa == 0:
-    game_selesai = True
-</code></pre></div>
-        </div>
-        <div class="card">
-          <h3>⌨️ Penyimpan input</h3>
-          <p>Menyimpan jawaban dari pengguna.</p>
-          <div class="code"><pre><code data-lang="py">
-nama = input("Siapa namamu? ")
-print("Halo,", nama)
-</code></pre></div>
-        </div>
-        <div class="card">
-          <h3>📥 Penampung sementara</h3>
-          <p>Menyimpan nilai sebentar agar tidak hilang.</p>
-          <div class="code"><pre><code data-lang="py">
-temp = a
-a = b
-b = temp
-</code></pre></div>
-        </div>
-        <div class="card">
-          <h3>⚙️ Pengaturan</h3>
-          <p>Nilai yang mengatur perilaku program.</p>
-          <div class="code"><pre><code data-lang="py">
-KECEPATAN = 5
-LEBAR_LAYAR = 800
-</code></pre></div>
-        </div>
+        <div class="card"><h3>🔢 Penghitung</h3><p>Menghitung berapa kali sesuatu terjadi, misalnya skor atau jumlah klik.</p><div class="script-box"><div data-script>var: ubah [skor] sebesar (1)</div></div></div>
+        <div class="card"><h3>❤️ Nyawa</h3><p>Berkurang saat pemain terkena musuh. Jika 0, permainan berakhir.</p><div class="script-box"><div data-script>var: ubah [nyawa] sebesar (-1)</div></div></div>
+        <div class="card"><h3>⏱️ Waktu</h3><p>Menghitung mundur sisa waktu permainan.</p><div class="script-box"><div data-script>var: ubah [waktu] sebesar (-1)</div></div></div>
+        <div class="card"><h3>💬 Penyimpan jawaban</h3><p>Menyimpan jawaban pemain agar bisa dipakai lagi.</p><div class="script-box"><div data-script>var: atur [nama] ke {s:jawaban}</div></div></div>
+        <div class="card"><h3>🏆 Level</h3><p>Menandai tingkat permainan. Naik saat skor mencapai target.</p><div class="script-box"><div data-script>var: ubah [level] sebesar (1)</div></div></div>
+        <div class="card"><h3>🎲 Angka acak</h3><p>Menyimpan angka acak untuk dadu, posisi musuh, atau soal kuis.</p><div class="script-box"><div data-script>var: atur [dadu] ke {o:acak (1) sampai (6)}</div></div></div>
       </div>
 
-      <h3 class="subhead">Di aplikasi nyata</h3>
+      <h3 class="subhead">Di game dan aplikasi nyata</h3>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Aplikasi</th><th>Contoh variabel</th></tr></thead>
+          <thead><tr><th>Proyek</th><th>Variabel yang dipakai</th></tr></thead>
           <tbody>
-            <tr><td>🎮 Game</td><td><code>posisi_x</code>, <code>posisi_y</code>, <code>skor</code>, <code>level</code>, <code>game_selesai</code></td></tr>
-            <tr><td>💬 Aplikasi chat</td><td><code>username</code>, <code>pesan_terakhir</code>, <code>jumlah_belum_dibaca</code></td></tr>
-            <tr><td>🏦 Dompet digital</td><td><code>saldo</code>, <code>nominal_transfer</code>, <code>pin_benar</code></td></tr>
-            <tr><td>🌡️ Sensor/robot</td><td><code>suhu</code>, <code>jarak_halangan</code>, <code>kecepatan_motor</code></td></tr>
+            <tr><td>🎮 Game tangkap buah</td><td><code>skor</code>, <code>nyawa</code>, <code>kecepatan</code>, <code>level</code></td></tr>
+            <tr><td>❓ Kuis interaktif</td><td><code>nama</code>, <code>skor</code>, <code>nomor_soal</code></td></tr>
+            <tr><td>🛒 Kasir sederhana</td><td><code>harga</code>, <code>jumlah</code>, <code>total</code>, <code>kembalian</code></td></tr>
+            <tr><td>🚀 Animasi roket</td><td><code>waktu</code> (hitung mundur), <code>tinggi</code></td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <!-- 09 KONSTANTA -->
-  <section class="section" id="konstanta">
+  <!-- 09 SPRITE -->
+  <section class="section" id="sprite">
     <div class="container">
-      <div class="section-head"><span class="section-num">09</span><h2>Variabel vs konstanta</h2></div>
-      <p class="section-intro">Konstanta adalah “variabel” yang nilainya <strong>tidak boleh diubah</strong> setelah dibuat, misalnya nilai π atau batas nilai KKM.</p>
-      <div class="grid grid-2">
-        <div class="table-wrap mt-0">
-          <table>
-            <thead><tr><th></th><th>Variabel</th><th>Konstanta</th></tr></thead>
-            <tbody>
-              <tr><td><strong>Nilai berubah?</strong></td><td>Boleh</td><td>Tidak</td></tr>
-              <tr><td><strong>Python</strong></td><td><code>skor = 0</code></td><td><code>PI = 3.14</code> (kesepakatan)</td></tr>
-              <tr><td><strong>JavaScript</strong></td><td><code>let skor = 0;</code></td><td><code>const PI = 3.14;</code></td></tr>
-              <tr><td><strong>Contoh</strong></td><td>skor, waktu, saldo</td><td>PI, NILAI_KKM, HARI_PER_MINGGU</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div>
-          <div class="code mt-0">
-            <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>konstanta.js</span></span></div>
-<pre><code data-lang="js">
-const PI = 3.14;
-let jariJari = 7;
-let luas = PI * jariJari * jariJari;
-
-PI = 3;   // ❌ error!
-</code></pre>
-            <div class="code-out">TypeError: Assignment to constant variable.</div>
-          </div>
-          <p class="muted">Python tidak benar-benar mengunci konstanta. Huruf kapital hanya penanda bagi programmer: “jangan ubah nilai ini”.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 10 SCOPE -->
-  <section class="section" id="scope">
-    <div class="container">
-      <div class="section-head"><span class="section-num">10</span><h2>Ruang lingkup (scope)</h2></div>
-      <p class="section-intro">Scope menentukan <strong>di bagian mana</strong> sebuah variabel bisa dipakai. Ini mulai penting saat programmu memakai fungsi.</p>
-
+      <div class="section-head"><span class="section-num">09</span><h2>“Untuk semua sprite” atau “hanya untuk sprite ini”?</h2></div>
+      <p class="section-intro">Pilihan saat membuat variabel ini menentukan <strong>siapa saja yang bisa memakai</strong> variabel tersebut.</p>
       <div class="grid grid-2">
         <div class="card">
           <div class="icon">📢</div>
-          <h3>Variabel global</h3>
-          <p>Dibuat di luar fungsi. Bisa dibaca dari mana saja dalam program. Seperti <strong>papan pengumuman sekolah</strong> yang bisa dibaca semua kelas.</p>
+          <h3>Untuk semua sprite</h3>
+          <p>Bisa dibaca dan diubah oleh <b>semua sprite</b> dan panggung. Seperti <b>papan pengumuman sekolah</b> yang bisa dibaca semua kelas.</p>
+          <p><b>Cocok untuk:</b> <code>skor</code>, <code>waktu</code>, <code>level</code>. Misalnya sprite Bola menambah skor, sprite Papan menampilkannya.</p>
         </div>
         <div class="card">
-          <div class="icon">🧑‍🏫</div>
-          <h3>Variabel lokal</h3>
-          <p>Dibuat di dalam fungsi. Hanya “hidup” di dalam fungsi itu, lalu hilang saat fungsi selesai. Seperti <strong>tulisan di papan tulis kelas</strong> yang dihapus setelah pelajaran.</p>
+          <div class="icon">🎒</div>
+          <h3>Hanya untuk sprite ini</h3>
+          <p>Hanya bisa dipakai oleh <b>sprite itu sendiri</b>. Seperti <b>buku catatan pribadi</b> di dalam tasmu.</p>
+          <p><b>Cocok untuk:</b> data milik satu sprite, misalnya <code>kecepatan</code> setiap musuh yang berbeda-beda.</p>
         </div>
       </div>
-
-      <div class="code" style="max-width:720px">
-        <div class="code-head"><span class="dots"><i></i><i></i><i></i><span>scope.py</span></span><button class="copy-btn" type="button">Salin</button></div>
-<pre><code data-lang="py">
-NILAI_KKM = 75                      # global
-
-def cek_lulus(nilai):
-    status = nilai &gt;= NILAI_KKM     # status adalah variabel lokal
-    return status
-
-print(cek_lulus(80))                # True
-print(status)                       # ❌ status tidak dikenal di luar fungsi
-</code></pre>
-        <div class="code-out">True
-NameError: name 'status' is not defined</div>
+      <div class="callout tip">
+        <span class="callout-icon">🤔</span>
+        <div><p><strong>Cara memilih:</strong> tanyakan “apakah sprite lain perlu tahu isi variabel ini?”. Jika <b>ya</b>, pilih <em>Untuk semua sprite</em>. Jika <b>tidak</b>, pilih <em>Hanya untuk sprite ini</em>.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- 11 KESALAHAN UMUM -->
+  <!-- 10 KESALAHAN -->
   <section class="section" id="kesalahan">
     <div class="container">
-      <div class="section-head"><span class="section-num">11</span><h2>Kesalahan umum &amp; cara memperbaikinya</h2></div>
-      <p class="section-intro">Error itu normal, bahkan untuk programmer profesional. Yang penting tahu cara membacanya.</p>
-
+      <div class="section-head"><span class="section-num">10</span><h2>Kesalahan umum &amp; cara memperbaikinya</h2></div>
+      <p class="section-intro">Program Scratch jarang memunculkan pesan error. Hasilnya saja yang aneh. Kenali empat kesalahan yang paling sering terjadi.</p>
       <div class="grid grid-2">
         <div class="card">
-          <span class="card-tag tag-bad">NameError</span>
-          <h3>Memakai variabel sebelum dibuat</h3>
-          <div class="code"><pre><code data-lang="py">
-print(skor)   # ❌ skor belum ada
-skor = 0
-</code></pre></div>
-          <p><strong>Perbaikan:</strong> buat (inisialisasi) variabel terlebih dahulu, baru dipakai.</p>
+          <span class="card-tag tag-bad">Lupa “atur” di awal</span>
+          <h3>Skor tidak mulai dari 0</h3>
+          <p>Saat bermain ulang, skor melanjutkan angka dari permainan sebelumnya.</p>
+          <p><b>Perbaikan:</b> tambahkan blok “atur” di bawah bendera hijau.</p>
+          <div class="script-box"><div data-script>
+            event: ketika 🏁 diklik
+            var: atur [skor] ke (0)
+          </div></div>
         </div>
         <div class="card">
-          <span class="card-tag tag-bad">NameError</span>
-          <h3>Salah huruf besar/kecil</h3>
-          <div class="code"><pre><code data-lang="py">
-Nama = "Ayu"
-print(nama)   # ❌ nama ≠ Nama
-</code></pre></div>
-          <p><strong>Perbaikan:</strong> tulis nama variabel persis sama setiap kali dipakai.</p>
+          <span class="card-tag tag-bad">“Atur” dan “ubah” tertukar</span>
+          <h3>Skor selalu 1</h3>
+          <p>Memakai “atur skor ke 1” saat sprite diklik membuat skor tidak pernah bertambah lebih dari 1.</p>
+          <p><b>Perbaikan:</b> pakai “ubah” untuk menambah.</p>
+          <div class="script-box"><div data-script>
+            event: ketika sprite ini diklik
+            var: ubah [skor] sebesar (1)
+          </div></div>
         </div>
         <div class="card">
-          <span class="card-tag tag-bad">TypeError</span>
-          <h3>Mencampur teks dan angka</h3>
-          <div class="code"><pre><code data-lang="py">
-umur = 12
-print("Umur: " + umur)        # ❌
-print("Umur: " + str(umur))   # ✓
-</code></pre></div>
-          <p><strong>Perbaikan:</strong> ubah tipe datanya dulu dengan <code>str()</code> atau <code>int()</code>.</p>
+          <span class="card-tag tag-bad">Salah pilih variabel</span>
+          <h3>Yang berubah variabel lain</h3>
+          <p>Di menu pilihan blok tertulis <code>nyawa</code>, padahal yang ingin ditambah adalah <code>skor</code>.</p>
+          <p><b>Perbaikan:</b> selalu periksa nama variabel di menu pilihan (▾) setiap blok.</p>
         </div>
         <div class="card">
-          <span class="card-tag tag-bad">Bug logika</span>
-          <h3>Nilai lama tertimpa</h3>
-          <div class="code"><pre><code data-lang="py">
-a, b = 5, 8
-a = b    # a = 8, nilai 5 hilang!
-b = a    # b = 8 juga ❌
-</code></pre></div>
-          <p><strong>Perbaikan:</strong> simpan dulu di variabel sementara (<code>temp</code>). Tidak ada pesan error, jadi lebih sulit ditemukan.</p>
+          <span class="card-tag tag-bad">Nama tidak jelas</span>
+          <h3>Bingung sendiri</h3>
+          <p>Variabel bernama <code>variabel saya</code>, <code>a</code>, atau <code>x1</code> membuat program sulit dibaca, apalagi kalau variabelnya banyak.</p>
+          <p><b>Perbaikan:</b> klik kanan variabel, lalu ganti namanya menjadi nama yang menjelaskan isinya.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 12 PENELUSUR KODE -->
+  <!-- 11 PENELUSUR -->
   <section class="section" id="penelusur">
     <div class="container">
-      <div class="section-head"><span class="section-num">12</span><h2>Penelusur kode</h2></div>
-      <p class="section-intro">Programmer sering “menelusuri” kode baris demi baris untuk melihat isi setiap variabel. Tekan <strong>Berikutnya</strong> dan perhatikan tabel variabel berubah.</p>
+      <div class="section-head"><span class="section-num">11</span><h2>Penelusur blok</h2></div>
+      <p class="section-intro">Jalankan program selangkah demi selangkah. Blok yang sedang berjalan diberi bingkai, dan monitor di panggung menunjukkan isi variabel saat itu.</p>
 
-      <div class="demo" data-tracer>
+      <div class="demo" data-tracer="TRACE_K6">
         <div class="demo-head">
           <div class="seg" role="tablist" aria-label="Pilih program">
-            <button type="button" data-prog="rata">Nilai rata-rata</button>
-            <button type="button" data-prog="tukar">Menukar nilai</button>
-            <button type="button" data-prog="ulang">Penghitung dalam perulangan</button>
+            <button type="button" data-prog="skor">Skor &amp; ulangi</button>
+            <button type="button" data-prog="mundur">Hitung mundur</button>
+            <button type="button" data-prog="umur">Tanya umur</button>
           </div>
           <span class="step-count"></span>
         </div>
         <div class="demo-body">
           <div class="tracer">
-            <ol class="tracer-code" aria-label="Kode program"></ol>
-            <div class="tracer-side">
-              <h4>Variabel di memori</h4>
-              <div class="table-wrap">
-                <table>
-                  <thead><tr><th>Nama</th><th>Nilai</th><th>Tipe</th></tr></thead>
-                  <tbody></tbody>
-                </table>
-              </div>
-              <h4>Output</h4>
-              <div class="tracer-out" aria-live="polite"></div>
+            <div class="script-box block" data-trace-script></div>
+            <div class="stage">
+              <div class="monitors"></div>
+              <div class="bubble" hidden></div>
+              <div class="sprite">🤖</div>
+              <span class="stage-label">Panggung</span>
             </div>
           </div>
           <p class="tracer-note" aria-live="polite"></p>
@@ -702,72 +477,76 @@ b = a    # b = 8 juga ❌
     </div>
   </section>
 
-  <!-- 13 KUIS -->
-  <section class="section quiz-block" id="kuis">
-    <div class="container prose" data-quiz="QUIZ_K6">
-      <div class="section-head"><span class="section-num">13</span><h2>Kuis variabel</h2></div>
-      <p class="section-intro">Delapan soal untuk menguji pemahamanmu. Beberapa soal meminta kamu menebak hasil kode.</p>
-      <div class="quiz-bar"><span></span></div>
-      <p class="quiz-status"></p>
-      <div class="quiz-list"></div>
-      <div class="quiz-result" hidden>
-        <p class="mb-0">Skor kamu</p>
-        <div class="score"></div>
-        <p class="msg"></p>
-        <button class="btn btn-primary quiz-reset" type="button">↺ Ulangi kuis</button>
+  <!-- 12 KUIS -->
+  <section class="section" id="kuis">
+    <div class="container">
+      <div class="section-head"><span class="section-num">12</span><h2>Kuis variabel</h2></div>
+      <p class="section-intro">25 soal tentang variabel di Scratch, satu per satu. Nilai minimal untuk lulus adalah <strong>85</strong> (paling sedikit 22 soal benar).</p>
+      <div class="quiz" data-quiz="QUIZ_K6" data-kkm="85">
+        <div class="quiz-top"><span data-count></span><span data-right></span></div>
+        <div class="quiz-bar"><span></span></div>
+        <div class="quiz-stage"></div>
       </div>
     </div>
   </section>
 
-  <!-- 14 TANTANGAN -->
-  <section class="section" id="tantangan">
+  <!-- 13 PROYEK -->
+  <section class="section" id="proyek">
     <div class="container">
-      <div class="section-head"><span class="section-num">14</span><h2>Tantangan mandiri</h2></div>
-      <p class="section-intro">Kerjakan di komputer (misalnya di Thonny, IDLE, atau editor Python online). Coba sendiri dulu sebelum membuka contoh jawaban.</p>
-
+      <div class="section-head"><span class="section-num">13</span><h2>Proyek Scratch</h2></div>
+      <p class="section-intro">Buka Scratch, lalu buat proyek berikut. Coba sendiri dulu sebelum membuka contoh jawaban.</p>
       <div class="grid grid-3">
-        <div class="challenge">
-          <h3>1. Kartu biodata</h3>
-          <p class="muted">Buat variabel <code>nama</code>, <code>umur</code>, <code>tinggi</code>, dan <code>hobi</code>. Tampilkan kalimat perkenalan memakai semua variabel itu.</p>
+        <div class="card">
+          <div class="icon">⭐</div>
+          <h3>1. Game klik bintang</h3>
+          <p>Buat variabel <code>skor</code>. Setiap sprite bintang diklik, skor bertambah 1. Jika skor mencapai 10, sprite berkata “Hebat!”.</p>
           <details>
             <summary>Lihat contoh jawaban</summary>
-            <div class="code"><pre><code data-lang="py">
-nama = "Dimas"
-umur = 12
-tinggi = 148.5
-hobi = "bermain catur"
-print(f"Halo, aku {nama}, umur {umur} tahun.")
-print(f"Tinggiku {tinggi} cm dan aku suka {hobi}.")
-</code></pre></div>
+            <div class="script-box"><div data-script>
+              event: ketika 🏁 diklik
+              var: atur [skor] ke (0)
+            </div><div data-script>
+              event: ketika sprite ini diklik
+              var: ubah [skor] sebesar (1)
+              ctrl: jika «{skor} = (10)» maka
+                look: katakan (Hebat!) selama (2) detik
+            </div></div>
           </details>
         </div>
-        <div class="challenge">
-          <h3>2. Uang saku seminggu</h3>
-          <p class="muted">Minta pengguna memasukkan uang saku harian. Hitung total uang saku selama 5 hari sekolah dan berapa yang tersisa jika ditabung 20%.</p>
+        <div class="card">
+          <div class="icon">🚀</div>
+          <h3>2. Hitung mundur roket</h3>
+          <p>Buat variabel <code>waktu</code> mulai dari 10. Kurangi 1 setiap detik sampai 0, lalu roket berkata “Meluncur!”.</p>
           <details>
             <summary>Lihat contoh jawaban</summary>
-            <div class="code"><pre><code data-lang="py">
-HARI_SEKOLAH = 5
-uang_harian = int(input("Uang saku harian: "))
-total = uang_harian * HARI_SEKOLAH
-tabungan = total * 0.2
-sisa = total - tabungan
-print("Total:", total)
-print("Ditabung:", tabungan)
-print("Bisa dipakai:", sisa)
-</code></pre></div>
+            <div class="script-box"><div data-script>
+              event: ketika 🏁 diklik
+              var: atur [waktu] ke (10)
+              var: tampilkan variabel [waktu]
+              ctrl: ulangi sampai «{waktu} = (0)»
+                ctrl: tunggu (1) detik
+                var: ubah [waktu] sebesar (-1)
+              look: katakan (Meluncur!) selama (2) detik
+            </div></div>
           </details>
         </div>
-        <div class="challenge">
-          <h3>3. Konversi suhu</h3>
-          <p class="muted">Ubah suhu Celsius ke Fahrenheit dengan rumus F = C × 9/5 + 32. Simpan setiap hasil di variabel yang namanya jelas.</p>
+        <div class="card">
+          <div class="icon">❓</div>
+          <h3>3. Kuis mini</h3>
+          <p>Ajukan 2 soal. Skor bertambah 1 untuk setiap jawaban benar. Di akhir, sprite menyebutkan skor dengan blok “gabung”.</p>
           <details>
             <summary>Lihat contoh jawaban</summary>
-            <div class="code"><pre><code data-lang="py">
-celsius = float(input("Suhu (°C): "))
-fahrenheit = celsius * 9 / 5 + 32
-print(celsius, "°C =", fahrenheit, "°F")
-</code></pre></div>
+            <div class="script-box"><div data-script>
+              event: ketika 🏁 diklik
+              var: atur [skor] ke (0)
+              sense: tanya (Berapa 4 + 4?) dan tunggu
+              ctrl: jika «{s:jawaban} = (8)» maka
+                var: ubah [skor] sebesar (1)
+              sense: tanya (Ibu kota Indonesia?) dan tunggu
+              ctrl: jika «{s:jawaban} = (Jakarta)» maka
+                var: ubah [skor] sebesar (1)
+              look: katakan {o:gabung (Skormu: ) {skor}}
+            </div></div>
           </details>
         </div>
       </div>
@@ -780,16 +559,15 @@ print(celsius, "°C =", fahrenheit, "°F")
       <div class="recap">
         <h2>Rangkuman</h2>
         <ol>
-          <li><span><strong>Pengertian:</strong> variabel adalah nama yang menunjuk ke lokasi di memori tempat nilai disimpan. Komponennya: nama, nilai, dan tipe data.</span></li>
-          <li><span><strong>Tujuan:</strong> menyimpan data selama program berjalan, membuat program fleksibel, mudah dibaca, dan tidak berulang.</span></li>
-          <li><span><strong>Penulisan:</strong> <code>=</code> adalah penugasan, bukan sama dengan. Python: <code>nama = nilai</code>; JavaScript: <code>let</code> / <code>const</code>.</span></li>
-          <li><span><strong>Tipe data</strong> utama: <code>int</code>, <code>float</code>, <code>str</code>, <code>bool</code>, <code>list</code>. Gunakan <code>int()</code>, <code>float()</code>, <code>str()</code> untuk konversi.</span></li>
-          <li><span><strong>Penamaan:</strong> diawali huruf/<code>_</code>, tanpa spasi &amp; simbol, case-sensitive, bukan keyword. Gunakan nama bermakna.</span></li>
-          <li><span><strong>Kegunaan:</strong> penghitung, akumulator, penanda, penyimpan input, penampung sementara, dan pengaturan.</span></li>
-          <li><span><strong>Lanjutan:</strong> konstanta tidak diubah nilainya; variabel lokal hanya hidup di dalam fungsi, variabel global bisa dibaca di mana saja.</span></li>
+          <li><span><strong>Pengertian:</strong> variabel adalah tempat penyimpanan data yang punya nama dan nilai. Nilainya bisa berubah selama program berjalan.</span></li>
+          <li><span><strong>Tujuan:</strong> menyimpan data, membuat program bereaksi, berbagi data antar-sprite, dan menyimpan hasil hitungan.</span></li>
+          <li><span><strong>Membuat:</strong> kategori Variabel → Buat Variabel → beri nama → pilih “untuk semua sprite” atau “hanya untuk sprite ini”.</span></li>
+          <li><span><strong>Blok:</strong> “atur” mengganti isi, “ubah” menambah atau mengurangi, “tampilkan/sembunyikan variabel” mengatur monitor.</span></li>
+          <li><span><strong>Gabungan:</strong> variabel bisa dipakai bersama operator (hitung, gabung, acak), “jika”, dan “ulangi”.</span></li>
+          <li><span><strong>Kegunaan:</strong> penghitung, nyawa, waktu, penyimpan jawaban, level, dan angka acak.</span></li>
         </ol>
         <div class="btn-row">
-          <a class="btn btn-primary" href="#penelusur">Coba penelusur kode lagi</a>
+          <a class="btn btn-primary" href="#kuis">Kerjakan kuis</a>
           <a class="btn" href="kelas-4.html">← Ulas materi kelas 4</a>
         </div>
       </div>
@@ -805,117 +583,131 @@ print(celsius, "°C =", fahrenheit, "°F")
 </footer>
 
 <script>
-  window.TRACE_PROGRAMS = {
-    rata: {
-      intro: "Program ini menghitung rata-rata dua nilai. Tekan <strong>Mulai</strong> untuk menjalankan baris pertama.",
-      lines: [
-        'nama = "Sinta"',
-        'nilai_mtk = 80',
-        'nilai_ipa = 90',
-        'total = nilai_mtk + nilai_ipa',
-        'rata_rata = total / 2',
-        'lulus = rata_rata >= 75',
-        'print(nama, rata_rata, lulus)'
-      ],
+  window.TRACE_K6 = {
+    skor: {
+      intro: "Program ini memakai <b>ulangi</b> untuk menambah skor. Tekan <b>Mulai</b>.",
+      script: "event: ketika 🏁 diklik\nvar: atur [skor] ke (0)\nctrl: ulangi (3) kali\n  var: ubah [skor] sebesar (5)\nlook: katakan {skor}",
       steps: [
-        { line: 0, set: { nama: ['"Sinta"', "str"] }, note: "Variabel <code>nama</code> dibuat dan diisi teks. Karena diapit tanda kutip, tipenya <code>str</code>." },
-        { line: 1, set: { nilai_mtk: ["80", "int"] }, note: "Variabel <code>nilai_mtk</code> berisi bilangan bulat 80 (<code>int</code>)." },
-        { line: 2, set: { nilai_ipa: ["90", "int"] }, note: "Variabel <code>nilai_ipa</code> berisi 90." },
-        { line: 3, set: { total: ["170", "int"] }, note: "Python <strong>membaca</strong> isi <code>nilai_mtk</code> (80) dan <code>nilai_ipa</code> (90), menjumlahkannya, lalu <strong>menyimpan</strong> 170 ke <code>total</code>." },
-        { line: 4, set: { rata_rata: ["85.0", "float"] }, note: "Pembagian dengan <code>/</code> selalu menghasilkan <code>float</code>, jadi hasilnya 85.0, bukan 85." },
-        { line: 5, set: { lulus: ["True", "bool"] }, note: "<code>85.0 >= 75</code> bernilai benar, sehingga <code>lulus</code> berisi <code>True</code> (tipe <code>bool</code>)." },
-        { line: 6, out: "Sinta 85.0 True", note: "<code>print()</code> membaca isi tiga variabel dan menampilkannya. Perhatikan: tidak ada variabel yang berubah di langkah ini." }
+        { id: 0, note: "Program dimulai saat bendera hijau diklik." },
+        { id: 1, set: { skor: "0" }, note: "Variabel <code>skor</code> diisi 0. Monitornya muncul di panggung." },
+        { id: 2, note: "Masuk ke perulangan. Putaran ke-1 dari 3." },
+        { id: 3, set: { skor: "5" }, note: "0 + 5 = <b>5</b>." },
+        { id: 2, note: "Putaran ke-2." },
+        { id: 3, set: { skor: "10" }, note: "5 + 5 = <b>10</b>." },
+        { id: 2, note: "Putaran ke-3 (terakhir)." },
+        { id: 3, set: { skor: "15" }, note: "10 + 5 = <b>15</b>. Perulangan selesai." },
+        { id: 4, say: "15", note: "Sprite mengatakan isi <code>skor</code>, yaitu 15." }
       ]
     },
-    tukar: {
-      intro: "Program ini menukar isi <code>a</code> dan <code>b</code> memakai variabel sementara <code>temp</code>.",
-      lines: [
-        'a = 5',
-        'b = 8',
-        'temp = a',
-        'a = b',
-        'b = temp',
-        'print(a, b)'
-      ],
+    mundur: {
+      intro: "Program hitung mundur dari 3. Perhatikan kapan perulangan berhenti.",
+      script: "event: ketika 🏁 diklik\nvar: atur [waktu] ke (3)\nctrl: ulangi sampai «{waktu} = (0)»\n  ctrl: tunggu (1) detik\n  var: ubah [waktu] sebesar (-1)\nlook: katakan (Waktu habis!)",
       steps: [
-        { line: 0, set: { a: ["5", "int"] }, note: "<code>a</code> berisi 5." },
-        { line: 1, set: { b: ["8", "int"] }, note: "<code>b</code> berisi 8. Tujuan kita: <code>a</code> menjadi 8 dan <code>b</code> menjadi 5." },
-        { line: 2, set: { temp: ["5", "int"] }, note: "Isi <code>a</code> disalin ke <code>temp</code> sebagai cadangan, sebelum <code>a</code> ditimpa." },
-        { line: 3, set: { a: ["8", "int"] }, note: "<code>a</code> ditimpa dengan isi <code>b</code>. Nilai 5 hilang dari <code>a</code>, tapi masih aman di <code>temp</code>." },
-        { line: 4, set: { b: ["5", "int"] }, note: "<code>b</code> diisi dari <code>temp</code>. Penukaran selesai!" },
-        { line: 5, out: "8 5", note: "Hasilnya <code>a = 8</code> dan <code>b = 5</code>. Tanpa <code>temp</code>, kedua variabel akan sama-sama berisi 8." }
+        { id: 0, note: "Program dimulai." },
+        { id: 1, set: { waktu: "3" }, note: "<code>waktu</code> diisi 3." },
+        { id: 2, note: "Periksa: apakah waktu = 0? <b>Belum</b> (masih 3), jadi masuk ke dalam perulangan." },
+        { id: 3, note: "Menunggu 1 detik." },
+        { id: 4, set: { waktu: "2" }, note: "3 − 1 = <b>2</b>." },
+        { id: 2, note: "Periksa lagi: waktu = 0? Belum (2)." },
+        { id: 3, note: "Menunggu 1 detik." },
+        { id: 4, set: { waktu: "1" }, note: "2 − 1 = <b>1</b>." },
+        { id: 2, note: "Periksa lagi: waktu = 0? Belum (1)." },
+        { id: 3, note: "Menunggu 1 detik." },
+        { id: 4, set: { waktu: "0" }, note: "1 − 1 = <b>0</b>." },
+        { id: 2, note: "Periksa lagi: waktu = 0? <b>Ya!</b> Perulangan berhenti." },
+        { id: 5, say: "Waktu habis!", note: "Sprite berkata “Waktu habis!”. Total ada 3 detik menunggu." }
       ]
     },
-    ulang: {
-      intro: "Perulangan <code>for</code> menjalankan baris yang menjorok berulang kali. Perhatikan bagaimana <code>jumlah</code> dan <code>i</code> berubah di setiap putaran.",
-      lines: [
-        'jumlah = 0',
-        'for i in range(1, 4):',
-        '    jumlah = jumlah + i',
-        'print(jumlah)'
-      ],
+    umur: {
+      intro: "Program bertanya, lalu menyimpan jawaban ke variabel.",
+      script: "event: ketika 🏁 diklik\nsense: tanya (Berapa umurmu?) dan tunggu\nvar: atur [umur] ke {s:jawaban}\nvar: ubah [umur] sebesar (1)\nlook: katakan {o:gabung (Tahun depan umurmu ) {umur}}",
       steps: [
-        { line: 0, set: { jumlah: ["0", "int"] }, note: "Akumulator <code>jumlah</code> dimulai dari 0." },
-        { line: 1, set: { i: ["1", "int"] }, note: "<code>range(1, 4)</code> menghasilkan 1, 2, 3. Putaran pertama: <code>i</code> = 1." },
-        { line: 2, set: { jumlah: ["1", "int"] }, note: "<code>jumlah</code> = 0 + 1 = 1." },
-        { line: 1, set: { i: ["2", "int"] }, note: "Putaran kedua: <code>i</code> = 2." },
-        { line: 2, set: { jumlah: ["3", "int"] }, note: "<code>jumlah</code> = 1 + 2 = 3." },
-        { line: 1, set: { i: ["3", "int"] }, note: "Putaran ketiga: <code>i</code> = 3 (angka 4 tidak termasuk)." },
-        { line: 2, set: { jumlah: ["6", "int"] }, note: "<code>jumlah</code> = 3 + 3 = 6." },
-        { line: 3, out: "6", note: "Perulangan selesai. Program menampilkan 6, yaitu 1 + 2 + 3. Inilah pola <strong>akumulator</strong>." }
+        { id: 0, note: "Program dimulai." },
+        { id: 1, ask: "Berapa umurmu?", answer: "11", note: "Sprite bertanya, program menunggu. Misalkan kamu mengetik <b>11</b>." },
+        { id: 2, set: { umur: "11" }, note: "Isi <span class=\"rep sense\">jawaban</span> (11) disimpan ke variabel <code>umur</code>." },
+        { id: 3, set: { umur: "12" }, note: "11 + 1 = <b>12</b>." },
+        { id: 4, say: "Tahun depan umurmu 12", note: "Blok <span class=\"rep op\">gabung</span> menyambung teks dengan isi <code>umur</code>." }
       ]
     }
   };
 
+  /* 25 soal kuis kelas 6 (Scratch). a = nomor jawaban benar (mulai dari 0). s = blok (opsional). */
   window.QUIZ_K6 = [
-    {
-      q: "Apa output kode berikut?<br><code>x = 10</code><br><code>x = x + 5</code><br><code>print(x)</code>",
-      o: ["10", "5", "15", "Error, karena x tidak mungkin sama dengan x + 5"],
-      a: 2,
-      e: "<code>=</code> adalah penugasan: baca x (10), tambah 5, simpan 15 kembali ke x."
-    },
-    {
-      q: "Manakah nama variabel yang <strong>valid</strong> di Python?",
-      o: ["<code>2nilai</code>", "<code>nilai-akhir</code>", "<code>nilai_akhir</code>", "<code>class</code>"],
-      a: 2,
-      e: "<code>2nilai</code> diawali angka, <code>nilai-akhir</code> memuat tanda minus, dan <code>class</code> adalah kata kunci."
-    },
-    {
-      q: "Tipe data dari <code>harga = 12.5</code> adalah …",
-      o: ["<code>int</code>", "<code>float</code>", "<code>str</code>", "<code>bool</code>"],
-      a: 1,
-      e: "Bilangan yang memiliki titik desimal bertipe <code>float</code>."
-    },
-    {
-      q: "Apa hasil dari <code>\"5\" + \"3\"</code> di Python?",
-      o: ["<code>8</code>", "<code>\"8\"</code>", "<code>\"53\"</code>", "Error"],
-      a: 2,
-      e: "Keduanya teks (<code>str</code>), sehingga operator <code>+</code> menggabungkannya menjadi <code>\"53\"</code>."
-    },
-    {
-      q: "Mula-mula <code>a = 3</code> dan <code>b = 7</code>. Setelah menjalankan <code>temp = a</code>, <code>a = b</code>, <code>b = temp</code>, isi a dan b adalah …",
-      o: ["a = 3, b = 7", "a = 7, b = 3", "a = 7, b = 7", "a = 3, b = 3"],
-      a: 1,
-      e: "<code>temp</code> menyimpan 3, lalu a menjadi 7, dan b diisi dari temp (3). Nilainya tertukar."
-    },
-    {
-      q: "Variabel yang dibuat di dalam sebuah fungsi dan hanya bisa dipakai di dalam fungsi itu disebut …",
-      o: ["Variabel global", "Variabel lokal", "Konstanta", "Keyword"],
-      a: 1,
-      e: "Variabel lokal hanya hidup di dalam fungsi tempat ia dibuat."
-    },
-    {
-      q: "Setelah <code>lulus = 80 >= 75</code>, apa isi variabel <code>lulus</code>?",
-      o: ["<code>80</code>", "<code>75</code>", "<code>True</code>", "<code>\"lulus\"</code>"],
-      a: 2,
-      e: "Ekspresi perbandingan <code>80 >= 75</code> bernilai benar, sehingga hasilnya <code>True</code> (tipe <code>bool</code>)."
-    },
-    {
-      q: "Mengapa programmer menulis <code>NILAI_KKM = 75</code> dengan huruf kapital semua?",
-      o: ["Agar program berjalan lebih cepat", "Sebagai penanda bahwa nilainya konstanta dan tidak boleh diubah", "Karena Python mewajibkan huruf kapital", "Agar bisa dipakai sebagai kata kunci"],
-      a: 1,
-      e: "Huruf kapital adalah konvensi untuk konstanta. Python tidak mewajibkannya, tetapi programmer lain jadi tahu nilai itu tidak untuk diubah."
-    }
+    { q: "Pengertian variabel yang paling tepat adalah …",
+      o: ["Tempat menyimpan data yang punya nama dan nilai yang dapat berubah", "Gambar yang bisa bergerak di panggung", "Suara yang diputar saat program berjalan", "Latar belakang panggung"], a: 0,
+      e: "Variabel menyimpan data, punya nama dan nilai, dan nilainya bisa berubah selama program berjalan." },
+    { q: "Di Scratch, variabel baru dibuat dengan cara …",
+      o: ["Klik kanan pada panggung", "Kategori Variabel → Buat Variabel", "Kategori Gerakan → Buat Variabel", "Menekan bendera hijau"], a: 1,
+      e: "Buka kategori Variabel (oranye), lalu klik tombol Buat Variabel." },
+    { q: "Kotak kecil di panggung yang menampilkan nama dan isi variabel disebut …",
+      o: ["Kostum", "Latar", "Monitor variabel", "Sprite"], a: 2,
+      e: "Monitor variabel muncul jika kotak centang di samping variabel dicentang." },
+    { q: "Isi variabel <code>skor</code> adalah 10. Blok apa yang membuat isinya menjadi 3?",
+      o: ["ubah skor sebesar 3", "ubah skor sebesar 13", "tampilkan variabel skor", "atur skor ke 3"], a: 3,
+      e: "“Atur” mengganti isi lama dengan nilai baru, jadi skor menjadi 3." },
+    { q: "Isi variabel <code>skor</code> adalah 10. Lalu dijalankan blok berikut. Berapa isi skor sekarang?", s: "var: ubah [skor] sebesar (3)",
+      o: ["13", "3", "10", "7"], a: 0,
+      e: "“Ubah sebesar 3” menambah isi lama: 10 + 3 = 13." },
+    { q: "Mengapa blok “atur skor ke 0” sebaiknya diletakkan di bawah “ketika 🏁 diklik”?",
+      o: ["Agar sprite bergerak", "Agar setiap permainan dimulai, skor kembali ke 0", "Agar skor menjadi rahasia", "Agar suara berbunyi"], a: 1,
+      e: "Tanpa blok itu, skor melanjutkan angka dari permainan sebelumnya." },
+    { q: "Blok untuk menghilangkan monitor variabel dari panggung saat program berjalan adalah …",
+      o: ["atur skor ke 0", "ubah skor sebesar 0", "sembunyikan variabel skor", "hentikan semua"], a: 2,
+      e: "Blok “sembunyikan variabel” menyembunyikan monitor dari panggung." },
+    { q: "Berapa isi variabel skor setelah program berikut selesai?", s: "event: ketika 🏁 diklik\nvar: atur [skor] ke (0)\nctrl: ulangi (4) kali\n  var: ubah [skor] sebesar (3)",
+      o: ["3", "4", "7", "12"], a: 3,
+      e: "Ditambah 3 sebanyak 4 kali: 0 → 3 → 6 → 9 → 12." },
+    { q: "Berapa isi variabel nyawa setelah program berikut selesai?", s: "event: ketika 🏁 diklik\nvar: atur [nyawa] ke (3)\nctrl: ulangi (3) kali\n  var: ubah [nyawa] sebesar (-1)",
+      o: ["0", "3", "-3", "6"], a: 0,
+      e: "3 → 2 → 1 → 0. Angka negatif mengurangi isi variabel." },
+    { q: "Berapa isi variabel x setelah program berikut selesai?", s: "event: ketika 🏁 diklik\nvar: atur [x] ke (10)\nvar: ubah [x] sebesar (-4)\nvar: atur [x] ke (2)\nvar: ubah [x] sebesar (5)",
+      o: ["11", "7", "13", "2"], a: 1,
+      e: "10 → 6, lalu “atur” mengganti menjadi 2, lalu ditambah 5 → 7." },
+    { q: "Berapa isi variabel skor setelah program berikut selesai?", s: "event: ketika 🏁 diklik\nvar: atur [skor] ke (0)\nctrl: ulangi (2) kali\n  var: ubah [skor] sebesar (5)\nvar: ubah [skor] sebesar (-1)",
+      o: ["10", "4", "9", "8"], a: 2,
+      e: "Di dalam ulangi: 0 → 5 → 10. Di luar ulangi dikurangi 1 sekali: 9." },
+    { q: "Berapa isi variabel skor setelah program berikut selesai?", s: "event: ketika 🏁 diklik\nvar: atur [skor] ke (0)\nctrl: ulangi (3) kali\n  var: ubah [skor] sebesar (2)\n  var: ubah [skor] sebesar (1)",
+      o: ["6", "3", "5", "9"], a: 3,
+      e: "Setiap putaran ditambah 2 lalu 1 (total 3). Tiga putaran: 3 × 3 = 9." },
+    { q: "Apa yang dikatakan sprite?", s: "var: atur [skor] ke (7)\nctrl: jika «{skor} > (5)» maka\n  look: katakan (Menang!)\nelse: jika tidak\n  look: katakan (Coba lagi)",
+      o: ["Menang!", "Coba lagi", "7", "Tidak berkata apa-apa"], a: 0,
+      e: "7 lebih besar dari 5, jadi kondisinya benar dan sprite berkata “Menang!”." },
+    { q: "Apa yang dikatakan sprite?", s: "var: atur [skor] ke (3)\nctrl: jika «{skor} > (5)» maka\n  look: katakan (Menang!)\nelse: jika tidak\n  look: katakan (Coba lagi)",
+      o: ["Menang!", "3", "Coba lagi", "5"], a: 2,
+      e: "3 tidak lebih besar dari 5, jadi bagian “jika tidak” yang dijalankan." },
+    { q: "Setelah blok “tanya … dan tunggu”, jawaban pemain bisa diambil dari blok …",
+      o: ["skor", "jawaban", "nama", "pengguna"], a: 1,
+      e: "Blok <span class=\"rep sense\">jawaban</span> (biru, kategori Penginderaan) berisi jawaban terakhir." },
+    { q: "Supaya jawaban pemain tidak hilang saat program bertanya lagi, sebaiknya …",
+      o: ["Pertanyaannya dihapus", "Program dihentikan", "Sprite disembunyikan", "Jawaban disimpan ke variabel dengan blok “atur … ke jawaban”"], a: 3,
+      e: "Blok jawaban hanya mengingat jawaban terakhir, jadi simpan ke variabel." },
+    { q: "Isi variabel <code>nama</code> adalah Sinta. Apa yang dikatakan sprite?", s: "look: katakan {o:gabung (Halo ) {nama}}",
+      o: ["Halo Sinta", "Halo nama", "gabung Halo nama", "Sinta Halo"], a: 0,
+      e: "Blok gabung menyambung teks “Halo ” dengan isi variabel nama." },
+    { q: "Blok <span class=\"rep op\">acak 1 sampai 6</span> paling cocok untuk membuat …",
+      o: ["Papan skor", "Dadu", "Hitung mundur", "Pertanyaan"], a: 1,
+      e: "Dadu menghasilkan angka acak 1 sampai 6." },
+    { q: "Berapa kali blok “ubah waktu sebesar −1” dijalankan?", s: "var: atur [waktu] ke (5)\nctrl: ulangi sampai «{waktu} = (0)»\n  ctrl: tunggu (1) detik\n  var: ubah [waktu] sebesar (-1)",
+      o: ["1 kali", "4 kali", "5 kali", "6 kali"], a: 2,
+      e: "5 → 4 → 3 → 2 → 1 → 0. Blok “ubah” dijalankan 5 kali, lalu perulangan berhenti." },
+    { q: "Variabel yang dipakai untuk menghitung berapa kali sprite diklik disebut pola …",
+      o: ["Penghitung", "Penyimpan jawaban", "Angka acak", "Level"], a: 0,
+      e: "Pola penghitung memakai “ubah … sebesar 1” setiap kali sesuatu terjadi." },
+    { q: "Program memakai “atur skor ke 1” saat sprite diklik. Apa akibatnya?",
+      o: ["Skor bertambah 1 setiap klik", "Skor berkurang", "Skor selalu 1, tidak pernah bertambah", "Program error"], a: 2,
+      e: "“Atur” mengganti isi menjadi 1 setiap klik. Untuk menambah, pakai “ubah skor sebesar 1”." },
+    { q: "Sprite Bola menambah skor, dan sprite Papan menampilkan skor. Saat membuat variabel skor, pilih …",
+      o: ["Hanya untuk sprite ini", "Tidak perlu memilih", "Buat dua variabel bernama sama", "Untuk semua sprite"], a: 3,
+      e: "Dua sprite memakai variabel yang sama, jadi pilih “Untuk semua sprite”." },
+    { q: "Setiap sprite musuh punya kecepatan berbeda-beda. Variabel <code>kecepatan</code> sebaiknya dibuat …",
+      o: ["Hanya untuk sprite ini", "Untuk semua sprite", "Di panggung saja", "Tanpa nama"], a: 0,
+      e: "Kecepatan milik masing-masing musuh, jadi cukup “Hanya untuk sprite ini”." },
+    { q: "Nama variabel paling baik untuk menyimpan sisa waktu permainan adalah …",
+      o: ["variabel saya", "sisa_waktu", "a", "x1"], a: 1,
+      e: "Nama yang jelas memudahkan siapa pun membaca program." },
+    { q: "Isi variabel <code>skor</code> adalah 15. Apa yang dikatakan sprite?", s: "look: katakan {o:gabung (Skor: ) {skor}}",
+      o: ["Skor: skor", "15 Skor:", "Skor: 15", "gabung 15"], a: 2,
+      e: "Teks “Skor: ” digabung dengan isi variabel skor (15)." }
   ];
 </script>
 <script src="script.js"></script>
