@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Variabel Kelas 6 — Ruang Variabel</title>
-  <meta name="description" content="Materi variabel kelas 6 dengan Scratch: membuat variabel, blok variabel, operator, jika dan ulangi, untuk semua sprite, kesalahan umum, penelusur blok, kuis 25 soal, dan proyek.">
+  <title>Variabel & Flowchart Kelas 6 — Ruang Variabel</title>
+  <meta name="description" content="Materi variabel kelas 6 dihubungkan dengan flowchart: simbol flowchart, variabel di setiap simbol, menelusuri flowchart, game Detektif Flowchart, dan kuis 25 soal.">
   <meta name="theme-color" content="#FAF6EF">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,15 +28,14 @@
 <main>
   <section class="hero">
     <div class="container">
-      <span class="eyebrow">Kelas 6 · Lanjut · Scratch</span>
-      <h1>Variabel di Scratch: <span class="mark">lebih dalam</span>.</h1>
-      <p class="lead">Di kelas 4 kamu mengenal variabel sebagai kotak berlabel. Sekarang kita memakai variabel di Scratch untuk membuat program sungguhan: game dengan skor, hitung mundur, tanya-jawab, dan dadu acak.</p>
+      <span class="eyebrow">Kelas 6 · Lanjut</span>
+      <h1>Variabel &amp; <span class="mark">flowchart</span>.</h1>
+      <p class="lead">Di kelas 4 kamu mengenal variabel sebagai kotak berlabel. Sekarang kita melihat bagaimana variabel dipakai di dalam <strong>flowchart</strong>, yaitu gambar langkah-langkah sebuah algoritma. Kamu akan belajar membaca, menelusuri, dan menyusun flowchart yang memakai variabel.</p>
       <div class="hero-meta">
-        <span class="pill">⏱ ± 60 menit</span>
-        <span class="pill">11 bagian materi</span>
-        <span class="pill">🔍 Penelusur blok</span>
+        <span class="pill">📖 Materi ± 40 menit</span>
+        <span class="pill">🎮 Game ± 30 menit</span>
         <span class="pill">✅ Kuis 25 soal</span>
-        <span class="pill">🧪 3 proyek</span>
+        <span class="pill">🎯 Nilai minimal 85</span>
       </div>
     </div>
   </section>
@@ -45,17 +44,16 @@
     <div class="toc-inner">
       <a href="#pengertian">Pengertian</a>
       <a href="#tujuan">Tujuan</a>
-      <a href="#membuat">Membuat Variabel</a>
-      <a href="#blok">Blok Variabel</a>
+      <a href="#flowchart">Flowchart</a>
+      <a href="#variabel-flowchart">Variabel di Flowchart</a>
       <a href="#contoh">Contoh</a>
-      <a href="#operator">Operator</a>
-      <a href="#jika-ulangi">Jika &amp; Ulangi</a>
+      <a href="#menelusuri">Menelusuri</a>
       <a href="#kegunaan">Kegunaan</a>
-      <a href="#sprite">Semua Sprite</a>
       <a href="#kesalahan">Kesalahan</a>
-      <a href="#penelusur">Penelusur</a>
+      <a href="#main">Ayo Main</a>
       <a href="#kuis">Kuis</a>
-      <a href="#proyek">Proyek</a>
+      <a href="#latihan">Latihan</a>
+      <a href="#rangkuman">Rangkuman</a>
     </div>
   </nav>
 
@@ -63,39 +61,27 @@
   <section class="section" id="pengertian">
     <div class="container">
       <div class="section-head"><span class="section-num">01</span><h2>Pengertian variabel</h2></div>
-
       <div class="definition">
         <span class="label">Definisi</span>
-        <strong>Variabel</strong> adalah tempat penyimpanan data di dalam program yang memiliki <strong>nama</strong> dan <strong>nilai</strong>. Nilainya <strong>dapat berubah</strong> selama program berjalan.
+        <strong>Variabel</strong> adalah tempat penyimpanan data di dalam algoritma atau program yang memiliki <strong>nama</strong> dan <strong>nilai</strong>. Nilainya <strong>dapat berubah</strong> selama langkah-langkah dijalankan.
       </div>
-
       <div class="split">
+        <ul class="rules">
+          <li><span class="badge-num">1</span><p><strong>Nama</strong><small>Label untuk memanggil variabel, misalnya <code>nilai</code>, <code>total</code>, <code>waktu</code>.</small></p></li>
+          <li><span class="badge-num">2</span><p><strong>Nilai</strong><small>Isi variabel. Bisa berupa angka (80) atau teks (Sinta).</small></p></li>
+          <li><span class="badge-num">3</span><p><strong>Satu isi pada satu waktu</strong><small>Saat diisi nilai baru, nilai lama diganti.</small></p></li>
+        </ul>
         <div>
-          <p>Di Scratch, setiap variabel punya tiga hal yang perlu kamu kenali:</p>
-          <ul class="rules">
-            <li><span class="badge-num">1</span><p><strong>Nama</strong><small>Label untuk memanggil variabel, misalnya <code>skor</code>, <code>nyawa</code>, <code>nama</code>.</small></p></li>
-            <li><span class="badge-num">2</span><p><strong>Nilai</strong><small>Isinya, bisa berupa <b>angka</b> (12) atau <b>teks</b> (Raka).</small></p></li>
-            <li><span class="badge-num">3</span><p><strong>Monitor</strong><small>Kotak kecil di panggung yang menampilkan nama dan nilai variabel saat program berjalan.</small></p></li>
-          </ul>
-        </div>
-        <div>
-          <div class="stage" aria-label="Contoh panggung dengan monitor variabel">
-            <div class="monitors">
-              <span class="monitor">skor <b>12</b></span>
-              <span class="monitor">nyawa <b>3</b></span>
-              <span class="monitor">nama <b>Raka</b></span>
-            </div>
-            <div class="bubble">Skorku 12!</div>
-            <div class="sprite">🤖</div>
-            <span class="stage-label">Panggung</span>
+          <div class="vbox-row">
+            <div class="vbox"><span class="vbox-label">nilai</span><span class="vbox-value">80</span></div>
+            <div class="vbox"><span class="vbox-label">nama</span><span class="vbox-value">Sinta</span></div>
+            <div class="vbox"><span class="vbox-label">total</span><span class="vbox-value">12000</span></div>
           </div>
-          <p class="muted" style="font-size:.88rem;margin-top:8px">Monitor variabel muncul di pojok panggung jika kotak centang di samping variabel dicentang.</p>
         </div>
       </div>
-
       <div class="callout">
-        <span class="callout-icon">🔎</span>
-        <div><p><strong>Angka biasa vs variabel.</strong> Angka <b>10</b> yang kamu ketik di dalam blok akan selalu 10. Sedangkan variabel <b>skor</b> bisa bernilai 0, lalu 1, lalu 25, tergantung apa yang terjadi saat program berjalan. Itulah yang membuat game bisa “hidup”.</p></div>
+        <span class="callout-icon">🔁</span>
+        <div><p><strong>Variabel vs angka biasa.</strong> Angka 75 dalam langkah “nilai ≥ 75?” selalu 75. Sedangkan variabel <code>nilai</code> bisa berisi 80 untuk Sinta, 60 untuk Budi, atau 95 untuk Rina. Karena memakai variabel, satu algoritma bisa dipakai untuk banyak orang.</p></div>
       </div>
     </div>
   </section>
@@ -105,96 +91,80 @@
     <div class="container">
       <div class="section-head"><span class="section-num">02</span><h2>Tujuan variabel</h2></div>
       <div class="grid grid-2">
-        <div class="card"><div class="icon">💾</div><h3>Menyimpan data selama program berjalan</h3><p>Skor, sisa waktu, jawaban pemain, atau level disimpan supaya bisa dipakai di langkah-langkah berikutnya.</p></div>
-        <div class="card"><div class="icon">🎮</div><h3>Membuat program bereaksi</h3><p>Program bisa berbeda-beda hasilnya tergantung isi variabel: menang jika skor 10, kalah jika nyawa 0.</p></div>
-        <div class="card"><div class="icon">🔗</div><h3>Berbagi data antar-blok dan antar-sprite</h3><p>Satu sprite menambah skor, sprite lain menampilkannya. Semuanya membaca variabel yang sama.</p></div>
-        <div class="card"><div class="icon">🧮</div><h3>Menghitung dan menyimpan hasil</h3><p>Total belanja, jumlah lemparan dadu, atau hasil kuis dihitung lalu disimpan di variabel.</p></div>
-      </div>
-
-      <h3 class="subhead">Bandingkan sendiri</h3>
-      <div class="grid grid-2">
-        <div>
-          <span class="card-tag tag-bad">Tanpa variabel</span>
-          <div class="script-box block"><div data-script>
-            event: ketika sprite ini diklik
-            look: katakan (Skormu 1)
-          </div></div>
-          <p class="muted mt-2">Diklik berapa kali pun, sprite selalu berkata “Skormu 1”. Program tidak bisa mengingat apa-apa.</p>
-        </div>
-        <div>
-          <span class="card-tag tag-good">Dengan variabel</span>
-          <div class="script-box block"><div data-script>
-            event: ketika sprite ini diklik
-            var: ubah [skor] sebesar (1)
-            look: katakan {o:gabung (Skormu ) {skor}}
-          </div></div>
-          <p class="muted mt-2">Setiap diklik, skor bertambah dan sprite menyebutkan skor terbaru: 1, 2, 3, dan seterusnya.</p>
-        </div>
+        <div class="card"><div class="icon">💾</div><h3>Menyimpan data</h3><p>Data yang dimasukkan pengguna atau hasil perhitungan disimpan supaya bisa dipakai di langkah berikutnya.</p></div>
+        <div class="card"><div class="icon">🔀</div><h3>Membuat algoritma berlaku umum</h3><p>Algoritma “hitung luas” bisa dipakai untuk ukuran berapa pun karena memakai variabel <code>panjang</code> dan <code>lebar</code>.</p></div>
+        <div class="card"><div class="icon">🤔</div><h3>Membantu mengambil keputusan</h3><p>Langkah selanjutnya bisa berbeda tergantung isi variabel, misalnya lulus atau belajar lagi.</p></div>
+        <div class="card"><div class="icon">📈</div><h3>Mencatat perubahan</h3><p>Variabel bisa terus diperbarui, misalnya skor yang bertambah atau waktu yang berkurang.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- 03 MEMBUAT -->
-  <section class="section" id="membuat">
+  <!-- 03 FLOWCHART -->
+  <section class="section" id="flowchart">
     <div class="container">
-      <div class="section-head"><span class="section-num">03</span><h2>Membuat variabel di Scratch</h2></div>
-      <div class="split">
-        <ul class="rules">
-          <li><span class="badge-num">1</span><p>Klik kategori <strong>Variabel</strong> (lingkaran oranye) di bagian kiri.</p></li>
-          <li><span class="badge-num">2</span><p>Klik tombol <strong>Buat Variabel</strong>.</p></li>
-          <li><span class="badge-num">3</span><p>Ketik nama variabel yang jelas, misalnya <code>skor</code>.</p></li>
-          <li><span class="badge-num">4</span><p>Pilih <strong>Untuk semua sprite</strong> atau <strong>Hanya untuk sprite ini</strong> (dibahas di bagian 09).</p></li>
-          <li><span class="badge-num">5</span><p>Klik <strong>OK</strong>. Blok-blok untuk variabel baru langsung muncul.</p></li>
-        </ul>
-        <div>
-          <div class="mock-dialog" aria-label="Ilustrasi kotak dialog variabel baru">
-            <div class="md-head">Variabel Baru</div>
-            <div class="md-body">
-              <div>Nama variabel baru:</div>
-              <div class="md-input">skor</div>
-              <div class="md-radios"><span class="on">Untuk semua sprite</span><span>Hanya untuk sprite ini</span></div>
-              <div class="md-btns"><span>Batal</span><span>OK</span></div>
-            </div>
-          </div>
-          <p class="muted" style="font-size:.88rem;margin-top:10px">Ilustrasi disederhanakan. Tampilan di Scratch bisa sedikit berbeda.</p>
-        </div>
-      </div>
-      <div class="callout tip">
-        <span class="callout-icon">💡</span>
-        <div><p>Scratch sudah menyediakan variabel bernama “variabel saya”. Lebih baik buat variabel sendiri dengan nama yang jelas. Untuk mengganti nama atau menghapus variabel, <strong>klik kanan</strong> pada variabel tersebut di daftar blok.</p></div>
-      </div>
-    </div>
-  </section>
+      <div class="section-head"><span class="section-num">03</span><h2>Mengenal flowchart</h2></div>
+      <p class="section-intro"><strong>Flowchart</strong> (diagram alir) adalah gambar yang menunjukkan langkah-langkah sebuah algoritma memakai <strong>simbol</strong> dan <strong>panah</strong>. Flowchart dibaca dari <em>Mulai</em>, mengikuti arah panah, sampai <em>Selesai</em>.</p>
 
-  <!-- 04 BLOK -->
-  <section class="section" id="blok">
-    <div class="container">
-      <div class="section-head"><span class="section-num">04</span><h2>Blok-blok variabel</h2></div>
-      <p class="section-intro">Setelah variabel dibuat, ada lima blok yang paling sering dipakai.</p>
-      <ul class="block-legend">
-        <li><div data-script>var: {skor}</div><p><strong>Reporter</strong> (blok bulat): mengambil isi variabel untuk dipakai di blok lain. Centang kotak di sampingnya untuk menampilkan monitor di panggung.</p></li>
-        <li><div data-script>var: atur [skor] ke (0)</div><p><strong>Mengganti</strong> isi variabel dengan nilai baru. Isi lama hilang.</p></li>
-        <li><div data-script>var: ubah [skor] sebesar (1)</div><p><strong>Menambah</strong> isi lama dengan angka tertentu. Pakai angka negatif (−1) untuk mengurangi.</p></li>
-        <li><div data-script>var: tampilkan variabel [skor]</div><p><strong>Memunculkan</strong> monitor variabel di panggung saat program berjalan.</p></li>
-        <li><div data-script>var: sembunyikan variabel [skor]</div><p><strong>Menyembunyikan</strong> monitor variabel dari panggung.</p></li>
-      </ul>
-
-      <h3 class="subhead">“Atur” atau “ubah”?</h3>
-      <p class="prose">Keduanya sering tertukar. Misalnya isi <code>skor</code> sekarang <b>10</b>:</p>
-      <div class="table-wrap">
+      <div class="table-wrap symbol-table">
         <table>
-          <thead><tr><th>Blok</th><th>Yang terjadi</th><th>Isi skor sesudahnya</th></tr></thead>
+          <thead><tr><th>Simbol</th><th>Nama</th><th>Fungsi</th><th>Contoh dengan variabel</th></tr></thead>
           <tbody>
-            <tr><td><div data-script>var: atur [skor] ke (3)</div></td><td>Isi lama (10) dibuang, diganti 3</td><td><b>3</b></td></tr>
-            <tr><td><div data-script>var: ubah [skor] sebesar (3)</div></td><td>Isi lama (10) ditambah 3</td><td><b>13</b></td></tr>
-            <tr><td><div data-script>var: ubah [skor] sebesar (-3)</div></td><td>Isi lama (10) dikurangi 3</td><td><b>7</b></td></tr>
+            <tr><td><span data-shape="start" data-text="Mulai"></span></td><td><b>Terminal</b><br><span class="muted">(oval)</span></td><td>Menandai awal dan akhir flowchart.</td><td>Mulai, Selesai</td></tr>
+            <tr><td><span data-shape="io" data-text="Masukkan nilai"></span></td><td><b>Input / Output</b><br><span class="muted">(jajar genjang)</span></td><td>Memasukkan data ke variabel, atau menampilkan isi variabel.</td><td><code>Masukkan nilai</code><br><code>Tampilkan total</code></td></tr>
+            <tr><td><span data-shape="proc" data-text="skor ← 0"></span></td><td><b>Proses</b><br><span class="muted">(persegi panjang)</span></td><td>Mengisi atau mengubah isi variabel, termasuk menghitung.</td><td><code>skor ← 0</code><br><code>total ← harga × jumlah</code></td></tr>
+            <tr><td><span data-shape="dec" data-text="nilai ≥ 75?"></span></td><td><b>Keputusan</b><br><span class="muted">(belah ketupat)</span></td><td>Memeriksa isi variabel. Jawabannya <b>Ya</b> atau <b>Tidak</b>, dan setiap jawaban punya panah sendiri.</td><td><code>nilai ≥ 75?</code><br><code>waktu = 0?</code></td></tr>
+            <tr><td style="font-size:1.6rem;text-align:center">→</td><td><b>Garis alir</b><br><span class="muted">(panah)</span></td><td>Menunjukkan urutan langkah.</td><td>—</td></tr>
           </tbody>
         </table>
       </div>
+    </div>
+  </section>
 
-      <div class="callout">
-        <span class="callout-icon">🖥️</span>
-        <div><p><strong>Tampilan monitor.</strong> Klik kanan monitor di panggung untuk memilih tampilan <b>normal</b> (nama + nilai), <b>besar</b> (hanya angka, cocok untuk papan skor), atau <b>penggeser</b> (slider) yang bisa digeser untuk mengubah nilai variabel saat program berjalan.</p></div>
+  <!-- 04 VARIABEL DI FLOWCHART -->
+  <section class="section" id="variabel-flowchart">
+    <div class="container">
+      <div class="section-head"><span class="section-num">04</span><h2>Variabel di dalam flowchart</h2></div>
+      <p class="section-intro">Variabel bisa muncul di empat jenis simbol. Masing-masing punya peran yang berbeda terhadap isi variabel.</p>
+      <div class="grid grid-2">
+        <div class="card">
+          <span data-shape="io" data-text="Masukkan nama" data-w="160"></span>
+          <h3 class="mt-2">Input: variabel <em>diisi</em> oleh pengguna</h3>
+          <p>Data yang diketik pengguna disimpan ke variabel <code>nama</code>.</p>
+        </div>
+        <div class="card">
+          <span data-shape="proc" data-text="skor ← skor + 1" data-w="160"></span>
+          <h3 class="mt-2">Proses: variabel <em>diisi atau diubah</em></h3>
+          <p>Hitung bagian kanan dulu (skor + 1), lalu simpan hasilnya ke variabel di kiri panah.</p>
+        </div>
+        <div class="card">
+          <span data-shape="dec" data-text="skor ≥ 10?" data-w="150"></span>
+          <h3 class="mt-2">Keputusan: variabel <em>diperiksa</em></h3>
+          <p>Isi <code>skor</code> dibandingkan dengan 10. Isinya <b>tidak berubah</b>, hanya menentukan jalur Ya atau Tidak.</p>
+        </div>
+        <div class="card">
+          <span data-shape="io" data-text="Tampilkan skor" data-w="160"></span>
+          <h3 class="mt-2">Output: isi variabel <em>ditampilkan</em></h3>
+          <p>Yang muncul di layar adalah <b>isi</b> variabel saat itu, misalnya 12, bukan tulisan “skor”.</p>
+        </div>
+      </div>
+
+      <div class="callout warn">
+        <span class="callout-icon">⬅️</span>
+        <div><p><strong>Arti tanda panah “←”.</strong> Tulisan <code>skor ← 0</code> dibaca “<b>skor diisi 0</b>”. Tanda panah dipakai supaya tidak tertukar dengan tanda sama dengan di simbol keputusan, misalnya <code>skor = 10?</code> yang artinya “apakah skor sama dengan 10?”.</p></div>
+      </div>
+
+      <h3 class="subhead">Contoh: menghitung luas persegi panjang</h3>
+      <div class="split">
+        <div class="flow-box" data-flow="luas"></div>
+        <div>
+          <ol class="rules" style="list-style:none">
+            <li><span class="badge-num">1</span><p><b>Mulai.</b></p></li>
+            <li><span class="badge-num">2</span><p><b>Input</b>: pengguna memasukkan panjang 8 dan lebar 5. Isinya disimpan ke variabel <code>panjang</code> dan <code>lebar</code>.</p></li>
+            <li><span class="badge-num">3</span><p><b>Proses</b>: hitung 8 × 5 = 40, lalu simpan ke variabel <code>luas</code>.</p></li>
+            <li><span class="badge-num">4</span><p><b>Output</b>: tampilkan isi <code>luas</code>, yaitu 40.</p></li>
+            <li><span class="badge-num">5</span><p><b>Selesai.</b> Jika pengguna memasukkan angka lain, hasilnya ikut berubah tanpa mengubah flowchart.</p></li>
+          </ol>
+        </div>
       </div>
     </div>
   </section>
@@ -202,95 +172,33 @@
   <!-- 05 CONTOH -->
   <section class="section" id="contoh">
     <div class="container">
-      <div class="section-head"><span class="section-num">05</span><h2>Contoh program dengan variabel</h2></div>
-      <p class="section-intro">Tiga program pendek yang sering dipakai di proyek Scratch. Perhatikan peran variabel di setiap program.</p>
-      <div class="grid grid-3">
+      <div class="section-head"><span class="section-num">05</span><h2>Tiga bentuk flowchart dengan variabel</h2></div>
+      <p class="section-intro">Hampir semua algoritma tersusun dari tiga bentuk: <b>urut</b>, <b>percabangan</b>, dan <b>perulangan</b>. Perhatikan peran variabel di masing-masing.</p>
+      <div class="grid grid-2">
         <div class="card">
-          <h3>A. Penghitung klik</h3>
-          <div class="script-box block">
-            <div data-script>
-              event: ketika 🏁 diklik
-              var: atur [skor] ke (0)
-              var: tampilkan variabel [skor]
-            </div>
-            <div data-script>
-              event: ketika sprite ini diklik
-              var: ubah [skor] sebesar (1)
-            </div>
-          </div>
-          <p class="mt-2">Setiap kali sprite diklik, <code>skor</code> bertambah 1. Saat bendera hijau diklik, skor kembali ke 0.</p>
+          <span class="card-tag tag-good">Urut</span>
+          <h3>Total belanja</h3>
+          <div class="flow-box" data-flow="belanja"></div>
+          <p class="mt-2">Langkah dijalankan satu per satu dari atas ke bawah. Hasil: <b>total = 12000</b>.</p>
         </div>
         <div class="card">
-          <h3>B. Hitung mundur</h3>
-          <div class="script-box block"><div data-script>
-            event: ketika 🏁 diklik
-            var: atur [waktu] ke (10)
-            ctrl: ulangi sampai «{waktu} = (0)»
-              ctrl: tunggu (1) detik
-              var: ubah [waktu] sebesar (-1)
-            look: katakan (Waktu habis!) selama (2) detik
-          </div></div>
-          <p class="mt-2"><code>waktu</code> berkurang 1 setiap detik sampai 0, lalu sprite berkata “Waktu habis!”.</p>
+          <span class="card-tag tag-good">Perulangan</span>
+          <h3>Menampilkan 1 sampai 3</h3>
+          <div class="flow-box" data-flow="hitung"></div>
+          <p class="mt-2">Panah “Tidak” kembali ke atas. Variabel <code>angka</code> bertambah setiap putaran sampai kondisinya bernilai Ya. Output: <b>1 2 3</b>.</p>
         </div>
-        <div class="card">
-          <h3>C. Tanya nama</h3>
-          <div class="script-box block"><div data-script>
-            event: ketika 🏁 diklik
-            sense: tanya (Siapa namamu?) dan tunggu
-            var: atur [nama] ke {s:jawaban}
-            look: katakan {o:gabung (Halo, ) {nama}} selama (2) detik
-          </div></div>
-          <p class="mt-2">Jawaban pemain disimpan di variabel <code>nama</code>, lalu dipakai untuk menyapa.</p>
-        </div>
-      </div>
-      <div class="callout warn">
-        <span class="callout-icon">☝️</span>
-        <div><p><strong>Kenapa jawaban perlu disimpan?</strong> Blok <span class="rep sense">jawaban</span> hanya mengingat jawaban <em>terakhir</em>. Kalau program bertanya lagi, jawaban lama hilang. Dengan menyimpannya ke variabel, jawaban itu aman dan bisa dipakai kapan saja.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 06 OPERATOR -->
-  <section class="section" id="operator">
-    <div class="container">
-      <div class="section-head"><span class="section-num">06</span><h2>Variabel + operator</h2></div>
-      <p class="section-intro">Blok operator (hijau) bisa menghitung dengan variabel, menggabung teks, atau membuat angka acak.</p>
-
-      <div class="split">
-        <div>
-          <h3>Menghitung total belanja</h3>
-          <div class="script-box block"><div data-script>
-            event: ketika 🏁 diklik
-            var: atur [harga] ke (3000)
-            var: atur [jumlah] ke (4)
-            var: atur [total] ke {o:{harga} * {jumlah}}
-            look: katakan {o:gabung (Total: ) {total}}
-          </div></div>
-          <p class="muted mt-2">Hasilnya sprite berkata <b>Total: 12000</b>. Blok <span class="rep op">gabung</span> menyambung teks dengan isi variabel.</p>
-        </div>
-        <div>
-          <h3>Angka acak dengan <span class="rep op">acak 1 sampai 6</span></h3>
-          <div class="demo" data-dice>
-            <div class="demo-head"><h3>Coba: lempar dadu</h3><p>Tiga variabel sekaligus</p></div>
-            <div class="demo-body">
-              <div class="script-box block"><div data-script>
-                event: ketika sprite ini diklik
-                var: atur [dadu] ke {o:acak (1) sampai (6)}
-                var: ubah [lemparan] sebesar (1)
-                var: ubah [jumlah] sebesar {dadu}
-              </div></div>
-              <div class="stage" style="margin-top:14px;min-height:150px">
-                <div class="monitors">
-                  <span class="monitor">dadu <b data-mon="dadu">0</b></span>
-                  <span class="monitor">lemparan <b data-mon="lemparan">0</b></span>
-                  <span class="monitor">jumlah <b data-mon="total">0</b></span>
-                </div>
-                <div class="dice" style="position:absolute;right:24px;top:30px">?</div>
-              </div>
-              <div class="btn-row" style="margin-top:14px">
-                <button class="btn btn-primary" type="button" data-roll>🎲 Lempar dadu</button>
-                <button class="btn" type="button" data-roll-reset>↺ Ulang</button>
-              </div>
+        <div class="card" style="grid-column:1/-1">
+          <span class="card-tag tag-good">Percabangan</span>
+          <h3>Lulus atau belajar lagi</h3>
+          <div class="split" style="align-items:center">
+            <div class="flow-box" data-flow="lulus"></div>
+            <div>
+              <p>Isi variabel <code>nilai</code> diperiksa di simbol keputusan. Jalurnya tergantung isi variabel:</p>
+              <ul class="rules">
+                <li><span class="badge-ok">✓</span><p>Nilai <b>82</b> → 82 ≥ 75? <b>Ya</b> → tampil <b>Lulus</b>.</p></li>
+                <li><span class="badge-bad">✗</span><p>Nilai <b>60</b> → 60 ≥ 75? <b>Tidak</b> → tampil <b>Belajar lagi</b>.</p></li>
+              </ul>
+              <p class="mt-2">Hanya satu jalur yang dijalankan setiap kali flowchart berjalan.</p>
             </div>
           </div>
         </div>
@@ -298,170 +206,32 @@
     </div>
   </section>
 
-  <!-- 07 JIKA & ULANGI -->
-  <section class="section" id="jika-ulangi">
+  <!-- 06 MENELUSURI -->
+  <section class="section" id="menelusuri">
     <div class="container">
-      <div class="section-head"><span class="section-num">07</span><h2>Variabel + “jika” dan “ulangi”</h2></div>
-      <p class="section-intro">Variabel menjadi sangat berguna jika digabung dengan blok kontrol. Program bisa mengambil keputusan dan mengulang berdasarkan isi variabel.</p>
-      <div class="grid grid-3">
-        <div class="card">
-          <h3>Jika … maka</h3>
-          <div class="script-box block"><div data-script>
-            event: ketika sprite ini diklik
-            var: ubah [skor] sebesar (1)
-            ctrl: jika «{skor} = (10)» maka
-              look: katakan (Kamu menang!) selama (2) detik
-              ctrl: hentikan [semua]
-          </div></div>
-          <p class="mt-2">Program memeriksa isi <code>skor</code> setiap kali sprite diklik. Saat skor tepat 10, permainan selesai.</p>
-        </div>
-        <div class="card">
-          <h3>Jika … maka … jika tidak</h3>
-          <div class="script-box block"><div data-script>
-            sense: tanya (Berapa 5 + 3?) dan tunggu
-            ctrl: jika «{s:jawaban} = (8)» maka
-              var: ubah [skor] sebesar (1)
-              look: katakan (Benar!) selama (2) detik
-            else: jika tidak
-              look: katakan (Coba lagi) selama (2) detik
-          </div></div>
-          <p class="mt-2">Skor hanya bertambah jika jawabannya benar.</p>
-        </div>
-        <div class="card">
-          <h3>Ulangi</h3>
-          <div class="script-box block"><div data-script>
-            event: ketika 🏁 diklik
-            var: atur [bintang] ke (0)
-            ctrl: ulangi (5) kali
-              var: ubah [bintang] sebesar (2)
-            look: katakan {bintang}
-          </div></div>
-          <p class="mt-2">Blok “ubah” dijalankan 5 kali: 0 → 2 → 4 → 6 → 8 → <b>10</b>.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="section-head"><span class="section-num">06</span><h2>Menelusuri flowchart</h2></div>
+      <p class="section-intro"><strong>Menelusuri</strong> artinya menjalankan flowchart langkah demi langkah sambil mencatat isi setiap variabel di sebuah <strong>tabel penelusuran</strong>. Dengan cara ini kita bisa memeriksa apakah flowchart sudah benar sebelum dibuat menjadi program.</p>
 
-  <!-- 08 KEGUNAAN -->
-  <section class="section" id="kegunaan">
-    <div class="container">
-      <div class="section-head"><span class="section-num">08</span><h2>Kegunaan: pola-pola variabel</h2></div>
-      <p class="section-intro">Programmer Scratch sering memakai variabel dengan “peran” tertentu. Kenali enam pola ini, nanti pasti terpakai di proyekmu.</p>
-      <div class="grid grid-3">
-        <div class="card"><h3>🔢 Penghitung</h3><p>Menghitung berapa kali sesuatu terjadi, misalnya skor atau jumlah klik.</p><div class="script-box"><div data-script>var: ubah [skor] sebesar (1)</div></div></div>
-        <div class="card"><h3>❤️ Nyawa</h3><p>Berkurang saat pemain terkena musuh. Jika 0, permainan berakhir.</p><div class="script-box"><div data-script>var: ubah [nyawa] sebesar (-1)</div></div></div>
-        <div class="card"><h3>⏱️ Waktu</h3><p>Menghitung mundur sisa waktu permainan.</p><div class="script-box"><div data-script>var: ubah [waktu] sebesar (-1)</div></div></div>
-        <div class="card"><h3>💬 Penyimpan jawaban</h3><p>Menyimpan jawaban pemain agar bisa dipakai lagi.</p><div class="script-box"><div data-script>var: atur [nama] ke {s:jawaban}</div></div></div>
-        <div class="card"><h3>🏆 Level</h3><p>Menandai tingkat permainan. Naik saat skor mencapai target.</p><div class="script-box"><div data-script>var: ubah [level] sebesar (1)</div></div></div>
-        <div class="card"><h3>🎲 Angka acak</h3><p>Menyimpan angka acak untuk dadu, posisi musuh, atau soal kuis.</p><div class="script-box"><div data-script>var: atur [dadu] ke {o:acak (1) sampai (6)}</div></div></div>
-      </div>
-
-      <h3 class="subhead">Di game dan aplikasi nyata</h3>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Proyek</th><th>Variabel yang dipakai</th></tr></thead>
-          <tbody>
-            <tr><td>🎮 Game tangkap buah</td><td><code>skor</code>, <code>nyawa</code>, <code>kecepatan</code>, <code>level</code></td></tr>
-            <tr><td>❓ Kuis interaktif</td><td><code>nama</code>, <code>skor</code>, <code>nomor_soal</code></td></tr>
-            <tr><td>🛒 Kasir sederhana</td><td><code>harga</code>, <code>jumlah</code>, <code>total</code>, <code>kembalian</code></td></tr>
-            <tr><td>🚀 Animasi roket</td><td><code>waktu</code> (hitung mundur), <code>tinggi</code></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- 09 SPRITE -->
-  <section class="section" id="sprite">
-    <div class="container">
-      <div class="section-head"><span class="section-num">09</span><h2>“Untuk semua sprite” atau “hanya untuk sprite ini”?</h2></div>
-      <p class="section-intro">Pilihan saat membuat variabel ini menentukan <strong>siapa saja yang bisa memakai</strong> variabel tersebut.</p>
-      <div class="grid grid-2">
-        <div class="card">
-          <div class="icon">📢</div>
-          <h3>Untuk semua sprite</h3>
-          <p>Bisa dibaca dan diubah oleh <b>semua sprite</b> dan panggung. Seperti <b>papan pengumuman sekolah</b> yang bisa dibaca semua kelas.</p>
-          <p><b>Cocok untuk:</b> <code>skor</code>, <code>waktu</code>, <code>level</code>. Misalnya sprite Bola menambah skor, sprite Papan menampilkannya.</p>
-        </div>
-        <div class="card">
-          <div class="icon">🎒</div>
-          <h3>Hanya untuk sprite ini</h3>
-          <p>Hanya bisa dipakai oleh <b>sprite itu sendiri</b>. Seperti <b>buku catatan pribadi</b> di dalam tasmu.</p>
-          <p><b>Cocok untuk:</b> data milik satu sprite, misalnya <code>kecepatan</code> setiap musuh yang berbeda-beda.</p>
-        </div>
-      </div>
-      <div class="callout tip">
-        <span class="callout-icon">🤔</span>
-        <div><p><strong>Cara memilih:</strong> tanyakan “apakah sprite lain perlu tahu isi variabel ini?”. Jika <b>ya</b>, pilih <em>Untuk semua sprite</em>. Jika <b>tidak</b>, pilih <em>Hanya untuk sprite ini</em>.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 10 KESALAHAN -->
-  <section class="section" id="kesalahan">
-    <div class="container">
-      <div class="section-head"><span class="section-num">10</span><h2>Kesalahan umum &amp; cara memperbaikinya</h2></div>
-      <p class="section-intro">Program Scratch jarang memunculkan pesan error. Hasilnya saja yang aneh. Kenali empat kesalahan yang paling sering terjadi.</p>
-      <div class="grid grid-2">
-        <div class="card">
-          <span class="card-tag tag-bad">Lupa “atur” di awal</span>
-          <h3>Skor tidak mulai dari 0</h3>
-          <p>Saat bermain ulang, skor melanjutkan angka dari permainan sebelumnya.</p>
-          <p><b>Perbaikan:</b> tambahkan blok “atur” di bawah bendera hijau.</p>
-          <div class="script-box"><div data-script>
-            event: ketika 🏁 diklik
-            var: atur [skor] ke (0)
-          </div></div>
-        </div>
-        <div class="card">
-          <span class="card-tag tag-bad">“Atur” dan “ubah” tertukar</span>
-          <h3>Skor selalu 1</h3>
-          <p>Memakai “atur skor ke 1” saat sprite diklik membuat skor tidak pernah bertambah lebih dari 1.</p>
-          <p><b>Perbaikan:</b> pakai “ubah” untuk menambah.</p>
-          <div class="script-box"><div data-script>
-            event: ketika sprite ini diklik
-            var: ubah [skor] sebesar (1)
-          </div></div>
-        </div>
-        <div class="card">
-          <span class="card-tag tag-bad">Salah pilih variabel</span>
-          <h3>Yang berubah variabel lain</h3>
-          <p>Di menu pilihan blok tertulis <code>nyawa</code>, padahal yang ingin ditambah adalah <code>skor</code>.</p>
-          <p><b>Perbaikan:</b> selalu periksa nama variabel di menu pilihan (▾) setiap blok.</p>
-        </div>
-        <div class="card">
-          <span class="card-tag tag-bad">Nama tidak jelas</span>
-          <h3>Bingung sendiri</h3>
-          <p>Variabel bernama <code>variabel saya</code>, <code>a</code>, atau <code>x1</code> membuat program sulit dibaca, apalagi kalau variabelnya banyak.</p>
-          <p><b>Perbaikan:</b> klik kanan variabel, lalu ganti namanya menjadi nama yang menjelaskan isinya.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 11 PENELUSUR -->
-  <section class="section" id="penelusur">
-    <div class="container">
-      <div class="section-head"><span class="section-num">11</span><h2>Penelusur blok</h2></div>
-      <p class="section-intro">Jalankan program selangkah demi selangkah. Blok yang sedang berjalan diberi bingkai, dan monitor di panggung menunjukkan isi variabel saat itu.</p>
-
-      <div class="demo" data-tracer="TRACE_K6">
+      <div class="demo" data-flow-tracer="TRACE_K6">
         <div class="demo-head">
-          <div class="seg" role="tablist" aria-label="Pilih program">
-            <button type="button" data-prog="skor">Skor &amp; ulangi</button>
-            <button type="button" data-prog="mundur">Hitung mundur</button>
-            <button type="button" data-prog="umur">Tanya umur</button>
+          <div class="seg" role="tablist" aria-label="Pilih flowchart">
+            <button type="button" data-prog="belanja">Total belanja</button>
+            <button type="button" data-prog="lulus">Lulus?</button>
+            <button type="button" data-prog="hitung">Hitung 1–3</button>
+            <button type="button" data-prog="tabungan">Tabungan</button>
           </div>
           <span class="step-count"></span>
         </div>
         <div class="demo-body">
-          <div class="tracer">
-            <div class="script-box block" data-trace-script></div>
-            <div class="stage">
-              <div class="monitors"></div>
-              <div class="bubble" hidden></div>
-              <div class="sprite">🤖</div>
-              <span class="stage-label">Panggung</span>
+          <div class="flow-tracer">
+            <div class="flow-box" data-flow-svg></div>
+            <div class="side-panel">
+              <h4>Isi variabel sekarang</h4>
+              <div class="monitors" data-vars></div>
+              <h4>Output</h4>
+              <div class="out-box" data-out></div>
+              <h4>Tabel penelusuran</h4>
+              <div class="table-wrap trace-table-wrap"><table class="trace-table"><thead></thead><tbody></tbody></table></div>
             </div>
           </div>
           <p class="tracer-note" aria-live="polite"></p>
@@ -477,11 +247,93 @@
     </div>
   </section>
 
-  <!-- 12 KUIS -->
+  <!-- 07 KEGUNAAN -->
+  <section class="section" id="kegunaan">
+    <div class="container">
+      <div class="section-head"><span class="section-num">07</span><h2>Kegunaan: peran variabel dalam algoritma</h2></div>
+      <p class="section-intro">Dalam flowchart, variabel sering memegang “peran” tertentu. Kenali enam peran ini.</p>
+      <div class="grid grid-3">
+        <div class="card"><h3>🔢 Penghitung</h3><p>Menghitung berapa kali sesuatu terjadi atau mengatur jumlah putaran.</p><span data-shape="proc" data-text="angka ← angka + 1" data-w="170"></span></div>
+        <div class="card"><h3>➕ Penjumlah</h3><p>Mengumpulkan jumlah dari banyak nilai, misalnya total belanja atau tabungan.</p><span data-shape="proc" data-text="total ← total + harga" data-w="170"></span></div>
+        <div class="card"><h3>⏱️ Hitung mundur</h3><p>Berkurang sedikit demi sedikit sampai batas tertentu.</p><span data-shape="proc" data-text="waktu ← waktu − 1" data-w="170"></span></div>
+        <div class="card"><h3>⌨️ Penyimpan input</h3><p>Menyimpan data dari pengguna agar bisa dipakai di langkah lain.</p><span data-shape="io" data-text="Masukkan nama" data-w="170"></span></div>
+        <div class="card"><h3>🚦 Penentu jalur</h3><p>Isinya diperiksa untuk memilih jalur Ya atau Tidak.</p><span data-shape="dec" data-text="nilai ≥ 75?" data-w="150"></span></div>
+        <div class="card"><h3>🧮 Penyimpan hasil</h3><p>Menyimpan hasil perhitungan agar bisa ditampilkan.</p><span data-shape="proc" data-text="luas ← p × l" data-w="170"></span></div>
+      </div>
+
+      <h3 class="subhead">Dari flowchart ke program</h3>
+      <p class="prose">Flowchart adalah rencana. Setelah flowchart benar, langkah-langkahnya bisa diubah menjadi program, misalnya di Scratch. Setiap simbol punya pasangannya:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Di flowchart</th><th>Di program (contoh: Scratch)</th></tr></thead>
+          <tbody>
+            <tr><td>Terminal “Mulai”</td><td>Blok awal, misalnya “ketika bendera hijau diklik”</td></tr>
+            <tr><td>Input “Masukkan nama”</td><td>Bertanya kepada pengguna, lalu menyimpan jawabannya ke variabel</td></tr>
+            <tr><td>Proses “skor ← 0” / “skor ← skor + 1”</td><td>Blok “atur skor ke 0” / “ubah skor sebesar 1”</td></tr>
+            <tr><td>Keputusan “skor ≥ 10?”</td><td>Blok “jika … maka”</td></tr>
+            <tr><td>Panah kembali ke atas (perulangan)</td><td>Blok “ulangi” atau “ulangi sampai …”</td></tr>
+            <tr><td>Output “Tampilkan skor”</td><td>Menampilkan isi variabel, misalnya sprite mengatakannya</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 KESALAHAN -->
+  <section class="section" id="kesalahan">
+    <div class="container">
+      <div class="section-head"><span class="section-num">08</span><h2>Kesalahan umum</h2></div>
+      <p class="section-intro">Kesalahan berikut sering terjadi saat membuat flowchart dengan variabel. Menelusuri flowchart adalah cara terbaik untuk menemukannya.</p>
+      <div class="grid grid-2">
+        <div class="card">
+          <span class="card-tag tag-bad">Lupa nilai awal</span>
+          <h3>Total tidak jelas</h3>
+          <div class="flow-box" data-flow="salahAwal"></div>
+          <p class="mt-2">Variabel <code>total</code> belum pernah diisi, tapi langsung ditambah. Berapa isi awalnya? Tidak ada yang tahu! <b>Perbaikan:</b> tambahkan proses <code>total ← 0</code> sebelumnya.</p>
+        </div>
+        <div class="card">
+          <span class="card-tag tag-bad">Perulangan tidak berhenti</span>
+          <h3>Waktu tidak pernah 0</h3>
+          <div class="flow-box" data-flow="salahLoop"></div>
+          <p class="mt-2">Waktu justru <b>ditambah</b>, sehingga 6, 7, 8, … dan tidak pernah sama dengan 0. <b>Perbaikan:</b> ganti menjadi <code>waktu ← waktu − 1</code>.</p>
+        </div>
+        <div class="card">
+          <span class="card-tag tag-bad">Urutan terbalik</span>
+          <h3>Ditampilkan sebelum dihitung</h3>
+          <p>Jika “Tampilkan luas” diletakkan sebelum “luas ← panjang × lebar”, yang tampil belum hasil yang benar. <b>Perbaikan:</b> ingat urutan <b>input → proses → output</b>.</p>
+        </div>
+        <div class="card">
+          <span class="card-tag tag-bad">Salah simbol</span>
+          <h3>Bentuk tidak sesuai fungsi</h3>
+          <p>“Masukkan nilai” ditulis di persegi panjang, atau “nilai ≥ 75?” ditulis di jajar genjang. <b>Perbaikan:</b> input/output memakai jajar genjang, pertanyaan Ya/Tidak memakai belah ketupat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 GAME -->
+  <section class="section" id="main">
+    <div class="container">
+      <div class="section-head"><span class="section-num">09</span><h2>Ayo main: Detektif Flowchart</h2></div>
+      <p class="section-intro">Selesaikan 5 misi tentang variabel dan flowchart. Waktunya sekitar 30 menit. Di akhir kamu mendapat <strong>nilai</strong>. Nilai minimal untuk lulus adalah <strong>85</strong>. Progresmu tersimpan setiap selesai satu misi.</p>
+      <div class="game" data-game="k6">
+        <div class="game-hud" hidden>
+          <span class="hud-item" data-hud="misi"></span>
+          <span class="hud-item" data-hud="soal"></span>
+          <span class="hud-item pts" data-hud="poin"></span>
+          <span class="hud-item" data-hud="waktu"></span>
+          <button class="hud-sound" type="button" data-sound>🔊 Suara</button>
+        </div>
+        <div class="game-screen" data-screen aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 KUIS -->
   <section class="section" id="kuis">
     <div class="container">
-      <div class="section-head"><span class="section-num">12</span><h2>Kuis variabel</h2></div>
-      <p class="section-intro">25 soal tentang variabel di Scratch, satu per satu. Nilai minimal untuk lulus adalah <strong>85</strong> (paling sedikit 22 soal benar).</p>
+      <div class="section-head"><span class="section-num">10</span><h2>Kuis variabel &amp; flowchart</h2></div>
+      <p class="section-intro">25 soal, satu per satu, dengan pembahasan. Nilai minimal untuk lulus adalah <strong>85</strong> (paling sedikit 22 soal benar).</p>
       <div class="quiz" data-quiz="QUIZ_K6" data-kkm="85">
         <div class="quiz-top"><span data-count></span><span data-right></span></div>
         <div class="quiz-bar"><span></span></div>
@@ -490,64 +342,29 @@
     </div>
   </section>
 
-  <!-- 13 PROYEK -->
-  <section class="section" id="proyek">
+  <!-- 11 LATIHAN -->
+  <section class="section" id="latihan">
     <div class="container">
-      <div class="section-head"><span class="section-num">13</span><h2>Proyek Scratch</h2></div>
-      <p class="section-intro">Buka Scratch, lalu buat proyek berikut. Coba sendiri dulu sebelum membuka contoh jawaban.</p>
+      <div class="section-head"><span class="section-num">11</span><h2>Latihan menggambar flowchart</h2></div>
+      <p class="section-intro">Gambar flowchart berikut di buku tulismu. Tulis juga tabel penelusurannya. Setelah selesai, cocokkan dengan contoh jawaban.</p>
       <div class="grid grid-3">
         <div class="card">
+          <div class="icon">📐</div>
+          <h3>1. Keliling persegi panjang</h3>
+          <p>Masukkan panjang dan lebar, hitung kelilingnya, lalu tampilkan. Telusuri dengan panjang 6 dan lebar 4.</p>
+          <details><summary>Lihat contoh jawaban</summary><div class="flow-box" data-flow="latKeliling"></div><p class="mt-2">Hasil: 2 × (6 + 4) = <b>20</b>.</p></details>
+        </div>
+        <div class="card">
+          <div class="icon">🏷️</div>
+          <h3>2. Diskon belanja</h3>
+          <p>Jika total belanja 50000 atau lebih, total dikurangi 5000. Lalu tampilkan total. Telusuri dengan total 60000 dan 40000.</p>
+          <details><summary>Lihat contoh jawaban</summary><div class="flow-box" data-flow="latDiskon"></div><p class="mt-2">60000 → <b>55000</b>. 40000 → tetap <b>40000</b>.</p></details>
+        </div>
+        <div class="card">
           <div class="icon">⭐</div>
-          <h3>1. Game klik bintang</h3>
-          <p>Buat variabel <code>skor</code>. Setiap sprite bintang diklik, skor bertambah 1. Jika skor mencapai 10, sprite berkata “Hebat!”.</p>
-          <details>
-            <summary>Lihat contoh jawaban</summary>
-            <div class="script-box"><div data-script>
-              event: ketika 🏁 diklik
-              var: atur [skor] ke (0)
-            </div><div data-script>
-              event: ketika sprite ini diklik
-              var: ubah [skor] sebesar (1)
-              ctrl: jika «{skor} = (10)» maka
-                look: katakan (Hebat!) selama (2) detik
-            </div></div>
-          </details>
-        </div>
-        <div class="card">
-          <div class="icon">🚀</div>
-          <h3>2. Hitung mundur roket</h3>
-          <p>Buat variabel <code>waktu</code> mulai dari 10. Kurangi 1 setiap detik sampai 0, lalu roket berkata “Meluncur!”.</p>
-          <details>
-            <summary>Lihat contoh jawaban</summary>
-            <div class="script-box"><div data-script>
-              event: ketika 🏁 diklik
-              var: atur [waktu] ke (10)
-              var: tampilkan variabel [waktu]
-              ctrl: ulangi sampai «{waktu} = (0)»
-                ctrl: tunggu (1) detik
-                var: ubah [waktu] sebesar (-1)
-              look: katakan (Meluncur!) selama (2) detik
-            </div></div>
-          </details>
-        </div>
-        <div class="card">
-          <div class="icon">❓</div>
-          <h3>3. Kuis mini</h3>
-          <p>Ajukan 2 soal. Skor bertambah 1 untuk setiap jawaban benar. Di akhir, sprite menyebutkan skor dengan blok “gabung”.</p>
-          <details>
-            <summary>Lihat contoh jawaban</summary>
-            <div class="script-box"><div data-script>
-              event: ketika 🏁 diklik
-              var: atur [skor] ke (0)
-              sense: tanya (Berapa 4 + 4?) dan tunggu
-              ctrl: jika «{s:jawaban} = (8)» maka
-                var: ubah [skor] sebesar (1)
-              sense: tanya (Ibu kota Indonesia?) dan tunggu
-              ctrl: jika «{s:jawaban} = (Jakarta)» maka
-                var: ubah [skor] sebesar (1)
-              look: katakan {o:gabung (Skormu: ) {skor}}
-            </div></div>
-          </details>
+          <h3>3. Mengumpulkan bintang</h3>
+          <p>Dito mendapat 3 bintang setiap hari selama 5 hari. Buat flowchart dengan perulangan untuk menghitung jumlah bintangnya.</p>
+          <details><summary>Lihat contoh jawaban</summary><div class="flow-box" data-flow="latBintang"></div><p class="mt-2">Hasil: 3 × 5 = <b>15</b> bintang.</p></details>
         </div>
       </div>
     </div>
@@ -559,16 +376,16 @@
       <div class="recap">
         <h2>Rangkuman</h2>
         <ol>
-          <li><span><strong>Pengertian:</strong> variabel adalah tempat penyimpanan data yang punya nama dan nilai. Nilainya bisa berubah selama program berjalan.</span></li>
-          <li><span><strong>Tujuan:</strong> menyimpan data, membuat program bereaksi, berbagi data antar-sprite, dan menyimpan hasil hitungan.</span></li>
-          <li><span><strong>Membuat:</strong> kategori Variabel → Buat Variabel → beri nama → pilih “untuk semua sprite” atau “hanya untuk sprite ini”.</span></li>
-          <li><span><strong>Blok:</strong> “atur” mengganti isi, “ubah” menambah atau mengurangi, “tampilkan/sembunyikan variabel” mengatur monitor.</span></li>
-          <li><span><strong>Gabungan:</strong> variabel bisa dipakai bersama operator (hitung, gabung, acak), “jika”, dan “ulangi”.</span></li>
-          <li><span><strong>Kegunaan:</strong> penghitung, nyawa, waktu, penyimpan jawaban, level, dan angka acak.</span></li>
+          <li><span><strong>Variabel</strong> adalah tempat menyimpan data yang punya nama dan nilai. Nilainya bisa berubah selama algoritma berjalan.</span></li>
+          <li><span><strong>Flowchart</strong> menggambarkan langkah algoritma dengan simbol: terminal, input/output, proses, keputusan, dan panah.</span></li>
+          <li><span>Di flowchart, variabel <b>diisi</b> lewat input atau proses (<code>skor ← 0</code>), <b>diperiksa</b> di keputusan (<code>skor ≥ 10?</code>), dan <b>ditampilkan</b> lewat output.</span></li>
+          <li><span>Flowchart bisa berbentuk <b>urut</b>, <b>percabangan</b>, dan <b>perulangan</b>.</span></li>
+          <li><span><b>Tabel penelusuran</b> membantu mengecek isi variabel di setiap langkah dan menemukan kesalahan.</span></li>
+          <li><span>Kesalahan umum: lupa nilai awal, perulangan tidak berhenti, urutan terbalik, dan salah simbol.</span></li>
         </ol>
         <div class="btn-row">
-          <a class="btn btn-primary" href="#kuis">Kerjakan kuis</a>
-          <a class="btn" href="kelas-4.html">← Ulas materi kelas 4</a>
+          <a class="btn btn-primary" href="#main">Main game</a>
+          <a class="btn" href="#kuis">Kerjakan kuis</a>
         </div>
       </div>
     </div>
@@ -583,133 +400,181 @@
 </footer>
 
 <script>
+  /* Pembuat simbol: S = Mulai, E = Selesai, P = proses, IO = input/output, D = keputusan */
+  function S() { return { t: "start", x: "Mulai" }; }
+  function E() { return { t: "end", x: "Selesai" }; }
+  function P(x) { return { t: "proc", x: x }; }
+  function IO(x) { return { t: "io", x: x }; }
+  function D(x, o) { return Object.assign({ t: "dec", x: x }, o || {}); }
+
+  const LULUS = [S(), IO("Masukkan nilai"), D("nilai ≥ 75?", { side: { t: "io", x: 'Tampilkan\n"Lulus"', label: "Ya", join: 1 } }), IO('Tampilkan\n"Belajar lagi"'), E()];
+  const HITUNG = [S(), P("angka ← 1"), IO("Tampilkan angka"), P("angka ← angka + 1"), D("angka > 3?", { back: { to: 2, label: "Tidak" } }), E()];
+
+  window.FLOWS = {
+    luas: { nodes: [S(), IO("Masukkan panjang\ndan lebar"), P("luas ←\npanjang × lebar"), IO("Tampilkan luas"), E()] },
+    belanja: { nodes: [S(), P("harga ← 3000"), P("jumlah ← 4"), P("total ←\nharga × jumlah"), IO("Tampilkan total"), E()] },
+    lulus: { nodes: LULUS },
+    hitung: { nodes: HITUNG },
+    salahAwal: { nodes: [S(), IO("Masukkan harga"), P("total ←\ntotal + harga"), IO("Tampilkan total"), E()] },
+    salahLoop: { nodes: [S(), P("waktu ← 5"), P("waktu ← waktu + 1"), D("waktu = 0?", { back: { to: 2, label: "Tidak" } }), E()] },
+    latKeliling: { nodes: [S(), IO("Masukkan panjang\ndan lebar"), P("keliling ←\n2 × (panjang + lebar)"), IO("Tampilkan keliling"), E()] },
+    latDiskon: { nodes: [S(), IO("Masukkan total"), D("total ≥ 50000?", { side: { t: "proc", x: "total ←\ntotal − 5000", label: "Ya", join: 0 } }), IO("Tampilkan total"), E()] },
+    latBintang: { nodes: [S(), P("bintang ← 0"), P("hari ← 1"), P("bintang ←\nbintang + 3"), P("hari ← hari + 1"), D("hari > 5?", { back: { to: 3, label: "Tidak" } }), IO("Tampilkan bintang"), E()] }
+  };
+
   window.TRACE_K6 = {
-    skor: {
-      intro: "Program ini memakai <b>ulangi</b> untuk menambah skor. Tekan <b>Mulai</b>.",
-      script: "event: ketika 🏁 diklik\nvar: atur [skor] ke (0)\nctrl: ulangi (3) kali\n  var: ubah [skor] sebesar (5)\nlook: katakan {skor}",
+    belanja: {
+      intro: "Flowchart <b>urut</b>: pengguna memasukkan harga dan jumlah barang. Tekan <b>Mulai</b>.",
+      flow: { nodes: [S(), IO("Masukkan harga\ndan jumlah"), P("total ←\nharga × jumlah"), IO("Tampilkan total"), E()] },
       steps: [
-        { id: 0, note: "Program dimulai saat bendera hijau diklik." },
-        { id: 1, set: { skor: "0" }, note: "Variabel <code>skor</code> diisi 0. Monitornya muncul di panggung." },
-        { id: 2, note: "Masuk ke perulangan. Putaran ke-1 dari 3." },
-        { id: 3, set: { skor: "5" }, note: "0 + 5 = <b>5</b>." },
-        { id: 2, note: "Putaran ke-2." },
-        { id: 3, set: { skor: "10" }, note: "5 + 5 = <b>10</b>." },
-        { id: 2, note: "Putaran ke-3 (terakhir)." },
-        { id: 3, set: { skor: "15" }, note: "10 + 5 = <b>15</b>. Perulangan selesai." },
-        { id: 4, say: "15", note: "Sprite mengatakan isi <code>skor</code>, yaitu 15." }
+        { n: 0, note: "Flowchart dimulai." },
+        { n: 1, set: { harga: "3000", jumlah: "4" }, note: "Pengguna memasukkan harga <b>3000</b> dan jumlah <b>4</b>. Keduanya disimpan ke variabel." },
+        { n: 2, set: { total: "12000" }, note: "Hitung harga × jumlah = 3000 × 4 = 12000, lalu simpan ke <code>total</code>." },
+        { n: 3, out: "12000", note: "Isi variabel <code>total</code> ditampilkan." },
+        { n: 4, note: "Selesai. Lihat tabel: setiap baris mencatat isi variabel pada langkah itu." }
       ]
     },
-    mundur: {
-      intro: "Program hitung mundur dari 3. Perhatikan kapan perulangan berhenti.",
-      script: "event: ketika 🏁 diklik\nvar: atur [waktu] ke (3)\nctrl: ulangi sampai «{waktu} = (0)»\n  ctrl: tunggu (1) detik\n  var: ubah [waktu] sebesar (-1)\nlook: katakan (Waktu habis!)",
+    lulus: {
+      intro: "Flowchart <b>percabangan</b>. Isi variabel <code>nilai</code> menentukan jalurnya.",
+      flow: { nodes: LULUS },
       steps: [
-        { id: 0, note: "Program dimulai." },
-        { id: 1, set: { waktu: "3" }, note: "<code>waktu</code> diisi 3." },
-        { id: 2, note: "Periksa: apakah waktu = 0? <b>Belum</b> (masih 3), jadi masuk ke dalam perulangan." },
-        { id: 3, note: "Menunggu 1 detik." },
-        { id: 4, set: { waktu: "2" }, note: "3 − 1 = <b>2</b>." },
-        { id: 2, note: "Periksa lagi: waktu = 0? Belum (2)." },
-        { id: 3, note: "Menunggu 1 detik." },
-        { id: 4, set: { waktu: "1" }, note: "2 − 1 = <b>1</b>." },
-        { id: 2, note: "Periksa lagi: waktu = 0? Belum (1)." },
-        { id: 3, note: "Menunggu 1 detik." },
-        { id: 4, set: { waktu: "0" }, note: "1 − 1 = <b>0</b>." },
-        { id: 2, note: "Periksa lagi: waktu = 0? <b>Ya!</b> Perulangan berhenti." },
-        { id: 5, say: "Waktu habis!", note: "Sprite berkata “Waktu habis!”. Total ada 3 detik menunggu." }
+        { n: 0, note: "Flowchart dimulai." },
+        { n: 1, set: { nilai: "82" }, note: "Pengguna memasukkan <b>82</b>. Disimpan ke variabel <code>nilai</code>." },
+        { n: 2, ans: "Ya", note: "Periksa: 82 ≥ 75? <b>Benar</b>, jadi ikuti panah <b>Ya</b> ke kanan. Isi <code>nilai</code> tidak berubah." },
+        { n: "2s", out: "Lulus", note: "Tampilkan “Lulus”." },
+        { n: 4, note: "Selesai. Kotak “Belajar lagi” dilewati karena jalurnya Tidak." }
       ]
     },
-    umur: {
-      intro: "Program bertanya, lalu menyimpan jawaban ke variabel.",
-      script: "event: ketika 🏁 diklik\nsense: tanya (Berapa umurmu?) dan tunggu\nvar: atur [umur] ke {s:jawaban}\nvar: ubah [umur] sebesar (1)\nlook: katakan {o:gabung (Tahun depan umurmu ) {umur}}",
+    hitung: {
+      intro: "Flowchart <b>perulangan</b>. Perhatikan variabel <code>angka</code> berubah di setiap putaran.",
+      flow: { nodes: HITUNG },
       steps: [
-        { id: 0, note: "Program dimulai." },
-        { id: 1, ask: "Berapa umurmu?", answer: "11", note: "Sprite bertanya, program menunggu. Misalkan kamu mengetik <b>11</b>." },
-        { id: 2, set: { umur: "11" }, note: "Isi <span class=\"rep sense\">jawaban</span> (11) disimpan ke variabel <code>umur</code>." },
-        { id: 3, set: { umur: "12" }, note: "11 + 1 = <b>12</b>." },
-        { id: 4, say: "Tahun depan umurmu 12", note: "Blok <span class=\"rep op\">gabung</span> menyambung teks dengan isi <code>umur</code>." }
+        { n: 0, note: "Flowchart dimulai." },
+        { n: 1, set: { angka: "1" }, note: "Nilai awal: <code>angka</code> diisi 1." },
+        { n: 2, out: "1", note: "Tampilkan isi angka: 1." },
+        { n: 3, set: { angka: "2" }, note: "angka ← 1 + 1 = 2." },
+        { n: 4, ans: "Tidak", note: "2 > 3? <b>Tidak</b>. Ikuti panah kembali ke atas." },
+        { n: 2, out: "2", note: "Tampilkan 2." },
+        { n: 3, set: { angka: "3" }, note: "angka ← 2 + 1 = 3." },
+        { n: 4, ans: "Tidak", note: "3 > 3? <b>Tidak</b> (3 tidak lebih dari 3). Kembali ke atas." },
+        { n: 2, out: "3", note: "Tampilkan 3." },
+        { n: 3, set: { angka: "4" }, note: "angka ← 3 + 1 = 4." },
+        { n: 4, ans: "Ya", note: "4 > 3? <b>Ya</b>. Perulangan berhenti." },
+        { n: 5, note: "Selesai. Output: 1, 2, 3." }
+      ]
+    },
+    tabungan: {
+      intro: "Rina menabung 2000 setiap hari selama 3 hari. Perhatikan dua variabel yang berubah bersama.",
+      flow: { nodes: [S(), P("tabungan ← 0"), P("hari ← 1"), P("tabungan ←\ntabungan + 2000"), P("hari ← hari + 1"), D("hari > 3?", { back: { to: 3, label: "Tidak" } }), IO("Tampilkan tabungan"), E()] },
+      steps: [
+        { n: 0, note: "Flowchart dimulai." },
+        { n: 1, set: { tabungan: "0" }, note: "Nilai awal tabungan 0." },
+        { n: 2, set: { hari: "1" }, note: "Mulai dari hari ke-1." },
+        { n: 3, set: { tabungan: "2000" }, note: "0 + 2000 = 2000." },
+        { n: 4, set: { hari: "2" }, note: "Hari berikutnya: hari ← 2." },
+        { n: 5, ans: "Tidak", note: "2 > 3? Tidak. Kembali menabung." },
+        { n: 3, set: { tabungan: "4000" }, note: "2000 + 2000 = 4000." },
+        { n: 4, set: { hari: "3" }, note: "hari ← 3." },
+        { n: 5, ans: "Tidak", note: "3 > 3? Tidak. Kembali menabung." },
+        { n: 3, set: { tabungan: "6000" }, note: "4000 + 2000 = 6000." },
+        { n: 4, set: { hari: "4" }, note: "hari ← 4." },
+        { n: 5, ans: "Ya", note: "4 > 3? <b>Ya</b>. Sudah 3 hari, perulangan berhenti." },
+        { n: 6, out: "6000", note: "Tampilkan tabungan: 6000." },
+        { n: 7, note: "Selesai." }
       ]
     }
   };
 
-  /* 25 soal kuis kelas 6 (Scratch). a = nomor jawaban benar (mulai dari 0). s = blok (opsional). */
+  /* 25 soal kuis kelas 6. a = nomor jawaban benar (mulai dari 0). f = flowchart (opsional). */
   window.QUIZ_K6 = [
     { q: "Pengertian variabel yang paling tepat adalah …",
-      o: ["Tempat menyimpan data yang punya nama dan nilai yang dapat berubah", "Gambar yang bisa bergerak di panggung", "Suara yang diputar saat program berjalan", "Latar belakang panggung"], a: 0,
-      e: "Variabel menyimpan data, punya nama dan nilai, dan nilainya bisa berubah selama program berjalan." },
-    { q: "Di Scratch, variabel baru dibuat dengan cara …",
-      o: ["Klik kanan pada panggung", "Kategori Variabel → Buat Variabel", "Kategori Gerakan → Buat Variabel", "Menekan bendera hijau"], a: 1,
-      e: "Buka kategori Variabel (oranye), lalu klik tombol Buat Variabel." },
-    { q: "Kotak kecil di panggung yang menampilkan nama dan isi variabel disebut …",
-      o: ["Kostum", "Latar", "Monitor variabel", "Sprite"], a: 2,
-      e: "Monitor variabel muncul jika kotak centang di samping variabel dicentang." },
-    { q: "Isi variabel <code>skor</code> adalah 10. Blok apa yang membuat isinya menjadi 3?",
-      o: ["ubah skor sebesar 3", "ubah skor sebesar 13", "tampilkan variabel skor", "atur skor ke 3"], a: 3,
-      e: "“Atur” mengganti isi lama dengan nilai baru, jadi skor menjadi 3." },
-    { q: "Isi variabel <code>skor</code> adalah 10. Lalu dijalankan blok berikut. Berapa isi skor sekarang?", s: "var: ubah [skor] sebesar (3)",
-      o: ["13", "3", "10", "7"], a: 0,
-      e: "“Ubah sebesar 3” menambah isi lama: 10 + 3 = 13." },
-    { q: "Mengapa blok “atur skor ke 0” sebaiknya diletakkan di bawah “ketika 🏁 diklik”?",
-      o: ["Agar sprite bergerak", "Agar setiap permainan dimulai, skor kembali ke 0", "Agar skor menjadi rahasia", "Agar suara berbunyi"], a: 1,
-      e: "Tanpa blok itu, skor melanjutkan angka dari permainan sebelumnya." },
-    { q: "Blok untuk menghilangkan monitor variabel dari panggung saat program berjalan adalah …",
-      o: ["atur skor ke 0", "ubah skor sebesar 0", "sembunyikan variabel skor", "hentikan semua"], a: 2,
-      e: "Blok “sembunyikan variabel” menyembunyikan monitor dari panggung." },
-    { q: "Berapa isi variabel skor setelah program berikut selesai?", s: "event: ketika 🏁 diklik\nvar: atur [skor] ke (0)\nctrl: ulangi (4) kali\n  var: ubah [skor] sebesar (3)",
-      o: ["3", "4", "7", "12"], a: 3,
-      e: "Ditambah 3 sebanyak 4 kali: 0 → 3 → 6 → 9 → 12." },
-    { q: "Berapa isi variabel nyawa setelah program berikut selesai?", s: "event: ketika 🏁 diklik\nvar: atur [nyawa] ke (3)\nctrl: ulangi (3) kali\n  var: ubah [nyawa] sebesar (-1)",
-      o: ["0", "3", "-3", "6"], a: 0,
-      e: "3 → 2 → 1 → 0. Angka negatif mengurangi isi variabel." },
-    { q: "Berapa isi variabel x setelah program berikut selesai?", s: "event: ketika 🏁 diklik\nvar: atur [x] ke (10)\nvar: ubah [x] sebesar (-4)\nvar: atur [x] ke (2)\nvar: ubah [x] sebesar (5)",
-      o: ["11", "7", "13", "2"], a: 1,
-      e: "10 → 6, lalu “atur” mengganti menjadi 2, lalu ditambah 5 → 7." },
-    { q: "Berapa isi variabel skor setelah program berikut selesai?", s: "event: ketika 🏁 diklik\nvar: atur [skor] ke (0)\nctrl: ulangi (2) kali\n  var: ubah [skor] sebesar (5)\nvar: ubah [skor] sebesar (-1)",
-      o: ["10", "4", "9", "8"], a: 2,
-      e: "Di dalam ulangi: 0 → 5 → 10. Di luar ulangi dikurangi 1 sekali: 9." },
-    { q: "Berapa isi variabel skor setelah program berikut selesai?", s: "event: ketika 🏁 diklik\nvar: atur [skor] ke (0)\nctrl: ulangi (3) kali\n  var: ubah [skor] sebesar (2)\n  var: ubah [skor] sebesar (1)",
-      o: ["6", "3", "5", "9"], a: 3,
-      e: "Setiap putaran ditambah 2 lalu 1 (total 3). Tiga putaran: 3 × 3 = 9." },
-    { q: "Apa yang dikatakan sprite?", s: "var: atur [skor] ke (7)\nctrl: jika «{skor} > (5)» maka\n  look: katakan (Menang!)\nelse: jika tidak\n  look: katakan (Coba lagi)",
-      o: ["Menang!", "Coba lagi", "7", "Tidak berkata apa-apa"], a: 0,
-      e: "7 lebih besar dari 5, jadi kondisinya benar dan sprite berkata “Menang!”." },
-    { q: "Apa yang dikatakan sprite?", s: "var: atur [skor] ke (3)\nctrl: jika «{skor} > (5)» maka\n  look: katakan (Menang!)\nelse: jika tidak\n  look: katakan (Coba lagi)",
-      o: ["Menang!", "3", "Coba lagi", "5"], a: 2,
-      e: "3 tidak lebih besar dari 5, jadi bagian “jika tidak” yang dijalankan." },
-    { q: "Setelah blok “tanya … dan tunggu”, jawaban pemain bisa diambil dari blok …",
-      o: ["skor", "jawaban", "nama", "pengguna"], a: 1,
-      e: "Blok <span class=\"rep sense\">jawaban</span> (biru, kategori Penginderaan) berisi jawaban terakhir." },
-    { q: "Supaya jawaban pemain tidak hilang saat program bertanya lagi, sebaiknya …",
-      o: ["Pertanyaannya dihapus", "Program dihentikan", "Sprite disembunyikan", "Jawaban disimpan ke variabel dengan blok “atur … ke jawaban”"], a: 3,
-      e: "Blok jawaban hanya mengingat jawaban terakhir, jadi simpan ke variabel." },
-    { q: "Isi variabel <code>nama</code> adalah Sinta. Apa yang dikatakan sprite?", s: "look: katakan {o:gabung (Halo ) {nama}}",
-      o: ["Halo Sinta", "Halo nama", "gabung Halo nama", "Sinta Halo"], a: 0,
-      e: "Blok gabung menyambung teks “Halo ” dengan isi variabel nama." },
-    { q: "Blok <span class=\"rep op\">acak 1 sampai 6</span> paling cocok untuk membuat …",
-      o: ["Papan skor", "Dadu", "Hitung mundur", "Pertanyaan"], a: 1,
-      e: "Dadu menghasilkan angka acak 1 sampai 6." },
-    { q: "Berapa kali blok “ubah waktu sebesar −1” dijalankan?", s: "var: atur [waktu] ke (5)\nctrl: ulangi sampai «{waktu} = (0)»\n  ctrl: tunggu (1) detik\n  var: ubah [waktu] sebesar (-1)",
-      o: ["1 kali", "4 kali", "5 kali", "6 kali"], a: 2,
-      e: "5 → 4 → 3 → 2 → 1 → 0. Blok “ubah” dijalankan 5 kali, lalu perulangan berhenti." },
-    { q: "Variabel yang dipakai untuk menghitung berapa kali sprite diklik disebut pola …",
-      o: ["Penghitung", "Penyimpan jawaban", "Angka acak", "Level"], a: 0,
-      e: "Pola penghitung memakai “ubah … sebesar 1” setiap kali sesuatu terjadi." },
-    { q: "Program memakai “atur skor ke 1” saat sprite diklik. Apa akibatnya?",
-      o: ["Skor bertambah 1 setiap klik", "Skor berkurang", "Skor selalu 1, tidak pernah bertambah", "Program error"], a: 2,
-      e: "“Atur” mengganti isi menjadi 1 setiap klik. Untuk menambah, pakai “ubah skor sebesar 1”." },
-    { q: "Sprite Bola menambah skor, dan sprite Papan menampilkan skor. Saat membuat variabel skor, pilih …",
-      o: ["Hanya untuk sprite ini", "Tidak perlu memilih", "Buat dua variabel bernama sama", "Untuk semua sprite"], a: 3,
-      e: "Dua sprite memakai variabel yang sama, jadi pilih “Untuk semua sprite”." },
-    { q: "Setiap sprite musuh punya kecepatan berbeda-beda. Variabel <code>kecepatan</code> sebaiknya dibuat …",
-      o: ["Hanya untuk sprite ini", "Untuk semua sprite", "Di panggung saja", "Tanpa nama"], a: 0,
-      e: "Kecepatan milik masing-masing musuh, jadi cukup “Hanya untuk sprite ini”." },
-    { q: "Nama variabel paling baik untuk menyimpan sisa waktu permainan adalah …",
-      o: ["variabel saya", "sisa_waktu", "a", "x1"], a: 1,
-      e: "Nama yang jelas memudahkan siapa pun membaca program." },
-    { q: "Isi variabel <code>skor</code> adalah 15. Apa yang dikatakan sprite?", s: "look: katakan {o:gabung (Skor: ) {skor}}",
-      o: ["Skor: skor", "15 Skor:", "Skor: 15", "gabung 15"], a: 2,
-      e: "Teks “Skor: ” digabung dengan isi variabel skor (15)." }
+      o: ["Tempat menyimpan data yang punya nama dan nilai yang dapat berubah", "Gambar langkah-langkah algoritma", "Garis panah pada flowchart", "Simbol untuk memulai program"], a: 0,
+      e: "Variabel menyimpan data, punya nama dan nilai, dan nilainya bisa berubah." },
+    { q: "Flowchart adalah …",
+      o: ["Daftar nama variabel", "Gambar langkah-langkah algoritma memakai simbol dan panah", "Tabel berisi angka", "Bahasa pemrograman"], a: 1,
+      e: "Flowchart (diagram alir) menggambarkan urutan langkah algoritma dengan simbol dan panah." },
+    { q: "Simbol untuk <b>Mulai</b> dan <b>Selesai</b> adalah …",
+      o: ["Belah ketupat", "Jajar genjang", "Terminal (oval)", "Persegi panjang"], a: 2,
+      e: "Terminal berbentuk oval menandai awal dan akhir flowchart." },
+    { q: "Simbol untuk <b>memasukkan data</b> atau <b>menampilkan hasil</b> adalah …",
+      o: ["Persegi panjang", "Belah ketupat", "Oval", "Jajar genjang"], a: 3,
+      e: "Input/output memakai jajar genjang." },
+    { q: "Langkah <code>total ← harga × jumlah</code> ditulis di simbol …",
+      o: ["Proses (persegi panjang)", "Keputusan (belah ketupat)", "Terminal (oval)", "Input/output (jajar genjang)"], a: 0,
+      e: "Menghitung dan mengisi variabel adalah proses." },
+    { q: "Simbol <b>keputusan</b> berbentuk …",
+      o: ["Oval", "Belah ketupat", "Jajar genjang", "Lingkaran"], a: 1,
+      e: "Keputusan berbentuk belah ketupat dan berisi pertanyaan Ya/Tidak." },
+    { q: "Berapa jalur yang keluar dari simbol keputusan?",
+      o: ["Satu", "Tiga", "Dua (Ya dan Tidak)", "Tidak ada"], a: 2,
+      e: "Keputusan selalu punya dua jalur: Ya dan Tidak." },
+    { q: "Arti tulisan <code>skor ← 0</code> adalah …",
+      o: ["Apakah skor sama dengan 0?", "Tampilkan angka 0", "Hapus variabel skor", "Variabel skor diisi 0"], a: 3,
+      e: "Tanda ← artinya “diisi”. skor ← 0 berarti skor diisi 0." },
+    { q: "Telusuri flowchart berikut. Apa yang ditampilkan?",
+      f: { nodes: [S(), P("a ← 5"), P("b ← 3"), P("c ← a + b"), IO("Tampilkan c"), E()] },
+      o: ["8", "53", "5", "15"], a: 0,
+      e: "c ← 5 + 3 = 8." },
+    { q: "Berapa nilai skor yang ditampilkan?",
+      f: { nodes: [S(), P("skor ← 10"), P("skor ← skor + 5"), IO("Tampilkan skor"), E()] },
+      o: ["10", "15", "5", "105"], a: 1,
+      e: "10 ditambah 5 = 15." },
+    { q: "Berapa nilai x yang ditampilkan?",
+      f: { nodes: [S(), P("x ← 4"), P("x ← x × 3"), P("x ← x − 2"), IO("Tampilkan x"), E()] },
+      o: ["12", "2", "10", "14"], a: 2,
+      e: "4 → 12 → 10." },
+    { q: "Pada langkah <b>Masukkan nama</b>, data yang diketik pengguna disimpan di …",
+      o: ["Simbol terminal", "Panah", "Layar saja", "Variabel nama"], a: 3,
+      e: "Input menyimpan data dari pengguna ke variabel, di sini variabel nama." },
+    { q: "Pengguna memasukkan nilai <b>80</b>. Apa yang ditampilkan?", f: { nodes: LULUS },
+      o: ["Lulus", "Belajar lagi", "80", "75"], a: 0,
+      e: "80 ≥ 75 benar, jadi jalur Ya: Lulus." },
+    { q: "Pengguna memasukkan nilai <b>60</b>. Apa yang ditampilkan?", f: { nodes: LULUS },
+      o: ["Lulus", "Belajar lagi", "60", "Tidak ada"], a: 1,
+      e: "60 ≥ 75 salah, jadi jalur Tidak: Belajar lagi." },
+    { q: "Apa saja yang ditampilkan flowchart berikut, berurutan?", f: { nodes: HITUNG },
+      o: ["1 2", "1 2 3 4", "1 2 3", "2 3 4"], a: 2,
+      e: "Tampil 1, 2, 3. Saat angka menjadi 4, kondisi angka > 3 bernilai Ya dan perulangan berhenti." },
+    { q: "Berapa total yang ditampilkan?",
+      f: { nodes: [S(), P("total ← 0"), P("i ← 1"), P("total ← total + i"), P("i ← i + 1"), D("i > 4?", { back: { to: 3, label: "Tidak" } }), IO("Tampilkan total"), E()] },
+      o: ["4", "6", "15", "10"], a: 3,
+      e: "total = 1 + 2 + 3 + 4 = 10." },
+    { q: "Pada flowchart hitung mundur berikut, berapa kali langkah <code>waktu ← waktu − 1</code> dijalankan?",
+      f: { nodes: [S(), P("waktu ← 5"), P("waktu ← waktu − 1"), D("waktu = 0?", { back: { to: 2, label: "Tidak" } }), E()] },
+      o: ["5 kali", "4 kali", "1 kali", "6 kali"], a: 0,
+      e: "5 → 4 → 3 → 2 → 1 → 0. Langkah itu dijalankan 5 kali sampai waktu = 0." },
+    { q: "Flowchart langsung menulis <code>total ← total + harga</code> tanpa langkah <code>total ← 0</code> sebelumnya. Apa masalahnya?",
+      o: ["Simbolnya salah", "Nilai awal total tidak jelas, sehingga hasilnya bisa salah", "Flowchart menjadi terlalu panjang", "Tidak ada masalah"], a: 1,
+      e: "Variabel perlu diberi nilai awal (inisialisasi) sebelum ditambah." },
+    { q: "Apa yang terjadi pada flowchart berikut?",
+      f: { nodes: [S(), P("waktu ← 5"), P("waktu ← waktu + 1"), D("waktu = 0?", { back: { to: 2, label: "Tidak" } }), E()] },
+      o: ["Berhenti setelah 5 kali", "Langsung selesai", "Perulangannya tidak pernah berhenti", "Waktu menjadi 0"], a: 2,
+      e: "Waktu terus bertambah (6, 7, 8, …) sehingga tidak pernah sama dengan 0." },
+    { q: "Tabel penelusuran dipakai untuk …",
+      o: ["Menggambar simbol flowchart", "Menghapus variabel", "Mengganti nama variabel", "Mencatat isi variabel di setiap langkah"], a: 3,
+      e: "Tabel penelusuran mencatat perubahan isi variabel saat flowchart dijalankan langkah demi langkah." },
+    { q: "Langkah <b>Tampilkan total</b> sebaiknya memakai simbol …",
+      o: ["Jajar genjang (input/output)", "Belah ketupat (keputusan)", "Persegi panjang (proses)", "Oval (terminal)"], a: 0,
+      e: "Menampilkan hasil adalah output, memakai jajar genjang." },
+    { q: "Variabel <code>suhu</code> berisi 30. Keputusan <code>suhu &gt; 30?</code> bernilai …",
+      o: ["Ya", "Tidak", "30", "Error"], a: 1,
+      e: "Tanda &gt; artinya lebih dari. 30 tidak lebih dari 30, jadi Tidak." },
+    { q: "Variabel <code>nilai</code> berisi 75. Keputusan <code>nilai ≥ 75?</code> bernilai …",
+      o: ["Tidak", "75", "Ya", "Tidak bisa ditentukan"], a: 2,
+      e: "Tanda ≥ artinya lebih dari atau sama dengan. 75 sama dengan 75, jadi Ya." },
+    { q: "Urutan langkah yang benar untuk menghitung luas persegi panjang adalah …",
+      o: ["Mulai → Tampilkan luas → Masukkan panjang dan lebar → luas ← panjang × lebar → Selesai",
+          "Mulai → luas ← panjang × lebar → Masukkan panjang dan lebar → Tampilkan luas → Selesai",
+          "Mulai → Tampilkan luas → luas ← panjang × lebar → Selesai",
+          "Mulai → Masukkan panjang dan lebar → luas ← panjang × lebar → Tampilkan luas → Selesai"], a: 3,
+      e: "Urutannya input → proses → output." },
+    { q: "Mengapa flowchart memakai variabel <code>panjang</code> dan <code>lebar</code>, bukan angka langsung seperti 8 dan 5?",
+      o: ["Agar flowchart bisa dipakai untuk ukuran berapa pun", "Agar flowchart lebih pendek", "Karena angka tidak boleh ditulis di flowchart", "Agar tidak perlu simbol proses"], a: 0,
+      e: "Dengan variabel, satu flowchart berlaku untuk data yang berbeda-beda." }
   ];
 </script>
 <script src="script.js"></script>
+<script src="game-engine.js"></script>
+<script src="game6.js"></script>
 </body>
 </html>
