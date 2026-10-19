@@ -1,12 +1,12 @@
 # Ruang Variabel
 
-Website materi **variabel** untuk SD kelas 4 (dengan blok Scratch) dan kelas 6 (variabel & flowchart).
+Website materi **variabel** untuk SD kelas 4 (kotak berlabel & kartu perintah) dan kelas 6 (variabel & flowchart). Praktik aplikasi (misalnya Scratch) dibahas guru secara terpisah.
 
 - `index.html` — beranda, pilih kelas
 - `kelas-4.html` — materi pemula, game **Misi Kotak Ajaib** (± 30 menit, nilai minimal 85), kuis 25 soal
 - `kelas-6.html` — variabel & flowchart: simbol, variabel di tiap simbol, urut/percabangan/perulangan, penelusur flowchart, game **Detektif Flowchart** (± 30 menit, nilai minimal 85), kuis 25 soal, latihan
 - `style.css` — tampilan
-- `script.js` — gambar blok Scratch, gambar flowchart, kuis, penelusur flowchart
+- `script.js` — kartu perintah, gambar flowchart, kuis, penelusur flowchart
 - `game-engine.js` — mesin game bersama (peta misi, poin, rapor)
 - `game4.js` — game kelas 4
 - `game6.js` — game kelas 6
@@ -33,20 +33,20 @@ Setiap kali file di GitHub diperbarui, Vercel otomatis memperbarui website.
 - **Nilai minimal lulus game:** `kkm: 85` di bagian bawah `game4.js` / `game6.js`.
 - **Soal-soal game:** daftar `M1` sampai `M5` di `game4.js` / `game6.js`.
 
-### Menulis blok Scratch
+### Menulis kartu perintah (kelas 4)
 
-Blok ditulis sebagai teks di dalam elemen `data-script`, satu baris satu blok:
+Kartu perintah ditulis sebagai teks di dalam elemen `data-steps` (atau `k:` pada soal kuis), satu baris satu perintah:
 
 ```
-event: ketika 🏁 diklik
-var: atur [skor] ke (0)
-ctrl: ulangi (3) kali
-  var: ubah [skor] sebesar (2)
-look: katakan {skor}
+mulai
+isi: skor | 0
+ulangi: 3
+  tambah: skor | 2
+kurangi: skor | 1
+tampilkan: skor
 ```
 
-Jenis: `event`, `var`, `ctrl`, `look`, `sense`, `op`, `else`. Baris menjorok 2 spasi masuk ke dalam blok di atasnya.
-`(isi)` kotak isian, `[nama]` pilihan, `{nama}` variabel, `{s:jawaban}` penginderaan, `{o:…}` operator, `«…»` kondisi.
+Baris menjorok 2 spasi masuk ke dalam “ulangi”.
 
 ### Menulis flowchart
 

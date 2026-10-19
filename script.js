@@ -102,6 +102,56 @@
     return html + '<div class="cfoot"></div></div>';
   }
 
+
+  /* ---------- 1b. Kartu perintah (kelas 4, tanpa aplikasi tertentu) ----------
+     Satu baris = satu perintah:
+       mulai                  -> ▶ Mulai
+       isi: skor | 0          -> Isi kotak skor dengan 0   (isi lama diganti)
+       tambah: skor | 2       -> Tambah isi skor dengan 2
+       kurangi: skor | 1      -> Kurangi isi skor dengan 1
+       ulangi: 3              -> Ulangi 3 kali (baris menjorok 2 spasi = isinya)
+       tampilkan: skor        -> Tampilkan isi skor
+       tanya: Siapa namamu? | nama -> Tanya, simpan jawaban ke nama */
+  function stepHTML(kind, args, id, extraCls) {
+    const v = '<span class="sv">' + esc(args[0] || "") + "</span>";
+    const n = '<span class="sn">' + esc(args[1] !== undefined ? args[1] : "") + "</span>";
+    let ico = "▶", txt = "Mulai";
+    if (kind === "isi") { ico = "📥"; txt = "Isi kotak " + v + " dengan " + n; }
+    else if (kind === "tambah") { ico = "➕"; txt = "Tambah isi " + v + " dengan " + n; }
+    else if (kind === "kurangi") { ico = "➖"; txt = "Kurangi isi " + v + " dengan " + n; }
+    else if (kind === "ulangi") { ico = "🔁"; txt = "Ulangi " + '<span class="sn">' + esc(args[0]) + "</span> kali:"; }
+    else if (kind === "tampilkan") { ico = "📢"; txt = "Tampilkan isi " + v; }
+    else if (kind === "tanya") { ico = "❓"; txt = "Tanya “" + esc(args[0]) + "”, simpan jawabannya ke " + '<span class="sv">' + esc(args[1] || "") + "</span>"; }
+    return '<div class="step-cmd k-' + kind + (extraCls ? " " + extraCls : "") + '"' + (id !== undefined ? ' data-id="' + id + '"' : "") + '><span class="si">' + ico + "</span><span>" + txt + "</span></div>";
+  }
+  function parseStep(line) {
+    const t = line.trim();
+    const m = t.match(/^([a-z]+)\s*:?\s*(.*)$/);
+    const kind = m ? m[1] : "mulai";
+    const args = m && m[2] ? m[2].split("|").map(function (a) { return a.trim(); }) : [];
+    return { kind: kind, args: args };
+  }
+  function renderSteps(src) {
+    const lines = dedent(src);
+    const root = { children: [] };
+    const stack = [{ indent: -1, node: root }];
+    lines.forEach(function (line, idx) {
+      const indent = line.match(/^ */)[0].length;
+      const p = parseStep(line);
+      const node = { kind: p.kind, args: p.args, id: idx, children: [] };
+      while (stack[stack.length - 1].indent >= indent) stack.pop();
+      stack[stack.length - 1].node.children.push(node);
+      stack.push({ indent: indent, node: node });
+    });
+    function draw(nodes) {
+      return nodes.map(function (n) {
+        const h = stepHTML(n.kind, n.args, n.id);
+        return n.children.length ? '<div class="step-loop">' + h + '<div class="step-inner">' + draw(n.children) + "</div></div>" : h;
+      }).join("");
+    }
+    return '<div class="steps">' + draw(root.children) + "</div>";
+  }
+
   /* ---------- 2. Flowchart (SVG) ----------
      spec = { nodes: [ { t, x, ... } ] }
      t: "start" / "end" (terminal), "proc" (proses), "io" (input/output), "dec" (keputusan)
@@ -232,6 +282,10 @@
 
   function renderAll(scope) {
     scope = scope || document;
+    scope.querySelectorAll("[data-steps]").forEach(function (el) {
+      el.innerHTML = renderSteps(el.textContent);
+      el.removeAttribute("data-steps");
+    });
     scope.querySelectorAll("[data-script]").forEach(function (el) {
       el.innerHTML = renderScript(el.textContent);
       el.removeAttribute("data-script");
@@ -277,7 +331,7 @@
   }
 
   window.RV = {
-    esc: esc, shuffle: shuffle, renderScript: renderScript, inline: parseInline,
+    esc: esc, shuffle: shuffle, renderScript: renderScript, renderSteps: renderSteps, stepHTML: stepHTML, inline: parseInline,
     renderFlow: renderFlow, flowShape: flowShape, beep: beep, scrollToTop: scrollToTop,
     setSound: function (on) { soundOn = on; }, soundOn: function () { return soundOn; }
   };
@@ -337,6 +391,7 @@
           '<p class="q-num">Soal ' + (idx + 1) + "</p>" +
           '<p class="q-text">' + q.q + "</p>" +
           (q.s ? '<div class="script-box">' + renderScript(q.s) + "</div>" : "") +
+          (q.k ? '<div class="steps-box">' + renderSteps(q.k) + "</div>" : "") +
           (q.f ? '<div class="flow-box">' + renderFlow(q.f) + "</div>" : "") +
           '<div class="q-opts"></div>' +
           '<p class="q-explain" hidden aria-live="polite"></p>' +

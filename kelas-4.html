@@ -115,7 +115,7 @@
   <section class="section" id="contoh">
     <div class="container">
       <div class="section-head"><span class="section-num">03</span><h2>Contoh variabel</h2></div>
-      <p class="section-intro">Ternyata, “variabel” ada di sekitar kita. Lihat contoh berikut, lalu kita lihat contohnya di dalam program Scratch.</p>
+      <p class="section-intro">Ternyata, “variabel” ada di sekitar kita. Lihat contoh berikut, lalu kita lihat bagaimana komputer memakai variabel di dalam program.</p>
 
       <h3 class="subhead">a. Di kehidupan sehari-hari</h3>
       <div class="grid grid-4">
@@ -141,36 +141,43 @@
         </div>
       </div>
 
-      <h3 class="subhead">b. Di dalam program Scratch</h3>
-      <p class="prose">Di Scratch, variabel dibuat lewat kategori <strong>Variabel</strong> → tombol <strong>Buat Variabel</strong>. Blok variabel berwarna oranye. Perhatikan program game berikut:</p>
+      <h3 class="subhead">b. Di dalam program komputer</h3>
+      <p class="prose">Program adalah kumpulan <strong>perintah</strong> yang dijalankan komputer satu per satu, dari atas ke bawah. Ada empat perintah penting untuk variabel. Perhatikan contoh program game berikut:</p>
 
       <div class="blocks-wrap mt-2">
-        <div class="script-box">
-          <div data-script>
-            event: ketika 🏁 diklik
-            var: atur [skor] ke (0)
-            var: atur [nyawa] ke (3)
-            look: katakan {skor}
-          </div>
-          <div data-script>
-            event: ketika tombol [spasi] ditekan
-            var: ubah [skor] sebesar (1)
+        <div class="steps-box">
+          <div data-steps>
+            mulai
+            isi: skor | 0
+            isi: nyawa | 3
+            tambah: skor | 1
+            tambah: skor | 1
+            tampilkan: skor
           </div>
         </div>
-        <ul class="block-legend">
+        <ul class="legend-list">
           <li>
-            <div data-script>var: atur [skor] ke (0)</div>
-            <p><strong>Mengisi</strong> variabel dengan nilai tertentu. Isi yang lama diganti. Biasanya dipakai di awal permainan, supaya skor mulai dari 0.</p>
+            <div data-steps>isi: skor | 0</div>
+            <p><strong>Mengisi</strong> kotak variabel dengan nilai tertentu. Isi yang lama <strong>diganti</strong>. Biasanya dipakai di awal permainan supaya skor mulai dari 0.</p>
           </li>
           <li>
-            <div data-script>var: ubah [skor] sebesar (1)</div>
-            <p><strong>Menambah</strong> isi variabel. Kalau angkanya negatif, misalnya −1, isinya <strong>berkurang</strong>.</p>
+            <div data-steps>tambah: skor | 1</div>
+            <p><strong>Menambah</strong> isi lama. Jika skor 4, setelah perintah ini skor menjadi 5.</p>
           </li>
           <li>
-            <div data-script>look: katakan {skor}</div>
-            <p><strong>Memakai</strong> isi variabel. Bulatan oranye <span class="rep var">skor</span> berarti “ambil isi kotak skor”.</p>
+            <div data-steps>kurangi: nyawa | 1</div>
+            <p><strong>Mengurangi</strong> isi lama. Jika nyawa 3, setelah perintah ini nyawa menjadi 2.</p>
+          </li>
+          <li>
+            <div data-steps>tampilkan: skor</div>
+            <p><strong>Memakai</strong> isi variabel. Yang muncul di layar adalah <strong>isinya</strong> (misalnya 2), bukan tulisan “skor”.</p>
           </li>
         </ul>
+      </div>
+
+      <div class="callout tip">
+        <span class="callout-icon">🧮</span>
+        <div><p><strong>Coba telusuri program di atas!</strong> skor diisi 0 → ditambah 1 menjadi 1 → ditambah 1 lagi menjadi 2. Jadi yang ditampilkan adalah <strong>2</strong>. Isi nyawa tetap 3 karena tidak diubah.</p></div>
       </div>
     </div>
   </section>
@@ -202,7 +209,7 @@
       </div>
       <div class="callout warn mt-2">
         <span class="callout-icon">☝️</span>
-        <div><p><strong>Ingat!</strong> Satu kotak variabel hanya menyimpan <strong>satu isi</strong> pada satu waktu. Saat diisi nilai baru dengan blok “atur”, isi yang lama akan diganti.</p></div>
+        <div><p><strong>Ingat!</strong> Satu kotak variabel hanya menyimpan <strong>satu isi</strong> pada satu waktu. Saat diisi nilai baru dengan perintah “isi”, isi yang lama akan diganti.</p></div>
       </div>
     </div>
   </section>
@@ -228,7 +235,7 @@
 
       <div class="callout">
         <span class="callout-icon">💬</span>
-        <div><p>Di Scratch, nama variabel sebenarnya boleh memakai spasi. Tapi nanti di bahasa pemrograman tulisan, spasi tidak boleh. Biasakan dari sekarang, ya!</p></div>
+        <div><p>Di banyak bahasa pemrograman, nama variabel yang memakai spasi akan membuat program <strong>error</strong>. Jadi biasakan dari sekarang memakai garis bawah, ya!</p></div>
       </div>
     </div>
   </section>
@@ -273,7 +280,7 @@
         <ol>
           <li><span><strong>Pengertian:</strong> variabel adalah tempat menyimpan data di dalam program, seperti kotak yang punya label (nama) dan isi (nilai).</span></li>
           <li><span><strong>Tujuan:</strong> agar komputer bisa mengingat data, memakainya berulang kali, dan mengubahnya dengan mudah.</span></li>
-          <li><span><strong>Contoh:</strong> <code>skor</code>, <code>nyawa</code>, <code>nama</code>, <code>suhu</code>. Di Scratch, kita memakai blok “atur … ke …” dan “ubah … sebesar …”.</span></li>
+          <li><span><strong>Contoh:</strong> <code>skor</code>, <code>nyawa</code>, <code>nama</code>, <code>suhu</code>. Di dalam program, kita memakai perintah “isi”, “tambah”, dan “kurangi” untuk mengubah isi variabel.</span></li>
           <li><span><strong>Kegunaan:</strong> menyimpan skor game, total belanja, jumlah jawaban benar, nama pengguna, dan hasil hitungan.</span></li>
           <li><span><strong>Nama variabel</strong> harus jelas, tanpa spasi, dan tidak diawali angka.</span></li>
         </ol>
@@ -294,7 +301,7 @@
 </footer>
 
 <script>
-  /* 25 soal kuis kelas 4. a = nomor jawaban benar (mulai dari 0). s = blok kode (opsional). */
+  /* 25 soal kuis kelas 4. a = nomor jawaban benar (mulai dari 0). k = kartu perintah (opsional). */
   window.QUIZ_K4 = [
     { q: "Variabel paling tepat diibaratkan seperti …",
       o: ["Kotak berlabel yang menyimpan sesuatu", "Layar komputer", "Kabel listrik", "Tombol keyboard"], a: 0,
@@ -303,7 +310,7 @@
       o: ["Isi variabel", "Nama variabel", "Warna variabel", "Ukuran variabel"], a: 1,
       e: "Label adalah nama variabel, dipakai untuk memanggil kotaknya." },
     { q: "Barang yang disimpan di dalam kotak variabel disebut …",
-      o: ["Nama", "Sprite", "Nilai (isi)", "Panggung"], a: 2,
+      o: ["Nama", "Label", "Nilai (isi)", "Tutup kotak"], a: 2,
       e: "Yang disimpan di dalam variabel disebut nilai atau isi variabel." },
     { q: "Kata “variabel” berasal dari bahasa Inggris yang artinya …",
       o: ["Tetap", "Rahasia", "Kotak", "Dapat berubah"], a: 3,
@@ -314,31 +321,31 @@
     { q: "Apa tujuan utama membuat variabel?",
       o: ["Agar layar lebih terang", "Agar komputer bisa mengingat dan mengubah data", "Agar komputer cepat mati", "Agar gambar lebih besar"], a: 1,
       e: "Variabel dibuat supaya data bisa diingat, dipakai lagi, dan diubah." },
-    { q: "Di Scratch, blok-blok variabel berwarna …",
-      o: ["Biru", "Hijau", "Oranye", "Ungu"], a: 2,
-      e: "Blok variabel di Scratch berwarna oranye." },
-    { q: "Di Scratch, untuk membuat variabel baru kita menekan tombol …",
-      o: ["Hapus Sprite", "Tambah Suara", "Ganti Latar", "Buat Variabel"], a: 3,
-      e: "Buka kategori Variabel, lalu tekan tombol “Buat Variabel”." },
-    { q: "Apa fungsi blok berikut?", s: "var: atur [skor] ke (0)",
-      o: ["Mengisi variabel skor dengan 0", "Menambah skor sebanyak 0 kali", "Menghapus variabel skor", "Menyembunyikan skor"], a: 0,
-      e: "Blok “atur … ke …” mengisi variabel dengan nilai tertentu. Isi lama diganti." },
-    { q: "Apa fungsi blok berikut?", s: "var: ubah [skor] sebesar (1)",
+    { q: "Program adalah …",
+      o: ["Gambar di layar komputer", "Nama sebuah variabel", "Kumpulan perintah yang dijalankan komputer satu per satu", "Kotak tempat menyimpan barang"], a: 2,
+      e: "Program berisi perintah-perintah yang dijalankan komputer secara berurutan dari atas ke bawah." },
+    { q: "Perintah-perintah dalam program dijalankan dengan urutan …",
+      o: ["Acak", "Dari bawah ke atas", "Semuanya sekaligus", "Dari atas ke bawah, satu per satu"], a: 3,
+      e: "Komputer menjalankan perintah satu per satu, mulai dari yang paling atas." },
+    { q: "Apa arti perintah berikut?", k: "isi: skor | 0",
+      o: ["Kotak skor diisi 0, isi lamanya diganti", "Skor ditambah 0 kali", "Kotak skor dihapus", "Skor disembunyikan"], a: 0,
+      e: "Perintah “isi” mengisi variabel dengan nilai baru. Isi lama diganti." },
+    { q: "Apa arti perintah berikut?", k: "tambah: skor | 1",
       o: ["Mengganti nama skor", "Menambah isi skor sebanyak 1", "Mengisi skor menjadi 1", "Menghapus 1 skor"], a: 1,
-      e: "Blok “ubah … sebesar …” menambah isi yang lama. Jika skor 4, setelahnya menjadi 5." },
-    { q: "Setelah blok berikut dijalankan, berapa isi variabel skor?", s: "event: ketika 🏁 diklik\nvar: atur [skor] ke (5)",
+      e: "Perintah “tambah” menambah isi yang lama. Jika skor 4, setelahnya menjadi 5." },
+    { q: "Setelah perintah berikut dijalankan, berapa isi variabel skor?", k: "mulai\nisi: skor | 5",
       o: ["0", "1", "5", "6"], a: 2,
-      e: "Blok “atur” langsung mengisi skor dengan 5." },
-    { q: "Setelah blok berikut dijalankan, berapa isi variabel skor?", s: "event: ketika 🏁 diklik\nvar: atur [skor] ke (0)\nvar: ubah [skor] sebesar (2)\nvar: ubah [skor] sebesar (3)",
+      e: "Perintah “isi” langsung mengisi skor dengan 5." },
+    { q: "Setelah perintah berikut dijalankan, berapa isi variabel skor?", k: "mulai\nisi: skor | 0\ntambah: skor | 2\ntambah: skor | 3",
       o: ["2", "3", "23", "5"], a: 3,
-      e: "0 → 2 → 5. Setiap blok “ubah” menambah isi yang lama." },
-    { q: "Setelah blok berikut dijalankan, berapa isi variabel nyawa?", s: "event: ketika 🏁 diklik\nvar: atur [nyawa] ke (3)\nvar: ubah [nyawa] sebesar (-1)",
-      o: ["2", "3", "4", "-1"], a: 0,
-      e: "3 dikurangi 1 menjadi 2. Angka negatif membuat isi variabel berkurang." },
-    { q: "Setelah blok berikut dijalankan, berapa isi variabel koin?", s: "event: ketika 🏁 diklik\nvar: atur [koin] ke (10)\nvar: atur [koin] ke (4)",
+      e: "0 → 2 → 5. Setiap perintah “tambah” menambah isi yang lama." },
+    { q: "Setelah perintah berikut dijalankan, berapa isi variabel nyawa?", k: "mulai\nisi: nyawa | 3\nkurangi: nyawa | 1",
+      o: ["2", "3", "4", "1"], a: 0,
+      e: "3 dikurangi 1 menjadi 2." },
+    { q: "Setelah perintah berikut dijalankan, berapa isi variabel koin?", k: "mulai\nisi: koin | 10\nisi: koin | 4",
       o: ["10", "4", "14", "6"], a: 1,
-      e: "Blok “atur” mengganti isi lama. Isi 10 diganti menjadi 4." },
-    { q: "Variabel <code>warna</code> berisi “merah”. Kemudian dijalankan blok “atur warna ke biru”. Apa isi variabel warna sekarang?",
+      e: "Perintah “isi” mengganti isi lama. Isi 10 diganti menjadi 4." },
+    { q: "Variabel <code>warna</code> berisi “merah”. Kemudian dijalankan perintah “isi warna dengan biru”. Apa isi variabel warna sekarang?",
       o: ["merah", "merah dan biru", "biru", "kosong"], a: 2,
       e: "Satu variabel hanya menyimpan satu isi. Isi lama (merah) diganti dengan isi baru (biru)." },
     { q: "Satu variabel bisa menyimpan berapa isi pada satu waktu?",
@@ -365,12 +372,12 @@
     { q: "Aplikasi kasir di toko memakai variabel untuk menyimpan …",
       o: ["Warna baju kasir", "Bentuk toko", "Total belanja", "Suara pembeli"], a: 2,
       e: "Total belanja disimpan di variabel dan bertambah setiap barang dipindai." },
-    { q: "Setelah blok berikut dijalankan, berapa isi variabel skor?", s: "event: ketika 🏁 diklik\nvar: atur [skor] ke (0)\nctrl: ulangi (3) kali\n  var: ubah [skor] sebesar (2)",
+    { q: "Setelah perintah berikut dijalankan, berapa isi variabel skor?", k: "mulai\nisi: skor | 0\nulangi: 3\n  tambah: skor | 2",
       o: ["2", "3", "5", "6"], a: 3,
-      e: "Blok “ubah skor sebesar 2” dijalankan 3 kali: 0 → 2 → 4 → 6." },
-    { q: "Pada blok berikut, bulatan oranye <span class=\"rep var\">skor</span> artinya …", s: "look: katakan {skor}",
-      o: ["Ambil isi variabel skor", "Hapus variabel skor", "Ganti nama skor", "Tambah skor 1"], a: 0,
-      e: "Bulatan oranye adalah reporter variabel. Ia mengambil isi variabel, lalu sprite mengatakannya." }
+      e: "Perintah “tambah skor dengan 2” dijalankan 3 kali: 0 → 2 → 4 → 6." },
+    { q: "Isi variabel <code>skor</code> adalah 7. Apa yang muncul di layar setelah perintah berikut?", k: "tampilkan: skor",
+      o: ["7", "skor", "0", "Tidak ada"], a: 0,
+      e: "Perintah “tampilkan” menampilkan <strong>isi</strong> variabel, yaitu 7, bukan tulisan namanya." }
   ];
 </script>
 <script src="script.js"></script>

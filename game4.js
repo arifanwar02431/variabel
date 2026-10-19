@@ -21,16 +21,15 @@
     { emo: "🏫", val: "4", desc: "kelas Budi sekarang", ok: "kelas", no: ["suhu", "tabungan"] }
   ];
 
-  const HAT = "event: ketika 🏁 diklik\n";
   const M2 = [
-    { v: "skor", s: HAT + "var: atur [skor] ke (5)", ans: 5, opts: [5, 0, 6, 1], ex: "Blok “atur” langsung mengisi skor dengan <b>5</b>." },
-    { v: "skor", s: HAT + "var: atur [skor] ke (0)\nvar: ubah [skor] sebesar (3)", ans: 3, opts: [3, 0, 30, 4], ex: "Mulai dari 0, lalu ditambah 3: 0 → <b>3</b>." },
-    { v: "skor", s: HAT + "var: atur [skor] ke (2)\nvar: ubah [skor] sebesar (4)\nvar: ubah [skor] sebesar (1)", ans: 7, opts: [7, 6, 5, 8], ex: "2 → 6 → <b>7</b>. Setiap blok “ubah” menambah isi yang lama." },
-    { v: "nyawa", s: HAT + "var: atur [nyawa] ke (5)\nvar: ubah [nyawa] sebesar (-1)", ans: 4, opts: [4, 6, 5, 1], ex: "5 → <b>4</b>. Angka negatif (−1) berarti isinya berkurang." },
-    { v: "koin", s: HAT + "var: atur [koin] ke (10)\nvar: ubah [koin] sebesar (-3)\nvar: ubah [koin] sebesar (5)", ans: 12, opts: [12, 18, 8, 7], ex: "10 → 7 → <b>12</b>." },
-    { v: "skor", s: HAT + "var: atur [skor] ke (8)\nvar: atur [skor] ke (1)", ans: 1, opts: [1, 9, 8, 7], ex: "Blok “atur” <b>mengganti</b> isi lama. Isi 8 dibuang, diganti menjadi <b>1</b>." },
-    { v: "skor", s: HAT + "var: atur [skor] ke (0)\nctrl: ulangi (3) kali\n  var: ubah [skor] sebesar (2)", ans: 6, opts: [6, 2, 5, 3], ex: "Blok di dalam “ulangi 3 kali” dijalankan 3 kali: 0 → 2 → 4 → <b>6</b>." },
-    { v: "bintang", s: HAT + "var: atur [bintang] ke (1)\nctrl: ulangi (4) kali\n  var: ubah [bintang] sebesar (5)\nvar: ubah [bintang] sebesar (-2)", ans: 19, opts: [19, 21, 18, 20], ex: "1 → 6 → 11 → 16 → 21 (4 kali ditambah 5), lalu dikurangi 2 → <b>19</b>." }
+    { v: "skor", k: "mulai\nisi: skor | 5", ans: 5, opts: [5, 0, 6, 1], ex: "Perintah “isi” langsung mengisi skor dengan <b>5</b>." },
+    { v: "skor", k: "mulai\nisi: skor | 0\ntambah: skor | 3", ans: 3, opts: [3, 0, 30, 4], ex: "Mulai dari 0, lalu ditambah 3: 0 → <b>3</b>." },
+    { v: "skor", k: "mulai\nisi: skor | 2\ntambah: skor | 4\ntambah: skor | 1", ans: 7, opts: [7, 6, 5, 8], ex: "2 → 6 → <b>7</b>. Setiap perintah “tambah” menambah isi yang lama." },
+    { v: "nyawa", k: "mulai\nisi: nyawa | 5\nkurangi: nyawa | 1", ans: 4, opts: [4, 6, 5, 1], ex: "5 → <b>4</b>. Perintah “kurangi” membuat isinya berkurang." },
+    { v: "koin", k: "mulai\nisi: koin | 10\nkurangi: koin | 3\ntambah: koin | 5", ans: 12, opts: [12, 18, 8, 7], ex: "10 → 7 → <b>12</b>." },
+    { v: "skor", k: "mulai\nisi: skor | 8\nisi: skor | 1", ans: 1, opts: [1, 9, 8, 7], ex: "Perintah “isi” <b>mengganti</b> isi lama. Isi 8 dibuang, diganti menjadi <b>1</b>." },
+    { v: "skor", k: "mulai\nisi: skor | 0\nulangi: 3\n  tambah: skor | 2", ans: 6, opts: [6, 2, 5, 3], ex: "Perintah di dalam “ulangi 3 kali” dijalankan 3 kali: 0 → 2 → 4 → <b>6</b>." },
+    { v: "bintang", k: "mulai\nisi: bintang | 1\nulangi: 4\n  tambah: bintang | 5\nkurangi: bintang | 2", ans: 19, opts: [19, 21, 18, 20], ex: "1 → 6 → 11 → 16 → 21 (4 kali ditambah 5), lalu dikurangi 2 → <b>19</b>." }
   ];
 
   const M3 = [
@@ -50,22 +49,29 @@
   ];
 
   const M5 = [
-    { v: "skor", target: 7, max: 3, palette: [["atur", 0], ["ubah", 5], ["ubah", 2], ["ubah", 1]], sol: [["atur", 0], ["ubah", 5], ["ubah", 2]],
-      say: "Mulai skor dari 0, lalu tambahkan sampai menjadi <b>7</b>. Ingat, blok pertama harus “atur”!" },
-    { v: "nyawa", target: 3, max: 3, palette: [["atur", 5], ["ubah", -1], ["ubah", 1]], sol: [["atur", 5], ["ubah", -1], ["ubah", -1]],
+    { v: "skor", target: 7, max: 3, palette: [["isi", 0], ["tambah", 5], ["tambah", 2], ["tambah", 1]], sol: [["isi", 0], ["tambah", 5], ["tambah", 2]],
+      say: "Mulai skor dari 0, lalu tambahkan sampai menjadi <b>7</b>. Ingat, perintah pertama harus “isi”!" },
+    { v: "nyawa", target: 3, max: 3, palette: [["isi", 5], ["kurangi", 1], ["tambah", 1]], sol: [["isi", 5], ["kurangi", 1], ["kurangi", 1]],
       say: "Pemain mulai dengan 5 nyawa, lalu terkena batu dua kali. Buat nyawa menjadi <b>3</b>." },
-    { v: "koin", target: 10, max: 3, palette: [["atur", 0], ["atur", 4], ["ubah", 3], ["ubah", 2]], sol: [["atur", 4], ["ubah", 3], ["ubah", 3]],
-      say: "Buat koin berisi <b>10</b> hanya dengan 3 blok. Pilih blok “atur” yang tepat!" },
-    { v: "skor", target: 12, max: 4, palette: [["atur", 0], ["ubah", 5], ["ubah", 2], ["ubah", -1]], sol: [["atur", 0], ["ubah", 5], ["ubah", 5], ["ubah", 2]],
-      say: "Buat skor menjadi <b>12</b>. Kamu boleh memakai blok yang sama lebih dari sekali." },
-    { v: "waktu", target: 0, max: 3, palette: [["atur", 10], ["ubah", -5], ["ubah", -2], ["ubah", 1]], sol: [["atur", 10], ["ubah", -5], ["ubah", -5]],
+    { v: "koin", target: 10, max: 3, palette: [["isi", 0], ["isi", 4], ["tambah", 3], ["tambah", 2]], sol: [["isi", 4], ["tambah", 3], ["tambah", 3]],
+      say: "Buat koin berisi <b>10</b> hanya dengan 3 perintah. Pilih perintah “isi” yang tepat!" },
+    { v: "skor", target: 12, max: 4, palette: [["isi", 0], ["tambah", 5], ["tambah", 2], ["kurangi", 1]], sol: [["isi", 0], ["tambah", 5], ["tambah", 5], ["tambah", 2]],
+      say: "Buat skor menjadi <b>12</b>. Kamu boleh memakai perintah yang sama lebih dari sekali." },
+    { v: "waktu", target: 0, max: 3, palette: [["isi", 10], ["kurangi", 5], ["kurangi", 2], ["tambah", 1]], sol: [["isi", 10], ["kurangi", 5], ["kurangi", 5]],
       say: "Hitung mundur! Waktu mulai dari 10. Buat waktu menjadi <b>0</b>." },
-    { v: "bintang", target: 9, max: 3, palette: [["atur", 0], ["atur", 1], ["ubah", 4], ["ubah", 3]], sol: [["atur", 1], ["ubah", 4], ["ubah", 4]],
-      say: "Tantangan terakhir: buat bintang berisi <b>9</b> dengan paling banyak 3 blok." }
+    { v: "bintang", target: 9, max: 3, palette: [["isi", 0], ["isi", 1], ["tambah", 4], ["tambah", 3]], sol: [["isi", 1], ["tambah", 4], ["tambah", 4]],
+      say: "Tantangan terakhir: buat bintang berisi <b>9</b> dengan paling banyak 3 perintah." }
   ];
 
-  function blockText(kind, v, n) {
-    return RV.inline(kind === "atur" ? "atur [" + v + "] ke (" + n + ")" : "ubah [" + v + "] sebesar (" + n + ")");
+  /* Kartu perintah: kind = "isi" | "tambah" | "kurangi" */
+  function cmd(kind, v, n, cls) { return RV.stepHTML(kind, [v, String(n)], undefined, cls); }
+  function cmdButton(kind, v, n, i) {
+    return cmd(kind, v, n).replace(/^<div/, '<button type="button" data-p="' + i + '"').replace(/<\/div>$/, "</button>");
+  }
+  function applyCmd(val, kind, n) {
+    if (kind === "isi") return n;
+    if (val === null) return null;
+    return kind === "tambah" ? val + n : val - n;
   }
   function bump(el) { el.classList.remove("bump"); void el.offsetWidth; el.classList.add("bump"); }
 
@@ -96,8 +102,8 @@
   /* ---------- Misi 2: hitung isi kotak ---------- */
   function roundCount(r, done, G) {
     const opts = RV.shuffle(r.opts);
-    G.show(G.head("Baca blok kodenya dari atas ke bawah. Setelah semua dijalankan, berapa isi variabel <b>" + r.v + "</b>?") +
-      '<div class="split" style="align-items:center;margin-bottom:20px"><div class="script-box block">' + RV.renderScript(r.s) + "</div>" +
+    G.show(G.head("Baca kartu perintahnya dari atas ke bawah. Setelah semua dijalankan, berapa isi variabel <b>" + r.v + "</b>?") +
+      '<div class="split" style="align-items:center;margin-bottom:20px"><div class="steps-box">' + RV.renderSteps(r.k) + "</div>" +
       '<div style="display:flex;justify-content:center;padding-top:16px"><div class="vbox" data-vb><span class="vbox-label">' + r.v + '</span><span class="vbox-value">?</span></div></div></div>' +
       '<div class="num-choices">' + opts.map(function (n) { return '<button type="button" class="q-opt" data-n="' + n + '">' + n + "</button>"; }).join("") + "</div>" +
       '<div class="feedback-slot"></div>');
@@ -147,7 +153,7 @@
       '<div class="timebar"><span></span></div>' +
       '<div class="arena"><div class="arena-msg"><div><p style="font-size:1.05rem;margin-bottom:6px">⭐ +1 &nbsp; 🌟 +2 &nbsp; 💎 +5</p><p style="font-size:1.05rem">🪨 −1 &nbsp; ☁️ −2</p>' +
       '<p class="mb-0" style="opacity:.8;font-size:.9rem">Waktu: ' + r.time + ' detik</p><div class="gs-actions"><button class="btn btn-primary btn-big" type="button" data-start>▶ Mulai!</button></div></div></div></div>' +
-      '<div class="last-block"><span>Blok yang dijalankan:</span><span class="blk var" data-lb>' + blockText("atur", "skor", 0) + "</span></div>" +
+      '<div class="last-block"><span>Perintah yang dijalankan:</span><span data-lb>' + cmd("isi", "skor", 0) + "</span></div>" +
       '<div class="feedback-slot"></div>');
     const screen = G.screen;
     const arena = screen.querySelector(".arena");
@@ -188,7 +194,7 @@
       skor += it.v;
       cv.querySelector(".vbox-value").textContent = skor;
       bump(cv);
-      lb.innerHTML = blockText("ubah", "skor", it.v);
+      lb.innerHTML = it.v > 0 ? cmd("tambah", "skor", it.v) : cmd("kurangi", "skor", -it.v);
       const f = document.createElement("span");
       f.className = "float-txt";
       f.textContent = (it.v > 0 ? "+" : "−") + Math.abs(it.v);
@@ -241,16 +247,15 @@
     });
   }
 
-  /* ---------- Misi 5: susun program ---------- */
+  /* ---------- Misi 5: susun perintah ---------- */
   function roundBuild(r, done, G) {
     let prog = [], attempts = 0, busy = false;
-    const label = function (b) { return blockText(b[0], r.v, b[1]); };
     G.show(G.head(r.say) +
-      '<div class="goal-card">🎯 Target: variabel <span class="blk var" style="min-height:0;padding:2px 10px">' + RV.esc(r.v) + "</span> berisi <b>" + r.target + "</b></div>" +
-      '<div class="build"><div><h4>Pilih blok (ketuk untuk menambah)</h4><div class="palette">' +
-      r.palette.map(function (b, i) { return '<button type="button" class="blk var btn-blk" data-p="' + i + '">' + label(b) + "</button>"; }).join("") +
-      '</div><p class="limit">Paling banyak <b>' + r.max + "</b> blok di bawah 🏁.</p></div>" +
-      '<div><h4>Programmu</h4><div class="workspace"><div class="script" data-ws></div></div>' +
+      '<div class="goal-card">🎯 Target: variabel <span class="sv" style="font-family:\'JetBrains Mono\',monospace;background:var(--yellow);color:var(--ink);border-radius:6px;padding:0 8px">' + RV.esc(r.v) + "</span> berisi <b>" + r.target + "</b></div>" +
+      '<div class="build"><div><h4>Pilih kartu perintah (ketuk untuk menambah)</h4><div class="palette">' +
+      r.palette.map(function (b, i) { return cmdButton(b[0], r.v, b[1], i); }).join("") +
+      '</div><p class="limit">Paling banyak <b>' + r.max + "</b> perintah setelah “Mulai”.</p></div>" +
+      '<div><h4>Programmu</h4><div class="workspace"><div class="steps" data-ws></div></div>' +
       '<div class="btn-row" style="margin-top:12px"><button class="btn" type="button" data-undo>↶ Hapus terakhir</button>' +
       '<button class="btn btn-primary" type="button" data-run>▶ Jalankan</button></div>' +
       '<div class="build-side"><div class="vbox" data-bv><span class="vbox-label">' + RV.esc(r.v) + '</span><span class="vbox-value">?</span></div>' +
@@ -265,8 +270,8 @@
     const runBtn = screen.querySelector("[data-run]");
 
     function draw(activeIdx) {
-      ws.innerHTML = '<div class="blk event">ketika 🏁 diklik</div>' + prog.map(function (b, i) {
-        return '<div class="blk var' + (i === activeIdx ? " active" : "") + '">' + label(b) + "</div>";
+      ws.innerHTML = RV.stepHTML("mulai", []) + prog.map(function (b, i) {
+        return cmd(b[0], r.v, b[1], i === activeIdx ? "active" : "");
       }).join("");
       palBtns.forEach(function (p) { p.disabled = busy || prog.length >= r.max; });
       undoBtn.disabled = busy || !prog.length;
@@ -285,7 +290,7 @@
     undoBtn.addEventListener("click", function () { prog.pop(); draw(); });
     runBtn.addEventListener("click", function () {
       if (busy) return;
-      if (!prog.length) { G.info("Ketuk blok untuk menambahkannya ke programmu dulu, ya."); return; }
+      if (!prog.length) { G.info("Ketuk kartu perintah untuk menambahkannya ke programmu dulu, ya."); return; }
       G.info("");
       busy = true; draw();
       let val = null, i = 0;
@@ -293,14 +298,14 @@
       (function stepRun() {
         if (i < prog.length) {
           const b = prog[i];
-          val = b[0] === "atur" ? b[1] : (val === null ? null : val + b[1]);
+          val = applyCmd(val, b[0], b[1]);
           draw(i); setVal(val); G.beep("tick");
           i++;
           setTimeout(stepRun, 650);
           return;
         }
         busy = false; attempts++; draw();
-        const startsOk = prog[0][0] === "atur";
+        const startsOk = prog[0][0] === "isi";
         const ok = startsOk && val === r.target;
         const leftTries = 3 - attempts;
         leftEl.textContent = Math.max(0, leftTries);
@@ -311,17 +316,15 @@
           return;
         }
         const why = !startsOk
-          ? "Programmu belum dimulai dengan blok “atur”, jadi isi awal " + r.v + " tidak diketahui (?)."
+          ? "Programmu belum dimulai dengan perintah “isi”, jadi isi awal " + r.v + " tidak diketahui (?)."
           : "Hasilnya " + val + ", padahal targetnya " + r.target + ".";
         if (leftTries > 0) {
           G.beep("bad"); G.resetCombo();
           G.screen.querySelector(".feedback-slot").innerHTML = '<div class="feedback-bar bad"><div class="fb-text">❌ ' + why + " Ubah programmu, lalu jalankan lagi. Kesempatan tersisa: <b>" + leftTries + "</b>.</div></div>";
         } else {
           lock();
-          const sol = "event: ketika 🏁 diklik\n" + r.sol.map(function (b) {
-            return "var: " + (b[0] === "atur" ? "atur [" + r.v + "] ke (" + b[1] + ")" : "ubah [" + r.v + "] sebesar (" + b[1] + ")");
-          }).join("\n");
-          G.feedback(false, why + ' Contoh jawaban yang benar:<div class="script-box" style="margin-top:10px">' + RV.renderScript(sol) + "</div>", function () { done(0); });
+          const sol = '<div class="steps">' + RV.stepHTML("mulai", []) + r.sol.map(function (b) { return cmd(b[0], r.v, b[1]); }).join("") + "</div>";
+          G.feedback(false, why + ' Contoh jawaban yang benar:<div class="steps-box" style="margin-top:10px">' + sol + "</div>", function () { done(0); });
         }
       })();
     });
@@ -330,7 +333,7 @@
 
   window.RVGame.create({
     root: root,
-    saveKey: "rv-k4-misi-kotak-v2",
+    saveKey: "rv-k4-misi-kotak-v3",
     title: "Misi Kotak Ajaib",
     kicker: "Game Variabel · Kelas 4",
     story: "Robi si robot punya banyak kotak, tapi semuanya berantakan! Bantu Robi menyelesaikan 5 misi tentang variabel. Kumpulkan poin sebanyak-banyaknya.",
@@ -343,8 +346,8 @@
         how: ["Lihat barang dan keterangannya.", "Ketuk kotak yang namanya paling cocok."] },
       { title: "Hitung Isi Kotak", icon: "🧮", max: 8, play: roundCount,
         rounds: function () { return M2.slice(); },
-        desc: "Robi menjalankan blok kode. Tebak isi variabel setelah semua blok selesai dijalankan.",
-        how: ["“atur … ke …” = mengganti isi kotak.", "“ubah … sebesar …” = menambah (atau mengurangi kalau negatif)."] },
+        desc: "Robi menjalankan kartu-kartu perintah. Tebak isi variabel setelah semua perintah selesai dijalankan.",
+        how: ["📥 “Isi” = mengganti isi kotak dengan nilai baru.", "➕ “Tambah” dan ➖ “Kurangi” = mengubah isi yang lama."] },
       { title: "Nama yang Tepat", icon: "🏷️", max: 6, play: roundName,
         rounds: function () { return RV.shuffle(M3).slice(0, 6); },
         desc: "Kotak-kotak Robi butuh nama. Pilih nama variabel yang paling jelas dan benar.",
@@ -353,10 +356,10 @@
         rounds: function () { return M4.slice(); },
         desc: "Benda berjatuhan dari langit! Ketuk benda untuk mengubah variabel skor sampai tepat sama dengan target.",
         how: ["⭐ +1, 🌟 +2, 💎 +5 menambah skor.", "🪨 −1, ☁️ −2 mengurangi skor. Pakai kalau skormu kelebihan!"] },
-      { title: "Susun Program", icon: "🧩", max: 6, play: roundBuild,
+      { title: "Susun Perintah", icon: "🧩", max: 6, play: roundBuild,
         rounds: function () { return M5.slice(); },
-        desc: "Sekarang kamu yang jadi programmer! Susun blok supaya isi variabel sama dengan target.",
-        how: ["Ketuk blok untuk menambahkannya ke program.", "Mulai dengan blok “atur”, lalu tekan ▶ Jalankan."] }
+        desc: "Sekarang kamu yang jadi programmer! Susun kartu perintah supaya isi variabel sama dengan target.",
+        how: ["Ketuk kartu perintah untuk menambahkannya ke program.", "Mulai dengan perintah “isi”, lalu tekan ▶ Jalankan."] }
     ]
   });
 })();

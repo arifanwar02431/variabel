@@ -590,3 +590,36 @@ details summary::marker { color: var(--accent); }
 }
 .flow:not(.flow-mini) { min-width: calc(var(--fw, 300px) * .8); }
 @media (max-width: 400px) { .flow:not(.flow-mini) { min-width: calc(var(--fw, 300px) * .64); } }
+
+/* =========================================================
+   KARTU PERINTAH (kelas 4)
+   ========================================================= */
+.steps-box { display: block; max-width: 100%; padding: 14px; background: var(--surface); border: 1px dashed #D5CCBC; border-radius: 16px; margin-bottom: 16px; }
+.steps-box.inline { display: inline-block; }
+.steps { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.step-cmd {
+  display: inline-flex; align-items: center; gap: 10px; max-width: 100%;
+  background: #fff; border: 2px solid var(--ink); border-radius: 12px;
+  padding: 8px 14px 8px 8px; font-weight: 600; font-size: .98rem; line-height: 1.35;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.step-cmd .si { flex: none; width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; background: var(--surface-2); font-size: 1.1rem; }
+.step-cmd.k-isi .si { background: #FFE7D6; }
+.step-cmd.k-tambah .si { background: #DDF2E7; }
+.step-cmd.k-kurangi .si { background: #FBE3E3; }
+.step-cmd.k-ulangi .si { background: #E6E9FB; }
+.step-cmd.k-tampilkan .si, .step-cmd.k-tanya .si { background: #FFF1C9; }
+.step-cmd.k-mulai { background: var(--ink); color: #fff; border-radius: 999px; padding: 6px 16px 6px 8px; }
+.step-cmd.k-mulai .si { background: rgba(255,255,255,.15); width: 28px; height: 28px; }
+.step-cmd .sv { font-family: "JetBrains Mono", monospace; font-weight: 700; background: var(--yellow); border: 1.5px solid var(--ink); border-radius: 6px; padding: 0 7px; white-space: nowrap; }
+.step-cmd .sn { font-family: "JetBrains Mono", monospace; font-weight: 800; color: var(--accent-ink); background: var(--accent-soft); border-radius: 6px; padding: 0 7px; white-space: nowrap; }
+.step-loop { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.step-inner { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin-left: 18px; padding: 4px 0 4px 16px; border-left: 4px solid #B9C1F0; border-radius: 0 0 0 8px; }
+.step-cmd.active { outline: 3px solid var(--yellow); outline-offset: 2px; background: #FFF6D6; }
+button.step-cmd { font: inherit; font-weight: 600; color: var(--ink); cursor: pointer; text-align: left; }
+button.step-cmd:hover:not(:disabled) { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--ink); }
+button.step-cmd:disabled { opacity: .45; cursor: not-allowed; }
+.legend-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+.legend-list li { display: grid; gap: 6px; justify-items: start; }
+.legend-list p { margin: 0; color: var(--muted); }
+@media (max-width: 520px) { .step-cmd { font-size: .93rem; } }
