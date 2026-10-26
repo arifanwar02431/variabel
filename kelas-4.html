@@ -246,7 +246,14 @@
   <section class="section" id="latihan">
     <div class="container">
       <div class="section-head"><span class="section-num">06</span><h2>Latihan soal</h2></div>
-      <p class="section-intro">30 soal dengan 8 jenis yang berbeda. Kerjakan satu per satu. Setiap soal langsung diperiksa dan ada pembahasannya. Setelah semua soal dikerjakan, nilaimu muncul di bawah (nilai minimal <strong>85</strong>).</p>
+      <p class="section-intro">30 soal dengan 8 jenis yang berbeda. Setiap soal langsung diperiksa dan ada pembahasannya. Skormu terlihat terus di papan skor dan bertambah setiap kali jawabanmu benar.</p>
+
+      <div class="score-rule">
+        <div><b>⭐ 1 poin</b><span>untuk setiap soal yang benar</span></div>
+        <div><b>30 poin</b><span>paling banyak</span></div>
+        <div><b>Skor 0–100</b><span>= poin ÷ 30 × 100</span></div>
+        <div><b>Minimal 85</b><span>untuk lulus</span></div>
+      </div>
 
       <div data-latihan data-kkm="85">
         <nav class="lat-jump" aria-label="Loncat ke bagian latihan">
@@ -255,8 +262,15 @@
         </nav>
         <div class="lat-top">
           <div class="lat-top-row">
-            <span data-lat-prog></span>
-            <button type="button" class="lat-restart" data-lat-restart>↺ Ulang</button>
+            <div class="lat-scorebox" aria-live="polite"><span class="lbl">Skor</span><b data-lat-score>0</b></div>
+            <div class="lat-mid">
+              <span data-lat-points class="lat-points">0/30 benar</span>
+              <span data-lat-prog class="lat-prog"></span>
+            </div>
+            <div class="lat-actions">
+              <button type="button" class="btn btn-primary lat-finish" data-lat-finish>🏁 Selesai</button>
+              <button type="button" class="lat-restart" data-lat-restart>↺ Ulang</button>
+            </div>
           </div>
           <div class="quiz-bar"><span data-lat-bar></span></div>
         </div>

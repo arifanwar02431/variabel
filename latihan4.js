@@ -140,6 +140,8 @@
 
   /* ---------------- STATUS ---------------- */
   let state;          // { [no]: true/false } untuk soal yang sudah diperiksa
+  let finished = false;
+  const finishBtn = root.querySelector("[data-lat-finish]");
   let TOTAL = 0;
   GROUPS.forEach(function (g) { TOTAL += g.items.length; });
 
@@ -154,16 +156,31 @@
     RV.beep(ok ? "ok" : "bad");
     updateProgress();
   }
-  function updateProgress() {
+  const scoreEl = root.querySelector("[data-lat-score]");
+  const pointsEl = root.querySelector("[data-lat-points]");
+  let lastScore = 0;
+  function counts() {
     const done = Object.keys(state).length;
     const right = Object.keys(state).filter(function (k) { return state[k]; }).length;
-    progText.innerHTML = "<b>" + done + "/" + TOTAL + "</b> dikerjakan · <b>" + right + "</b> benar" +
-      (done === TOTAL ? ' · <a href="#lat-hasil">Lihat nilai ↓</a>' : "");
-    progBar.style.width = (done / TOTAL * 100) + "%";
-    if (done === TOTAL) showResult();
+    return { done: done, right: right, score: Math.round(right / TOTAL * 100) };
   }
-  function fbHTML(ok, html) {
-    return '<div class="lat-fb ' + (ok ? "ok" : "bad") + '"><b>' + (ok ? "✅ Benar! " : "❌ Belum tepat. ") + "</b>" + html + "</div>";
+  function updateProgress() {
+    const c = counts();
+    scoreEl.textContent = c.score;
+    pointsEl.textContent = c.right + "/" + TOTAL + " benar";
+    if (c.score !== lastScore) {
+      scoreEl.parentNode.classList.remove("pop"); void scoreEl.offsetWidth; scoreEl.parentNode.classList.add("pop");
+      lastScore = c.score;
+    }
+    progText.innerHTML = "<b>" + c.done + "/" + TOTAL + "</b> dikerjakan" +
+      (finished ? ' · <a href="#lat-hasil">Lihat skor ↓</a>' : "");
+    progBar.style.width = (c.done / TOTAL * 100) + "%";
+    finishBtn.hidden = finished;
+    if (c.done === TOTAL && !finished) showResult(false);
+  }
+  function fbHTML(ok, html, pts) {
+    const p = pts !== undefined ? pts : (ok ? 1 : 0);
+    return '<div class="lat-fb ' + (ok ? "ok" : "bad") + '"><span class="pt-chip ' + (p ? "plus" : "zero") + '">+' + p + " poin</span><b>" + (ok ? "✅ Benar! " : "❌ Belum tepat. ") + "</b>" + html + "</div>";
   }
   function norm(s) { return String(s).toLowerCase().replace(/\s+/g, " ").trim(); }
   function cmdHTML(c, cls) { return RV.stepHTML(c[0], [c[1], c[2]], undefined, cls); }
@@ -373,7 +390,7 @@
       });
       btn.disabled = true;
       RV.beep(right === g.items.length ? "ok" : "bad");
-      slot.innerHTML = '<div class="lat-fb ' + (right === g.items.length ? "ok" : "bad") + '"><b>' + right + " dari " + g.items.length + " pasangan benar.</b> " +
+      slot.innerHTML = '<div class="lat-fb ' + (right === g.items.length ? "ok" : "bad") + '"><span class="pt-chip ' + (right ? "plus" : "zero") + '">+' + right + ' poin</span><b>' + right + " dari " + g.items.length + " pasangan benar.</b> " +
         (right === g.items.length ? "Hebat, semuanya tepat!" : "Lihat tanda ❌ untuk nama yang benar.") + "</div>";
       updateProgress();
     });
@@ -382,6 +399,8 @@
   /* ---------------- GAMBAR SEMUA ---------------- */
   function build() {
     state = {};
+    finished = false;
+    lastScore = 0;
     resultBox.hidden = true;
     resultBox.innerHTML = "";
     let no = 1, html = "";
@@ -404,11 +423,23 @@
     updateProgress();
   }
 
-  function showResult() {
-    if (!resultBox.hidden) return;
-    const right = Object.keys(state).filter(function (k) { return state[k]; }).length;
-    const nilai = Math.round(right / TOTAL * 100);
-    const pass = nilai >= KKM;
+  function showResult(early) {
+    if (finished) return;
+    finished = true;
+    const answered = Object.keys(state).map(Number);
+    const skipped = [];
+    for (let n = 1; n <= TOTAL; n++) if (answered.indexOf(n) === -1) skipped.push(n);
+    if (early) {
+      // kunci soal yang belum dijawab; dihitung 0 poin
+      body.querySelectorAll("button, input, select").forEach(function (el) { el.disabled = true; });
+      body.querySelectorAll(".pickable").forEach(function (el) { el.classList.remove("pickable"); el.removeAttribute("tabindex"); });
+      skipped.forEach(function (n) {
+        const q = body.querySelector('.lat-q[data-no="' + n + '"], .match-row[data-no="' + n + '"]');
+        if (q) q.classList.add("is-skip");
+      });
+    }
+    const c = counts();
+    const pass = c.score >= KKM;
     let no = 1;
     const rows = GROUPS.map(function (g) {
       let r = 0;
@@ -419,21 +450,31 @@
     const wrongNos = Object.keys(state).filter(function (k) { return !state[k]; }).map(Number).sort(function (a, b) { return a - b; });
     resultBox.innerHTML =
       '<div class="result-card">' +
-        '<p class="mb-0">Nilai latihanmu</p><div class="big">' + nilai + "</div>" +
-        "<p>" + right + " dari " + TOTAL + " soal benar · Nilai minimal: " + KKM + "</p>" +
+        '<p class="mb-0">Skor latihanmu</p><div class="big">' + c.score + "</div>" +
+        '<div class="score-calc"><span>Poin: <b>' + c.right + "</b> dari " + TOTAL + '</span><span>Skor = ' + c.right + " ÷ " + TOTAL + " × 100 = <b>" + c.score + "</b></span></div>" +
         '<span class="status-pill ' + (pass ? "pass" : "fail") + '">' + (pass ? "LULUS ✓" : "BELUM LULUS") + "</span>" +
-        "<p>" + (nilai === 100 ? "Sempurna! Semua soal latihan benar." : pass ? "Hebat! Lihat lagi soal yang masih salah supaya makin paham." : "Baca lagi materinya, lalu ulangi latihan. Kamu pasti bisa!") + "</p>" +
-        (wrongNos.length ? '<p class="mb-0">Soal yang perlu dilihat lagi: <b>' + wrongNos.join(", ") + "</b></p>" : "") +
-        '<div class="review"><h4>Hasil per bagian</h4><div class="rapor-rows" style="margin:0">' + rows + "</div></div>" +
+        "<p>Skor minimal untuk lulus: <b>" + KKM + "</b></p>" +
+        "<p>" + (c.score === 100 ? "Sempurna! Semua soal latihan benar." : pass ? "Hebat! Lihat lagi soal yang masih salah supaya makin paham." : "Baca lagi materinya, lalu ulangi latihan. Kamu pasti bisa!") + "</p>" +
+        (wrongNos.length ? '<p class="mb-0">Soal yang salah: <b>' + wrongNos.join(", ") + "</b></p>" : "") +
+        (skipped.length ? '<p class="mb-0">Soal yang belum dijawab (0 poin): <b>' + skipped.join(", ") + "</b></p>" : "") +
+        '<div class="review"><h4>Poin per bagian</h4><div class="rapor-rows" style="margin:0">' + rows + "</div></div>" +
         '<div class="gs-actions"><button class="btn btn-primary" type="button" data-lat-reset>↺ Ulangi latihan</button><a class="btn" href="#coba">Lanjut ke game →</a></div>' +
       "</div>";
     resultBox.hidden = false;
-    if (pass) RV.beep("win");
+    updateProgress();
+    RV.beep(pass ? "win" : "ok");
+    if (early) resultBox.scrollIntoView({ behavior: "smooth", block: "start" });
     resultBox.querySelector("[data-lat-reset]").addEventListener("click", function () {
       build();
       root.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }
+
+  finishBtn.addEventListener("click", function () {
+    const c = counts();
+    if (c.done < TOTAL && !window.confirm("Masih ada " + (TOTAL - c.done) + " soal yang belum dijawab. Soal itu akan mendapat 0 poin. Selesai sekarang?")) return;
+    showResult(c.done < TOTAL);
+  });
 
   root.querySelector("[data-lat-restart]").addEventListener("click", function () {
     if (Object.keys(state).length && !window.confirm("Hapus semua jawaban dan mulai latihan dari awal?")) return;
