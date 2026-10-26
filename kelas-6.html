@@ -33,6 +33,7 @@
       <p class="lead">Di kelas 4 kamu mengenal variabel sebagai kotak berlabel. Sekarang kita melihat bagaimana variabel dipakai di dalam <strong>flowchart</strong>, yaitu gambar langkah-langkah sebuah algoritma. Kamu akan belajar membaca, menelusuri, dan menyusun flowchart yang memakai variabel.</p>
       <div class="hero-meta">
         <span class="pill">📖 Materi ± 40 menit</span>
+        <span class="pill">📝 Latihan 30 soal</span>
         <span class="pill">🎮 Game ± 30 menit</span>
         <span class="pill">✅ Kuis 25 soal</span>
         <span class="pill">🎯 Nilai minimal 85</span>
@@ -50,9 +51,10 @@
       <a href="#menelusuri">Menelusuri</a>
       <a href="#kegunaan">Kegunaan</a>
       <a href="#kesalahan">Kesalahan</a>
+      <a href="#latihan-soal">Latihan Soal</a>
       <a href="#main">Ayo Main</a>
       <a href="#kuis">Kuis</a>
-      <a href="#latihan">Latihan</a>
+      <a href="#latihan">Menggambar</a>
       <a href="#rangkuman">Rangkuman</a>
     </div>
   </nav>
@@ -311,10 +313,48 @@
     </div>
   </section>
 
-  <!-- 09 GAME -->
+  <!-- 09 LATIHAN SOAL -->
+  <section class="section" id="latihan-soal">
+    <div class="container">
+      <div class="section-head"><span class="section-num">09</span><h2>Latihan soal</h2></div>
+      <p class="section-intro">30 soal tingkat lanjut dengan 9 jenis yang berbeda: menelusuri flowchart dengan beberapa variabel, melengkapi tabel penelusuran, menyusun dan memperbaiki flowchart. Siapkan kertas coretan untuk mencatat isi variabel. Skormu terlihat terus di papan skor.</p>
+
+      <div class="score-rule">
+        <div><b>⭐ 1 poin</b><span>untuk setiap soal yang benar</span></div>
+        <div><b>30 poin</b><span>paling banyak</span></div>
+        <div><b>Skor 0–100</b><span>= poin ÷ 30 × 100</span></div>
+        <div><b>Minimal 85</b><span>untuk lulus</span></div>
+      </div>
+
+      <div data-latihan="k6" data-kkm="85">
+        <nav class="lat-jump" aria-label="Loncat ke bagian latihan">
+          <span class="muted" style="font-size:.84rem;align-self:center">Loncat ke bagian:</span>
+          <a href="#lat-A">A</a><a href="#lat-B">B</a><a href="#lat-C">C</a><a href="#lat-D">D</a><a href="#lat-E">E</a><a href="#lat-F">F</a><a href="#lat-G">G</a><a href="#lat-H">H</a><a href="#lat-I">I</a>
+        </nav>
+        <div class="lat-top">
+          <div class="lat-top-row">
+            <div class="lat-scorebox" aria-live="polite"><span class="lbl">Skor</span><b data-lat-score>0</b></div>
+            <div class="lat-mid">
+              <span data-lat-points class="lat-points">0/30 benar</span>
+              <span data-lat-prog class="lat-prog"></span>
+            </div>
+            <div class="lat-actions">
+              <button type="button" class="btn btn-primary lat-finish" data-lat-finish>🏁 Selesai</button>
+              <button type="button" class="lat-restart" data-lat-restart>↺ Ulang</button>
+            </div>
+          </div>
+          <div class="quiz-bar"><span data-lat-bar></span></div>
+        </div>
+        <div data-lat-body></div>
+        <div class="lat-result" id="lat-hasil" data-lat-result hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 GAME -->
   <section class="section" id="main">
     <div class="container">
-      <div class="section-head"><span class="section-num">09</span><h2>Ayo main: Detektif Flowchart</h2></div>
+      <div class="section-head"><span class="section-num">10</span><h2>Ayo main: Detektif Flowchart</h2></div>
       <p class="section-intro">Selesaikan 5 misi tentang variabel dan flowchart. Waktunya sekitar 30 menit. Di akhir kamu mendapat <strong>nilai</strong>. Nilai minimal untuk lulus adalah <strong>85</strong>. Progresmu tersimpan setiap selesai satu misi.</p>
       <div class="game" data-game="k6">
         <div class="game-hud" hidden>
@@ -329,10 +369,10 @@
     </div>
   </section>
 
-  <!-- 10 KUIS -->
+  <!-- 11 KUIS -->
   <section class="section" id="kuis">
     <div class="container">
-      <div class="section-head"><span class="section-num">10</span><h2>Kuis variabel &amp; flowchart</h2></div>
+      <div class="section-head"><span class="section-num">11</span><h2>Kuis variabel &amp; flowchart</h2></div>
       <p class="section-intro">25 soal, satu per satu, dengan pembahasan. Nilai minimal untuk lulus adalah <strong>85</strong> (paling sedikit 22 soal benar).</p>
       <div class="quiz" data-quiz="QUIZ_K6" data-kkm="85">
         <div class="quiz-top"><span data-count></span><span data-right></span></div>
@@ -342,10 +382,10 @@
     </div>
   </section>
 
-  <!-- 11 LATIHAN -->
+  <!-- 12 LATIHAN MENGGAMBAR -->
   <section class="section" id="latihan">
     <div class="container">
-      <div class="section-head"><span class="section-num">11</span><h2>Latihan menggambar flowchart</h2></div>
+      <div class="section-head"><span class="section-num">12</span><h2>Latihan menggambar flowchart</h2></div>
       <p class="section-intro">Gambar flowchart berikut di buku tulismu. Tulis juga tabel penelusurannya. Setelah selesai, cocokkan dengan contoh jawaban.</p>
       <div class="grid grid-3">
         <div class="card">
@@ -576,5 +616,7 @@
 <script src="script.js"></script>
 <script src="game-engine.js"></script>
 <script src="game6.js"></script>
+<script src="latihan-engine.js"></script>
+<script src="latihan6.js"></script>
 </body>
 </html>

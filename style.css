@@ -748,3 +748,39 @@ button.step-cmd:disabled { opacity: .45; cursor: not-allowed; }
 .lat-q.is-skip, .match-row.is-skip { opacity: .55; border-style: dashed; }
 .score-calc { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin: 4px 0 12px; color: rgba(255,255,255,.85); font-size: .95rem; }
 .score-calc b { color: #fff; }
+
+/* Latihan kelas 6: jenis soal flowchart */
+.lat-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+@media (max-width: 760px) { .lat-split { grid-template-columns: minmax(0, 1fr); } }
+.lat-q .flow-box { margin-bottom: 12px; }
+.mono-txt { font-family: "JetBrains Mono", monospace; font-weight: 700; }
+.tbl-latihan { margin: 0 0 12px; }
+.tbl-latihan th, .tbl-latihan td { padding: 8px 10px; text-align: center; font-family: "JetBrains Mono", monospace; font-weight: 700; }
+.tbl-latihan th { font-family: "Plus Jakarta Sans", sans-serif; }
+.tbl-in { font: inherit; font-family: "JetBrains Mono", monospace; font-weight: 700; width: 92px; max-width: 100%; text-align: center; padding: 7px 6px; border: 2px solid var(--ink); border-radius: 8px; background: #fff; color: var(--ink); }
+select.tbl-in { width: 100px; }
+.tbl-in.is-correct { border-color: var(--ok); background: var(--ok-soft); }
+.tbl-in.is-wrong { border-color: var(--bad); background: var(--bad-soft); }
+.tbl-fix { display: block; font-size: .78rem; color: #17603F; margin-top: 2px; }
+.match-shape { display: flex; justify-content: flex-start; }
+.match-shape .flow-mini { width: 200px; max-width: 100%; }
+.flow-box.in-fb { margin-top: 10px; background: #fff; }
+.salah-flow .fn.pickable { cursor: pointer; }
+.salah-flow .fn.pickable:hover > rect, .salah-flow .fn.pickable:hover > polygon,
+.salah-flow .fn.pickable:focus-visible > rect, .salah-flow .fn.pickable:focus-visible > polygon { stroke-width: 4; fill: #FFF6D6; }
+.salah-flow .fn:focus { outline: none; }
+.fn.is-correct > rect, .fn.is-correct > polygon { fill: var(--ok-soft); stroke: var(--ok); stroke-width: 4; }
+.fn.is-wrong > rect, .fn.is-wrong > polygon { fill: var(--bad-soft); stroke: var(--bad); stroke-width: 4; }
+.lat-q .cards .step-card { font-size: .9rem; }
+@media (max-width: 520px) {
+  .tbl-latihan th, .tbl-latihan td { padding: 7px 4px; font-size: .84rem; }
+  .tbl-latihan th { font-size: .66rem; letter-spacing: .03em; white-space: normal; }
+  .tbl-in { width: 68px; padding: 6px 3px; font-size: .9rem; }
+  select.tbl-in { width: 74px; }
+}
+@media (max-width: 420px) {
+  .lat-q > .lat-head { flex-direction: column; gap: 8px; }
+  .tbl-in { width: 60px; }
+  select.tbl-in { width: 70px; }
+}
+@media (max-width: 420px) { .lat-q > .lat-head > .lat-main { align-self: stretch; width: 100%; } }

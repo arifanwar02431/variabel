@@ -4,13 +4,15 @@ Website materi **variabel** untuk SD kelas 4 (kotak berlabel & kartu perintah) d
 
 - `index.html` — beranda, pilih kelas
 - `kelas-4.html` — materi pemula, latihan 30 soal (8 jenis), game **Misi Kotak Ajaib** (± 30 menit, nilai minimal 85), kuis 25 soal
-- `kelas-6.html` — variabel & flowchart: simbol, variabel di tiap simbol, urut/percabangan/perulangan, penelusur flowchart, game **Detektif Flowchart** (± 30 menit, nilai minimal 85), kuis 25 soal, latihan
+- `kelas-6.html` — variabel & flowchart: simbol, variabel di tiap simbol, urut/percabangan/perulangan, penelusur flowchart, latihan 30 soal tingkat lanjut (9 jenis), game **Detektif Flowchart** (± 30 menit, nilai minimal 85), kuis 25 soal, latihan
 - `style.css` — tampilan
 - `script.js` — kartu perintah, gambar flowchart, kuis, penelusur flowchart
 - `game-engine.js` — mesin game bersama (peta misi, poin, rapor)
 - `game4.js` — game kelas 4
 - `game6.js` — game kelas 6
-- `latihan4.js` — 30 soal latihan kelas 4 (data soal ada di bagian atas file, `GROUPS`)
+- `latihan-engine.js` — mesin latihan soal bersama (papan skor, pemeriksaan, skor akhir)
+- `latihan4.js` — 30 soal latihan kelas 4 (`GROUPS`)
+- `latihan6.js` — 30 soal latihan kelas 6 (`GROUPS`)
 
 Tanpa library dan tanpa proses build.
 
@@ -29,7 +31,7 @@ Setiap kali file di GitHub diperbarui, Vercel otomatis memperbarui website.
 ## Mengubah isi
 
 - **Soal kuis kelas 4:** bagian bawah `kelas-4.html` (`window.QUIZ_K4`).
-- **Soal latihan kelas 4:** bagian atas `latihan4.js` (`GROUPS`). Jenis soal: `pg`, `bs`, `isian`, `jodoh`, `hitung`, `urut`, `multi`, `salah`.
+- **Soal latihan:** `latihan4.js` dan `latihan6.js` (`GROUPS`). Jenis soal kelas 4: `pg`, `bs`, `isian`, `jodoh`, `hitung`, `urut`, `multi`, `salah`. Jenis tambahan kelas 6: `telusur`, `tabel`, `lengkapi`, `susun`, `salahflow` (soal `pg`/`bs`/`multi` boleh diberi gambar flowchart lewat `f`).
 - **Soal kuis kelas 6, flowchart & penelusur:** bagian bawah `kelas-6.html` (`window.QUIZ_K6`, `window.FLOWS`, `window.TRACE_K6`).
 - **Nilai minimal lulus kuis:** atribut `data-kkm="85"` pada elemen kuis.
 - **Nilai minimal lulus game:** `kkm: 85` di bagian bawah `game4.js` / `game6.js`.
