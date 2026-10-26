@@ -30,9 +30,10 @@
     <div class="container">
       <span class="eyebrow">Kelas 4 · Pemula</span>
       <h1>Variabel itu seperti <span class="mark">kotak berlabel</span>.</h1>
-      <p class="lead">Di halaman ini kamu akan belajar apa itu variabel, untuk apa variabel dibuat, contohnya, dan kegunaannya. Setelah itu, mainkan game Misi Kotak Ajaib dan kerjakan kuisnya!</p>
+      <p class="lead">Di halaman ini kamu akan belajar apa itu variabel, untuk apa variabel dibuat, contohnya, dan kegunaannya. Setelah itu, kerjakan latihan soal, mainkan game Misi Kotak Ajaib, lalu kerjakan kuisnya!</p>
       <div class="hero-meta">
         <span class="pill">📖 Materi ± 20 menit</span>
+        <span class="pill">📝 Latihan 30 soal</span>
         <span class="pill">🎮 Game ± 30 menit</span>
         <span class="pill">✅ Kuis 25 soal</span>
         <span class="pill">🎯 Nilai minimal 85</span>
@@ -47,6 +48,7 @@
       <a href="#contoh">Contoh</a>
       <a href="#kegunaan">Kegunaan</a>
       <a href="#nama">Memberi Nama</a>
+      <a href="#latihan">Latihan Soal</a>
       <a href="#coba">Ayo Coba</a>
       <a href="#kuis">Kuis</a>
       <a href="#rangkuman">Rangkuman</a>
@@ -240,10 +242,34 @@
     </div>
   </section>
 
-  <!-- 06 AYO COBA (GAME) -->
+  <!-- 06 LATIHAN SOAL -->
+  <section class="section" id="latihan">
+    <div class="container">
+      <div class="section-head"><span class="section-num">06</span><h2>Latihan soal</h2></div>
+      <p class="section-intro">30 soal dengan 8 jenis yang berbeda. Kerjakan satu per satu. Setiap soal langsung diperiksa dan ada pembahasannya. Setelah semua soal dikerjakan, nilaimu muncul di bawah (nilai minimal <strong>85</strong>).</p>
+
+      <div data-latihan data-kkm="85">
+        <nav class="lat-jump" aria-label="Loncat ke bagian latihan">
+          <span class="muted" style="font-size:.84rem;align-self:center">Loncat ke bagian:</span>
+          <a href="#lat-A">A</a><a href="#lat-B">B</a><a href="#lat-C">C</a><a href="#lat-D">D</a><a href="#lat-E">E</a><a href="#lat-F">F</a><a href="#lat-G">G</a><a href="#lat-H">H</a>
+        </nav>
+        <div class="lat-top">
+          <div class="lat-top-row">
+            <span data-lat-prog></span>
+            <button type="button" class="lat-restart" data-lat-restart>↺ Ulang</button>
+          </div>
+          <div class="quiz-bar"><span data-lat-bar></span></div>
+        </div>
+        <div data-lat-body></div>
+        <div class="lat-result" id="lat-hasil" data-lat-result hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 AYO COBA (GAME) -->
   <section class="section" id="coba">
     <div class="container">
-      <div class="section-head"><span class="section-num">06</span><h2>Ayo coba: Misi Kotak Ajaib</h2></div>
+      <div class="section-head"><span class="section-num">07</span><h2>Ayo coba: Misi Kotak Ajaib</h2></div>
       <p class="section-intro">Bantu Robi si robot menyelesaikan 5 misi tentang variabel. Waktunya sekitar 30 menit. Di akhir kamu akan mendapat <strong>nilai</strong>. Nilai minimal untuk lulus adalah <strong>85</strong>. Progresmu tersimpan setiap selesai satu misi.</p>
 
       <div class="game" data-game="k4">
@@ -259,10 +285,10 @@
     </div>
   </section>
 
-  <!-- 07 KUIS -->
+  <!-- 08 KUIS -->
   <section class="section" id="kuis">
     <div class="container">
-      <div class="section-head"><span class="section-num">07</span><h2>Kuis variabel</h2></div>
+      <div class="section-head"><span class="section-num">08</span><h2>Kuis variabel</h2></div>
       <p class="section-intro">25 soal, satu per satu. Setiap soal langsung ada pembahasannya. Nilai minimal untuk lulus adalah <strong>85</strong> (paling sedikit 22 soal benar).</p>
       <div class="quiz" data-quiz="QUIZ_K4" data-kkm="85">
         <div class="quiz-top"><span data-count></span><span data-right></span></div>
@@ -285,7 +311,8 @@
           <li><span><strong>Nama variabel</strong> harus jelas, tanpa spasi, dan tidak diawali angka.</span></li>
         </ol>
         <div class="btn-row">
-          <a class="btn btn-primary" href="#coba">Main game lagi</a>
+          <a class="btn btn-primary" href="#latihan">Latihan soal</a>
+          <a class="btn" href="#coba">Main game</a>
           <a class="btn" href="#kuis">Kerjakan kuis</a>
         </div>
       </div>
@@ -383,5 +410,6 @@
 <script src="script.js"></script>
 <script src="game-engine.js"></script>
 <script src="game4.js"></script>
+<script src="latihan4.js"></script>
 </body>
 </html>
